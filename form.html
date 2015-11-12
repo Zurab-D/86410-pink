@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+    <title>HTML Academy: Pink :: Form</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="form">
+  <header class="header">
+    <nav class="nav">
+      <span class="nav__btn  nav__btn--close"></span>
+      <ul class="nav__list">
+        <li class="nav__item"><a href="#">Информация</a></li>
+        <li class="nav__item"><a href="#">Блог</a></li>
+        <li class="nav__item"><a href="#">Отзывы</a></li>
+        <li class="nav__item"><a href="form.html">Конкурс</a></li>
+      </ul>
+      <div class="nav__btn-holder">
+        <div class="logo">
+          <a href="index.html"><img src="img/logo.svg" width="75" height="25" alt="logo"></a>
+        </div>
+      </div>
+    </nav>
+    <div class="face">
+      <div class="face__content">
+        <div class="face__text"></div>
+        <div class="face__picture hidden"></div>
+      </div>
+    </div>
+    <div class="download">
+      <div class="download__btn btn"></div>
+      <div class="download__brands">
+        <div class="download__brand"></div>
+        <div class="download__brand"></div>
+        <div class="download__brand"></div>
+      </div>
+      <div class="download__text"></div>
+    </div>
+  </header>
+  
+  <main class="main">
+    <p class="tell-story"></p>
+    <form action="#" method="post">
+      <fieldset class="fieldset fieldset--fio">
+        <div class="fieldset__input"><input type="text" id="fio_fname"><label  class="fieldset__label"for="fio_fname"></label></div>
+        <div class="fieldset__input"><input type="text" id="fio_lname"><label  class="fieldset__label"for="fio_lname"></label></div>
+        <div class="fieldset__input"><input type="text" id="fio_mname"><label  class="fieldset__label"for="fio_mname"></label></div>
+      </fieldset>
+      
+      <fieldset class="fieldset fieldset--app">
+        <h3 class="fieldset__header"></h3>
+        <input class="fieldset__radio" type="radio" id="app_ios"><label class="fieldset__label" for="app_ios"></label>
+        <input class="fieldset__radio" type="radio" id="app_android"><label class="fieldset__label" for="app_android"></label>
+        <input class="fieldset__radio" type="radio" id="app_win"><label class="fieldset__label" for="app_win"></label>
+      </fieldset>
+      
+      <fieldset class="fieldset  fieldset--trip-date">
+        <h3 class="fieldset__header">Когда вы путешествовали?</h3>
+        <input type="text" id="checkin-date" required><label class="fieldset__label" for="checkin-date" required>Дата вызда</label>
+        <label class="fieldset__label" for="days_count" required>Продолжительность</label>
+
+         <div class="calc calc--days">
+          <button class="calc__btn-minus btn" type="button"></button>
+          <div class="calc__result-over">
+            <input class="calc__result" type="number" id="days_count" name="days_count" required>
+          </div>
+          <button class="calc__btn-plus btn" type="button"></button>
+        </div>
+        <label class="fieldset__label" for="checkout-date">Дата отъезда</label><input type="text" id="checkout-date">
+      </fieldset>
+      
+      <fieldset class="fieldset  fieldset--travelers">
+        <h3 class="fieldset__header">Кол-во путешественников:</h3>
+        <label class="fieldset__label" for="persons_count" required>Количество путешественников:</label>
+        <div class="calc calc--persons">
+          <div class="calc__btn-minus btn">-</div>
+          <div class="calc__result-over">
+            <input class="calc__result" type="number" id="persons_count" name="persons_count" required>
+          </div>
+          <div class="calc__btn-plus btn">+</div>
+        </div>
+        <div class="person">
+          <div class="person__number-cover">
+            <p class="person__number-label">№</p>
+            <p class="person__number">1</p>
+          </div>
+          <div class="person__fio">
+            <label class="fieldset__label" for="last-name">Фамилия</label>
+            <input type="text" id="last-name" name="last-name-1" value="Иванов" required>
+            <label class="fieldset__label" for="first-name">Имя</label>
+            <input type="text" id="first-name" name="first-name-1" value="Петр" required>
+            <label class="fieldset__label" for="fathers-name">Отчество</label>
+            <input type="text" id="fathers-name" name="fathers-name-1" value="Александрович">
+          </div>
+        </div>
+
+        <div class="person">
+          <div class="person__number-cover">
+            <p class="person__number-label">№</p>
+            <p class="person__number">2</p>
+          </div>
+          <div class="person__fio">
+            <label class="fieldset__label" for="last-name">Фамилия</label>
+            <input type="text" id="last-name" name="last-name-1" value="Иванов" required>
+            <label class="fieldset__label" for="first-name">Имя</label>
+            <input type="text" id="first-name" name="first-name-1" value="Петр" required>
+            <label class="fieldset__label" for="fathers-name">Отчество</label>
+            <input type="text" id="fathers-name" name="fathers-name-1" value="Александрович">
+          </div>
+        </div>
+      </fieldset>
+    </form>
+  </main>
+</body>
+</html>
