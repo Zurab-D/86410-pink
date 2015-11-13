@@ -19,80 +19,82 @@
       </ul>
       <div class="nav__btn-holder">
         <div class="logo">
-          <a href="index.html"><img src="img/logo.svg" width="75" height="25" alt="logo"></a>
+          <a href="index.html"><img src="img/logo.svg" width="75" height="25" alt="logo">Pink</a>
         </div>
       </div>
     </nav>
     <div class="face">
       <div class="face__content">
-        <div class="face__text"></div>
-        <div class="face__picture hidden"></div>
+        <div class="face__text">Конкурс на самое безбашенное путешествие с Пинк</div>
+        <div class="face__picture  hidden"></div>
       </div>
-    </div>
-    <div class="download">
-      <div class="download__btn btn"></div>
-      <div class="download__brands">
-        <div class="download__brand"></div>
-        <div class="download__brand"></div>
-        <div class="download__brand"></div>
-      </div>
-      <div class="download__text"></div>
     </div>
   </header>
   
   <main class="main">
-    <p class="tell-story"></p>
+    <p class="story">Поделитесь своей историей и получите шанс выиграть ценный приз — 1000 миль на вашу бонусную карту! <span class="story__fill-please">Пожалуйста, заполните форму ниже:</span></p>
+    
     <form action="#" method="post">
-      <fieldset class="fieldset fieldset--fio">
-        <div class="fieldset__input"><input type="text" id="fio_fname"><label  class="fieldset__label"for="fio_fname"></label></div>
-        <div class="fieldset__input"><input type="text" id="fio_lname"><label  class="fieldset__label"for="fio_lname"></label></div>
-        <div class="fieldset__input"><input type="text" id="fio_mname"><label  class="fieldset__label"for="fio_mname"></label></div>
+      <fieldset class="fieldset  fieldset--fio">
+        <div class="fieldset__input"><input type="text" id="fio_name-f" placeholder="Введите ваше имя" required><label class="fieldset__label"for="fio_name-f">Имя</label></div>
+        <div class="fieldset__input"><input type="text" id="fio_name-l" placeholder="Укажите фамилию" required><label class="fieldset__label"for="fio_name-l">Фамилия</label></div>
+        <div class="fieldset__input"><input type="text" id="fio_name-m" placeholder="Ну и отчество тоже"><label class="fieldset__label"for="fio_name-m">Отчество</label></div>
       </fieldset>
       
-      <fieldset class="fieldset fieldset--app">
-        <h3 class="fieldset__header"></h3>
-        <input class="fieldset__radio" type="radio" id="app_ios"><label class="fieldset__label" for="app_ios"></label>
-        <input class="fieldset__radio" type="radio" id="app_android"><label class="fieldset__label" for="app_android"></label>
-        <input class="fieldset__radio" type="radio" id="app_win"><label class="fieldset__label" for="app_win"></label>
+      <fieldset class="fieldset  fieldset--app">
+        <ul>
+          <li>
+            <input class="fieldset__radio" type="radio" id="app_ios" name="app" required><label class="fieldset__label" for="app_ios">Pink для iOS</label>
+          </li>
+          <li>
+            <input class="fieldset__radio" type="radio" id="app_and" name="app"><label class="fieldset__label" for="app_and">Pink на Android</label>
+          </li>
+          <li>
+            <input class="fieldset__radio" type="radio" id="app_win" name="app"><label class="fieldset__label" for="app_win">Windows Phone</label>
+          </li>
+        </ul>
+        <h3 class="fieldset__header">С каким приложением вы путешествовали?</h3>
       </fieldset>
       
       <fieldset class="fieldset  fieldset--trip-date">
         <h3 class="fieldset__header">Когда вы путешествовали?</h3>
         <input type="text" id="checkin-date" required><label class="fieldset__label" for="checkin-date" required>Дата вызда</label>
+        
         <label class="fieldset__label" for="days_count" required>Продолжительность</label>
-
-         <div class="calc calc--days">
-          <button class="calc__btn-minus btn" type="button"></button>
+        <div class="calc  calc--days">
+          <button class="calc__btn-minus  btn" type="button"></button>
           <div class="calc__result-over">
             <input class="calc__result" type="number" id="days_count" name="days_count" required>
           </div>
-          <button class="calc__btn-plus btn" type="button"></button>
+          <button class="calc__btn-plus  btn" type="button"></button>
         </div>
-        <label class="fieldset__label" for="checkout-date">Дата отъезда</label><input type="text" id="checkout-date">
+        <label class="fieldset__label" for="checkout-date">Дата возвращения</label><input type="text" id="checkout-date">
       </fieldset>
       
       <fieldset class="fieldset  fieldset--travelers">
-        <h3 class="fieldset__header">Кол-во путешественников:</h3>
-        <label class="fieldset__label" for="persons_count" required>Количество путешественников:</label>
-        <div class="calc calc--persons">
+        <label class="fieldset__label" for="persons_count" required>Количество попутчиков</label>
+        <div class="calc  calc--persons">
           <div class="calc__btn-minus btn">-</div>
           <div class="calc__result-over">
             <input class="calc__result" type="number" id="persons_count" name="persons_count" required>
           </div>
-          <div class="calc__btn-plus btn">+</div>
+          <div class="calc__btn-plus  btn">+</div>
         </div>
+        
         <div class="person">
           <div class="person__number-cover">
             <p class="person__number-label">№</p>
             <p class="person__number">1</p>
           </div>
           <div class="person__fio">
-            <label class="fieldset__label" for="last-name">Фамилия</label>
-            <input type="text" id="last-name" name="last-name-1" value="Иванов" required>
-            <label class="fieldset__label" for="first-name">Имя</label>
-            <input type="text" id="first-name" name="first-name-1" value="Петр" required>
-            <label class="fieldset__label" for="fathers-name">Отчество</label>
-            <input type="text" id="fathers-name" name="fathers-name-1" value="Александрович">
+            <div class="fieldset__input">
+              <input type="text" id="first_name_1" name="first_name_1" value="" placeholder="Введите ваше имя" required>
+              <label class="fieldset__label" for="first_name_1">Имя</label>
+            </div>
+            <div class="fieldset__input">
+              <input type="text" id="nickname_1" name="nickname_1" value="" placeholder="Ну как же без этого!">
+              <label class="fieldset__label" for="nikname_1">Прозвище</label>
+            </div>
           </div>
         </div>
 
@@ -102,16 +104,87 @@
             <p class="person__number">2</p>
           </div>
           <div class="person__fio">
-            <label class="fieldset__label" for="last-name">Фамилия</label>
-            <input type="text" id="last-name" name="last-name-1" value="Иванов" required>
-            <label class="fieldset__label" for="first-name">Имя</label>
-            <input type="text" id="first-name" name="first-name-1" value="Петр" required>
-            <label class="fieldset__label" for="fathers-name">Отчество</label>
-            <input type="text" id="fathers-name" name="fathers-name-1" value="Александрович">
+            <div class="fieldset__input">
+              <input type="text" id="first_name_2" name="first_name_2" value="" placeholder="Введите ваше имя" required>
+              <label class="fieldset__label" for="first_name_2">Имя</label>
+            </div>
+            <div class="fieldset__input">
+              <input type="text" id="nickname_2" name="nickname_2" value="" placeholder="Ну как же без этого!">
+              <label class="fieldset__label" for="nikname_2">Прозвище</label>
+            </div>
           </div>
         </div>
       </fieldset>
+      
+      <fieldset class="fieldset  fieldset--achievements">
+        <h3 class="fieldset__header">Ваши безбашенные достижения в путешествии</h3>
+        <input type="checkbox" id="cb_1" name="cb_1" checked><label class="fieldset__label" for="cb_1">Сделал селфи с акулой</label>
+        <input type="checkbox" id="cb_2" name="cb_2" checked><label class="fieldset__label" for="cb_2">Обгорел на пляже</label>
+        <input type="checkbox" id="cb_3" name="cb_3"        ><label class="fieldset__label" for="cb_3">Видел Чака Норриса</label>
+        <input type="checkbox" id="cb_4" name="cb_4"        ><label class="fieldset__label" for="cb_4">Накупил сувениров</label>
+        <input type="checkbox" id="cb_5" name="cb_5" checked><label class="fieldset__label" for="cb_5">Удержал башню</label>
+        <input type="checkbox" id="cb_6" name="cb_6"        ><label class="fieldset__label" for="cb_6">Разгромил отель</label>
+      </fieldset>
+      
+      <fieldset class="fieldset  fieldset--photo">
+        <h3 class="fieldset__header">Ваши фотографии из поездки *</h3>
+        <figure class="pics">
+          <a class="pics__select  btn" href="#pics__select">Загрузить фото</a>
+          <ul class="pics__ul">
+            <li class="pics__item">
+              <img src="http://placehold.it/67x67" alt="" width="67" height="67">
+              <a class="pics__delete" href="#pic-del">
+            </a></li>
+            <li class="pics__item">
+              <img src="http://placehold.it/67x67" alt="" width="67" height="67">
+              <a class="pics__delete" href="#pic-del">
+            </a></li>
+            <li class="pics__item">
+              <img src="http://placehold.it/67x67" alt="" width="67" height="67">
+              <a class="pics__delete" href="#pic-del">
+            </a></li>
+            <li class="pics__item">
+              <img src="http://placehold.it/67x67" alt="" width="67" height="67">
+              <a class="pics__delete" href="#pic-del">
+            </a></li>
+            <li class="pics__item">
+              <img src="http://placehold.it/67x67" alt="" width="67" height="67">
+              <a class="pics__delete" href="#pic-del">
+            </a></li>
+            <li class="pics__item">
+              <img src="http://placehold.it/67x67" alt="" width="67" height="67">
+              <a class="pics__delete" href="#pic-del">
+            </a></li>
+            <li class="pics__item">
+              <img src="http://placehold.it/67x67" alt="" width="67" height="67">
+              <a class="pics__delete" href="#pic-del">
+            </a></li>
+          </ul>
+        </figure>
+      </fieldset>
+      
+      <input class="main--btn-blue  btn" type="submit" value="Отправить форму">
     </form>
+    
+    <p class="required-field"><span class="asterisk">*</span> &mdash; Обязательные поля</p>
   </main>
+  
+  <footer class="footer">
+    <div class="logo">
+      <a href="index.html"><img src="img/logo.svg" width="75" height="25" alt="logo">Pink</a>
+    </div>
+    <ul class="socials">
+      <li>
+        <a href=""><span class="socials__item  socials__tw">Twitter</span></a>
+      </li>
+      <li>
+        <a href=""><span class="socials__item  socials__fb">Facebook</span></a>
+      </li>
+      <li>
+        <a href=""><span class="socials__item  socials__vk">VK</span></a>
+      </li>
+    </ul>
+    <div class="developed">Разработано</div>
+  </footer>
 </body>
 </html>
