@@ -1,12 +1,131 @@
 <!DOCTYPE html>
-<html lang="ru">
-  <head>
-    <meta charset="utf-8">
-    <title>HTML Academy: Пинк</title>
-  </head>
-  <body>
-
-    <p>Репозиторий создан для обучения на интенсивном онлайн-курсе «<a href="https://htmlacademy.ru/advanced_intensive">Продвинутый HTML и CSS</a>».</p>
-
-  </body>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+    <title>HTML Academy: Pink</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="index">
+  <header class="header">
+    <nav class="nav">
+      <span class="nav__btn  nav__btn--close"></span>
+      <ul class="nav__list">
+        <li class="nav__item"><a href="#">Информация</a></li>
+        <li class="nav__item"><a href="#">Блог</a></li>
+        <li class="nav__item"><a href="#">Отзывы</a></li>
+        <li class="nav__item"><a href="form.html">Конкурс</a></li>
+      </ul>
+      <div class="nav__btn-holder">
+        <div class="logo">
+          <a href="index.html"><img src="img/logo.svg" width="75" height="25" alt="logo"></a>
+        </div>
+      </div>
+    </nav>
+    <div class="face">
+      <div class="face__content">
+        <div class="face__text">Взгляните на жизнь иначе!</div>
+        <div class="face__picture"></div>
+      </div>
+    </div>
+    <div class="download">
+      <a class="download__btn btn" href="">Скачать приложение</a>
+      <ul class="brands">
+        <li class="brands__item  brands__item--icon"><a href="">iOS</a></li>
+        <li class="brands__item  brands__item--icon"><a href="">Android</a></li>
+        <li class="brands__item  brands__item--icon"><a href="">Windows Phone</a></li>
+      </ul>
+      <div class="download__text">Доступно для iPhone, iPad, Android, Windows Phone, OS X, Windows 8</div>
+    </div>
+  </header>
+  
+  <main class="main">
+    <h2 class="big_text">Устали от серости мегаполиса?<br><span class="show-for-mobile"><br></span>Нам есть, что вам<br>предложить!</h2>
+    <div class="benefits">
+      <div class="benefits__item">
+        <h3 class="benefits__head">Поднимает настроение</h3>
+        <span class="benefits__text">Приложение позволит вам победить осеннюю хандру и деперессию буквально в несколько кликов!</span>
+      </div>
+      <div class="benefits__item">
+        <h3 class="benefits__head">Меняет мир вокруг</h3>
+        <span class="benefits__text">Сделайте снимок и украсьте его смайликом или текстовой подписью, чтобы усилить эффект</span>
+      </div>
+      <div class="benefits__item">
+        <h3 class="benefits__head">Заводит новых друзей</h3>
+        <span class="benefits__text">Ставьте лайки, комментируте, делитесь фотографиями с друзьями и заводите новых</span>
+      </div>
+    </div>
+    
+    <div class="slider-rewiew">
+      <div class="slider-rewiew__item  slider-rewiew__item--active">
+        <h3 class="slider-rewiew__fio">Николай Петров</h3>
+        <span class="slider-rewiew__text">«Это приложение перевернуло мой мир и позволило по-новому взглянуть на привычные серые вещи! А еще я познакомился со своей будущей женой в комментариях к выложенной фотографии!»</span>
+      </div>
+      <div class="slider-rewiew__item">
+        <h3 class="slider-rewiew__fio">Lorem ipsum</h3>
+        <span class="slider-rewiew__text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eius, beatae in accusamus cumque! Amet consequatur consequuntur, reprehenderit error ad quo fugit veniam reiciendis doloribus impedit, excepturi quas mollitia ullam autem.</span>
+      </div>
+      <div class="slider-rewiew__item">
+        <h3 class="slider-rewiew__fio">Lorem ipsum!</h3>
+        <span class="slider-rewiew__text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Inventore, ad?</span>
+      </div>
+    </div>
+    
+    <div class="prices">
+      <table class="prices__table">
+        <tr class="prices__header">
+          <th></th>
+          <th>
+            <h3>Стандарт</h3>
+            <span>3,99 USD</span>
+          </th>
+          <th></th>
+        </tr>
+        <tr class="prices__row">
+          <td class="prices__col"></td>
+          <td class="prices__col">Розовый фильтр</td>
+          <td class="prices__col"></td>
+        </tr>
+        <tr class="prices__row">
+          <td class="prices__col"></td>
+          <td class="prices__col">Смайлики</td>
+          <td class="prices__col"></td>
+        </tr>
+        <tr class="prices__row">
+          <td class="prices__col"></td>
+          <td class="prices__col">Комментарии</td>
+          <td class="prices__col"></td>
+        </tr>
+      </table>
+      
+      <div class="prices__switch">
+        <input type="radio" id="price_switch_1" name="price_switch" hidden-><label for="price_switch_1">1 слайд</label>
+        <input type="radio" id="price_switch_2" name="price_switch" hidden- checked><label for="price_switch_2">2 слайд</label>
+        <input type="radio" id="price_switch_3" name="price_switch" hidden-><label for="price_switch_3">3 слайд</label>
+      </div>
+    </div>
+    
+    <h2 class="big_text  big_text--ask">Остались вопросы?<br>Свяжитесь с нами!</h2>
+    
+    <div class="contacts">
+      <div class="contacts__item">
+        <div class="contacts__head"></div>
+        <div class="contacts__text"></div>
+      </div>
+      <div class="contacts__item">
+        <div class="contacts__head"></div>
+        <div class="contacts__text"></div>
+      </div>
+      <div class="contacts__item">
+        <div class="contacts__head"></div>
+        <a class="contacts__text" href="#"></a>
+      </div>
+    </div>
+    
+    <div class="map"></div>
+  </main>
+  
+  <footer class="footer"></footer>
+</body>
 </html>
