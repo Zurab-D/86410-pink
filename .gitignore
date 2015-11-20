@@ -1,6 +1,7 @@
 gosha/
 node_modules/
 bower_components/
+_arc/
 .DS_Store
 Thumbs.db
 .idea
