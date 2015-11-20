@@ -8,3 +8,7 @@ Thumbs.db
 *.sublime*
 *.log
 css/*.css
+ex_files
+_arc/*
+*.txt
+*.zip
