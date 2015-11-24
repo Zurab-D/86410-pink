@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
   <meta charset="UTF-8">
     <title>HTML Academy: Pink :: Blog</title>
@@ -9,77 +9,85 @@
 </head>
 <body class="form">
   <header class="header">
-    <nav class="nav">
-      <span class="nav__btn  nav__btn--close"></span>
-      <ul class="nav__list">
-        <li class="nav__item"><a href="#">Информация</a></li>
-        <li class="nav__item"><a href="#">Блог</a></li>
-        <li class="nav__item"><a href="#">Отзывы</a></li>
-        <li class="nav__item"><a href="form.html">Конкурс</a></li>
-      </ul>
-      <div class="nav__btn-holder">
-        <div class="logo">
-          <a href="index.html"><img src="img/logo.svg" width="75" height="25" alt="logo">Pink</a>
-        </div>
-      </div>
-    </nav>
-    <div class="face">
-      <div class="face__content">
-        <div class="face__text">Блог путешественников, пользователей Пинк</div>
-        <div class="face__picture  hidden"></div>
+    <div class="header__wrap">
+      <nav class="nav">
+        <a class="logo  logo--top" href="index.html">
+          <img src="img/logo.png" width="75" height="25" alt="logo">
+        </a>
+        <span class="menu-btn  menu-btn--close-"></span>
+        <ul class="nav__list  hidden">
+          <li class="nav__item  nav__item--empty"></li>
+          <li class="nav__item"><a href="#">Информация</a></li>
+          <li class="nav__item"><a href="blog.html">Блог</a></li>
+          <li class="nav__item"><a href="#">Отзывы</a></li>
+          <li class="nav__item"><a href="form.html">Конкурс</a></li>
+        </ul>
+      </nav>
+      <div class="face">
+        <h1 class="face__text">Блог путешественников, пользователей Пинк</h1>
       </div>
     </div>
   </header>
-  
+
+
+
   <main class="main">
     <article class="post-preview">
-      <h3 class="post-preview__header">Антон и Надя в Тайланде</h3>
-      <span class="post-preview__subheader">Опубликовано: 6 месяцев назад</span>
-      <p class="post-preview__text">Читайте рассказ о том, как семейная пара посещала Тайланд, стараясь максимально избегать избитых туристических мест и районов.</p>
+      <a class="post-preview__link" href="post.html">
+        <h3 class="post-preview__header">Антон и Надя в Тайланде</h3>
+        <p class="post-preview__subheader">Опубликовано: 6 месяцев назад</p>
+        <p class="post-preview__text">Читайте рассказ о том, как семейная пара посещала Тайланд, стараясь максимально избегать избитых туристических мест и районов.</p>
+      </a>
     </article>
-    
+
+
     <article class="post-preview">
-      <h3 class="post-preview__header">Гастрольный тур «Кубанских борщеваров»</h3>
-      <span class="post-preview__subheader">Опубликовано: 5 лет назад</span>
-      <p class="post-preview__text">Возрождение культурных традиций уже не за горами. Фолк-металл-рэп-группа из столицы Кубани провела весь год в гастролях по России и ближнему (а также среднему) зарубежью.</p>
+      <a class="post-preview__link" href="post.html">
+        <h3 class="post-preview__header">Гастрольный тур «Кубанских борщеваров»</h3>
+        <p class="post-preview__subheader">Опубликовано: 5 лет назад</p>
+        <p class="post-preview__text">Возрождение культурных традиций уже не за горами. Фолк-металл-рэп-группа из столицы Кубани провела весь год в гастролях по России и ближнему (а также среднему) зарубежью.</p>
+      </a>
     </article>
-    
+
+
     <article class="post-preview">
-      <h3 class="post-preview__header">Чета Болонских в Париже</h3>
-      <span class="post-preview__subheader">Опубликовано: 100 лет назад</span>
-      <p class="post-preview__text">Невероятные приключения русских во Франции. Интриги, предательства, погони и, разумеется, убийства. Читайте криминально-исторический трактат в двух томах.</p>
+      <a class="post-preview__link" href="post.html">
+        <h3 class="post-preview__header">Чета Болонских в Париже</h3>
+        <p class="post-preview__subheader">Опубликовано: 100 лет назад</p>
+        <p class="post-preview__text">Невероятные приключения русских во Франции. Интриги, предательства, погони и, разумеется, убийства. Читайте криминально-исторический трактат в двух томах.</p>
+      </a>
     </article>
-    
+
+
     <article class="post-preview">
-      <h3 class="post-preview__header">Путешествие на яхте сеньора Христофора</h3>
-      <span class="post-preview__subheader">Опубликовано: 523 года назад</span>
-      <p class="post-preview__text">Группа испанцев отдыхала на яхте, но они даже не представляли, какие открытия ждут их впереди и чем это обернется для всего человечества!</p>
+      <a class="post-preview__link" href="post.html">
+        <h3 class="post-preview__header">Путешествие на яхте сеньора Христофора</h3>
+        <p class="post-preview__subheader">Опубликовано: 523 года назад</p>
+        <p class="post-preview__text">Группа испанцев отдыхала на яхте, но они даже не представляли, какие открытия ждут их впереди и чем это обернется для всего человечества!</p>
+      </a>
     </article>
-    
+
+
     <div class="pager">
-      <div class="pager__item  btn  "pager__item--active>1</div>
-      <div class="pager__item  btn">2</div>
-      <div class="pager__item  btn">3</div>
-      <div class="pager__item  btn">4</div>
+      <a class="btn  pager__item  pager__item--active" href="#p1">1</a>
+      <a class="btn  pager__item" href="#p2">2</a>
+      <a class="btn  pager__item" href="#p3">3</a>
+      <a class="btn  pager__item" href="#p4">4</a>
     </div>
   </main>
 
+
+
   <footer class="footer">
-    <div class="logo">
-      <a href="index.html"><img src="img/logo.svg" width="75" height="25" alt="logo">Pink</a>
-    </div>
+    <a class="logo  logo--bottom" href="index.html">
+      <img src="img/logo.png" width="75" height="25" alt="logo">
+    </a>
     <ul class="socials">
-      <li>
-        <a href=""><span class="socials__item  socials__tw">Twitter</span></a>
-      </li>
-      <li>
-        <a href=""><span class="socials__item  socials__fb">Facebook</span></a>
-      </li>
-      <li>
-        <a href=""><span class="socials__item  socials__vk">VK</span></a>
-      </li>
+      <li><a class="socials__item  socials__tw" href="#tw">Twitter</a></li>
+      <li><a class="socials__item  socials__fb" href="#fb">Facebook</a></li>
+      <li><a class="socials__item  socials__vk" href="#vk">VK</a></li>
     </ul>
-    <div class="developed">Разработано</div>
+    <a class="developed" href="">Разработано</a>
   </footer>
 </body>
 </html>

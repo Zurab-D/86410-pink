@@ -1,6 +1,7 @@
 gosha/
 node_modules/
 bower_components/
+_arc/
 .DS_Store
 Thumbs.db
 .idea
@@ -11,3 +12,5 @@ ex_files
 _arc/*
 *.txt
 *.zip
+*.rar
+ex_files
