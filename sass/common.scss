@@ -1,7 +1,11 @@
+html { box-sizing: border-box; }
+*, *:before, *:after { box-sizing: inherit; }
+
 body {
   background-color: #fff;
   color: $base-color;
-  font-family: "OpenSansLight", "Comic Sans MS", sans-serif;
+  //font-family: "OpenSansLight", "Comic Sans MS", sans-serif;
+  font-family: "OpenSansLight", sans-serif;
   font-weight: normal;
   font-size: $base-font-size;
   line-height: $base-line-height;

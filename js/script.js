@@ -5,7 +5,9 @@
     pricesSwitch3 = document.querySelector("#prices__table--switch-3"),
     tablePrice = document.querySelector("#prices_table"),
     priceSwitch = document.querySelector("#price_switch"),
-    priceSwitchLi = priceSwitch.querySelectorAll("li")
+    priceSwitchLi = !!priceSwitch && priceSwitch.querySelectorAll("li"),
+    nav = document.querySelector("#nav"),
+    menuBtn = document.querySelector("#menu_btn")
   ;
 
   function removePriceTableSwitchClasses() {
@@ -31,15 +33,21 @@
     self.parentNode.classList.add("switch__item--active");
   }
 
-  pricesSwitch1.addEventListener('click', function(event){
+  !!pricesSwitch1 && pricesSwitch1.addEventListener('click', function(event){
     switchItemsListener(this);
   });
 
-  pricesSwitch2.addEventListener('click', function(event){
+  !!pricesSwitch2 && pricesSwitch2.addEventListener('click', function(event){
     switchItemsListener(this);
   });
 
-  pricesSwitch3.addEventListener('click', function(event){
+  !!pricesSwitch3 && pricesSwitch3.addEventListener('click', function(event){
     switchItemsListener(this);
   });
+  
+  menuBtn.addEventListener('click', function(event){
+    event.preventDefault();
+    nav.classList.toggle("nav--expand");
+    menuBtn.classList.toggle("menu-btn--close");
+  })
 })();

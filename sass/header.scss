@@ -7,24 +7,64 @@
     background-size: cover;
     background-position: center;
   }
+  &--blog {
+    margin: 0 0 29px 0;
+  }
 }
 
+
+.index .header {
+  min-height: 100vh;
+  background: #1d2631;
+  flex-direction: column;
+  display: flex;
+}
+
+
 .nav {
-  position: relative;
+  position: absolute;
   padding: 0;
   margin: 0;
   height: $nav-height;
+  width: 100%;
   background-color: rgba(0, 0, 0, .3);
-  &__list {
-    padding: 0;
-    margin: 0;
+  z-index: 10;
+  &--expand {
+    height: $nav-height + 3;
+    border-bottom: 1px solid #000;
+    background-color: $base-color;
   }
-  &__item,
-  &__item a {
+  &--expand &__list {
+    display: block;
+  }
+  &__list {
+    position: absolute;
+    display: none;
+    margin: 0;
+    padding: 0;
+    top: $nav-height + 3;
+    width: 100%;
     list-style: none;
-    display: inline-block;
+    z-index: 10;
+  }
+  &__item {
+  }
+  &__item a {
+    display: block;
+    height: $nav-item-height;
+    background-color: $base-color;
+    border-top: 1px solid #485461;
+    border-bottom: 1px solid #000;
+    font-family: "OpenSansBold", sans-serif;
+    font-weight: bold;
+    font-size: $middle-font-size;
+    line-height: $nav-item-height;
+    text-transform: uppercase;
+    color: #fff;
+    text-decoration: none;
   }
 }
+
 
 .logo {
   position: absolute;
@@ -36,6 +76,7 @@
     margin: 21px 20px;
   }
 }
+
 
 .menu-btn {
   position: absolute;
@@ -64,6 +105,7 @@
   &:after {top: ($menu-btn-sheet-height + $menu-btn-sheet-margin) * 2;}
 
   /* кнопка "крестик" для закрытия меню */
+  //.nav--expand &,
   &--close {
     width: 22px;
     height: 22px;
@@ -89,26 +131,33 @@
   }*/
 }
 
+
 .face {
   position: relative;
   margin: 0;
-  padding: 0;
+  padding: 66px 0 0 0;
   width: auto;
   &__text {
     margin: 0;
-    padding: 31px 30px 51px;
+    padding: 31px 20px 41px; //51px;
     font-weight: normal;
     font-size: $header-font-size;
     line-height: $header-line-height;
     color: #fff;
   }
   &--img {
-    height: 392px;
+    height: 458px;//392px;
     background: transparent url("../img/palm.png") no-repeat;
-    background-position: 10% 106px;
+    background-position: 10% 119%;//106px;
     background-size: 320px auto;
   }
 }
+
+
+.index .download {
+  margin: auto;
+}
+
 
 .download {
   margin: 0;

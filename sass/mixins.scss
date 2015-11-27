@@ -59,7 +59,7 @@
 
 @mixin sign-v($color: #000, $size: 30px, $line-width: 2px, $bg-color: transparent) {
   width: $size;
-  height: $size/100*35;
+  height: $size/100*45;
   border-left: $line-width solid $color;
   border-bottom: $line-width solid $color;
   transform-origin: (center);

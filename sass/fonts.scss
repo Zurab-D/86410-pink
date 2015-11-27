@@ -57,6 +57,18 @@
 
 @font-face
 {
+    font-family: 'OpenSans';
+    font-weight: 100;
+    font-style: normal;
+
+    src: url('#{$dirfont}/opensans-regular.eot');
+    src: url('#{$dirfont}/opensans-regular.eot?#iefix') format('embedded-opentype'),
+    url('#{$dirfont}/opensans-regular.woff') format('woff'),
+    url('#{$dirfont}/opensans-regular.ttf') format('truetype');
+}
+
+@font-face
+{
     font-family: 'OpenSansLight';
     font-weight: 100;
     font-style: normal;
