@@ -1,0 +1,44 @@
+body {
+  background-color: #fff;
+  color: $base-color;
+  font-family: "OpenSansLight", "Comic Sans MS", sans-serif;
+  font-weight: normal;
+  font-size: $base-font-size;
+  line-height: $base-line-height;
+  text-align: center;
+}
+
+.hidden {
+  display: none;
+}
+
+.not-visible {
+  visibility: hidden;
+}
+
+.outline {
+  outline: 1px solid red;
+}
+
+.icon {
+  position: relative;
+}
+
+.icon:before,
+.icon:after {
+  content: "";
+  display: block;
+  position: absolute;
+  background-repeat: no-repeat;
+}
+
+.btn {
+  display: inline-block;
+  outline: none;
+  border: none;
+  border-radius: none;
+  text-decoration: none;
+  text-transform: uppercase;
+  text-align: center;
+  color: #fff;
+}

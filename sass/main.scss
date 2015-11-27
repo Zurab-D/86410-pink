@@ -1,0 +1,239 @@
+.wrapper {
+  padding: 0 20px;
+}
+
+
+.big_text {
+  font-family: "OpenSansLight", sans-serif;
+  font-weight: normal;
+  font-size: $header-font-size;
+  line-height: $header-line-height;
+  &--offer {
+    margin-top: -6px;
+  }
+  &--ask {
+    margin-bottom: 34px;
+  }
+}
+
+
+.benefits {
+  margin: 93px 0 0 0;
+  line-height: $base-line-height;
+  &__item {
+    margin-bottom: 40px;
+  }
+  &__head {
+    color: #000;
+    font-family: "OpenSansBold", sans-serif;
+    font-weight: bold;
+    font-size: $middle-font-size;
+  }
+  &__text {
+     font-family: "OpenSansRegular", sans-serif;
+    font-size: $base-font-size;
+  }
+}
+
+
+.mobile-pic {
+  margin: 0 0 39px;
+  padding: 0;
+}
+
+
+.slider-review {
+  display: flex;
+  flex-direction: column;
+  &__items-wrapper {
+    height: 200px;
+    overflow: hidden;
+    order: 1;
+  }
+  &__item {
+    display: none;
+    //opacity: 0;
+    &--active {
+      display: block;
+      //opacity: 1;
+    }
+  }
+  &__header {
+    margin: 0 0 14px;
+    padding: 0;
+    font-family: "OpenSansBold", sans-serif;
+    font-weight: bold;
+    font-size: $middle-font-size;
+    line-height: $header-line-height;
+  }
+  &__text {
+    font-family: "OpenSans", sans-serif;
+    font-size: $base-font-size;
+    line-height: $header-line-height;
+  }
+}
+
+
+.switch {
+  @include no-bullet-list;
+  display: flex;
+  justify-content: space-between;
+  margin: 40px auto;
+  width: 62px;
+  order: 2;
+  &__item {
+    @include menu-list-item;
+  }
+  &__label {
+    position: relative;
+    cursor: pointer;
+  }
+  &__label:before {
+    @include icon;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    border: 3px solid;
+    background-color: #b5b9be;
+    border-color:  #fff;
+  }
+  &__item--active &__label:before,
+  &__radio:nth-child(1):checked ~ & &__item:nth-child(1) &__label:before,
+  &__radio:nth-child(2):checked ~ & &__item:nth-child(2) &__label:before,
+  &__radio:nth-child(3):checked ~ & &__item:nth-child(3) &__label:before {
+    background-color: #fff;
+    border-color:  $base-color;
+  }
+  &__radio:nth-child(1):checked ~ .slider-review__items-wrapper .slider-review__item:nth-child(1),
+  &__radio:nth-child(2):checked ~ .slider-review__items-wrapper .slider-review__item:nth-child(2),
+  &__radio:nth-child(3):checked ~ .slider-review__items-wrapper .slider-review__item:nth-child(3) {
+    display: block;
+  }
+}
+
+
+.prices {
+  overflow-x: hidden;
+  &__table {
+    margin: 0 auto;
+    border-collapse: collapse;
+    //&--switch-2 {transform: translateX(-260px);}
+    &--switch-1 { transform: translateX(0px); }
+    &--switch-2 { transform: translateX(-260px); }
+    &--switch-3 { transform: translateX(-538px); }
+  }
+  &__th {
+    min-width: 278px;
+    border: 1px solid #e5e5e5;
+    background-color: $base-color;
+  }
+  &__td {
+    position: relative;
+    padding: 14px 0 15px 22px;
+    border: 1px solid lightgray;
+    font-family: "OpenSans", sans-serif;
+    font-weight: normal;
+    font-size: $base-font-size;
+    line-height: $header-line-height;
+    text-transform: uppercase;
+    text-align: left;
+  }
+  &__title {
+    margin: 18px 0 0;
+    font-family: "OpenSansBold", sans-serif;
+    font-weight: bold;
+    font-size: $middle-font-size;
+    line-height: $header-line-height;
+    color: #fff;
+  }
+  &__value {
+    margin: 0 0 20px;
+    font-family: "OpenSansLight", sans-serif;
+    font-weight: normal;
+    font-size: $header-font-size;
+    line-height: $header-line-height;
+    color: #fff;
+  }
+  &__sign {
+    position: absolute;
+    float: right;
+  }
+  &--yes>&__sign {
+    /*margin: -1px 18px 0 0;*/
+    @include sign-v(#3dc644, 25px);
+    top: 0;
+    right: 0;
+    transform: translate(-18px, 20px) rotate(-45deg);
+  }
+  &--no>&__sign {
+    /*margin: 18px 15px 0 0;*/
+    @include sign-x(#f25b26, 35px);
+    top: 0;
+    right: 0;
+    transform: translate(-13px, 18px);
+  }
+}
+
+
+.contacts {
+  margin: 0;
+  &__head {
+    margin: 0 0 -3px;
+    font-family: "OpenSansBold", sans-serif;
+    font-weight: bold;
+    font-size: $middle-font-size;
+    line-height: $header-line-height;
+    color: $base-color;
+  }
+  &__text {
+    display: block;
+    margin: 0 0 20px;
+    font-family: "OpenSansLight", sans-serif;
+    font-weight: normal;
+    font-size: $header-font-size;
+    line-height: $header-line-height;
+    color: #d22856;
+  }
+}
+
+
+.map {
+  height: 200px;
+  width: auto;
+  background-image: url(../img/map.jpg);
+  background-size: cover;
+  background-position: bottom;
+  background-repeat: no-repeat;
+}
+
+.sign-x {@include sign-x(#f25b26, 35px);}
+.sign-v {@include sign-v(#3dc644, 25px);}
+
+.sign-vt {@include sign-v(transparent, 25px);}
+.sign-vt {@include sign-v(transparent, 25px);}
+
+
+/* --- form.html ---------------------------------------- */
+
+.story {
+  margin: 0 0 37px;
+  font-family: "OpenSans", sans-serif;
+  font-weight: normal;
+  font-size: $base-font-size;
+  line-height: $header-line-height;
+}
+
+.fieldset {
+  margin: 0;
+  padding: 0;
+  border: none;
+  &__label {
+    margin-left: 22px;
+  }
+  &__input {
+
+  }
+}

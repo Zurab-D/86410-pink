@@ -1,0 +1,173 @@
+.header {
+  margin: 0 0 47px 0;
+  padding: 0;
+  &__wrap {
+    width: auto;
+    background: #2e3e4f url("../img/bg.jpg") no-repeat;
+    background-size: cover;
+    background-position: center;
+  }
+}
+
+.nav {
+  position: relative;
+  padding: 0;
+  margin: 0;
+  height: $nav-height;
+  background-color: rgba(0, 0, 0, .3);
+  &__list {
+    padding: 0;
+    margin: 0;
+  }
+  &__item,
+  &__item a {
+    list-style: none;
+    display: inline-block;
+  }
+}
+
+.logo {
+  position: absolute;
+  display: block;
+  padding: 0;
+  width: 74px;
+  height: 23px;
+  &--top {
+    margin: 21px 20px;
+  }
+}
+
+.menu-btn {
+  position: absolute;
+  top: 21px;
+  right: 20px;
+  height: ($menu-btn-sheet-height * 3) + ($menu-btn-sheet-margin * 2);
+  width: $menu-btn-width;
+  cursor: pointer;
+  z-index: 10;
+
+  /* кнопка меню "гамбургер" */
+  box-shadow: inset 0 4px 0 0 #fff;
+  &:before,
+  &:after {
+    content: "";
+    position: absolute;
+    display: block;
+    margin: 0;
+    padding: 0;
+    left: 0;
+    width: $menu-btn-width;
+    height: $menu-btn-sheet-height;
+    background: #fff;
+  }
+  &:before {top: $menu-btn-sheet-height + $menu-btn-sheet-margin;}
+  &:after {top: ($menu-btn-sheet-height + $menu-btn-sheet-margin) * 2;}
+
+  /* кнопка "крестик" для закрытия меню */
+  &--close {
+    width: 22px;
+    height: 22px;
+    border-radius: 2px;
+    box-shadow: none;
+    /*transition: all .6s;*/
+    &:before,
+    &:after {
+      top: 50%;
+      width: 31px;
+      height: 4px;
+      background-color: #fff;
+      transform-origin: 50% 50%;
+    }
+    &:before { transform: rotate(45deg); }
+    &:after { transform: rotate(-45deg); }
+    &:active:before,
+    &:active:after { background-color: #b7dff8; }
+  }
+  /*&:before, &:after {
+    -webkit-transition: all 300ms ease-in-out;
+    transition: all 300ms ease-in-out;
+  }*/
+}
+
+.face {
+  position: relative;
+  margin: 0;
+  padding: 0;
+  width: auto;
+  &__text {
+    margin: 0;
+    padding: 31px 30px 51px;
+    font-weight: normal;
+    font-size: $header-font-size;
+    line-height: $header-line-height;
+    color: #fff;
+  }
+  &--img {
+    height: 392px;
+    background: transparent url("../img/palm.png") no-repeat;
+    background-position: 10% 106px;
+    background-size: 320px auto;
+  }
+}
+
+.download {
+  margin: 0;
+  padding: 28px 20px 30px;
+  background: $header-bg-color;
+  color: #fff;
+  &__btn {
+    margin-bottom: 26px;
+    width: 100%;
+    height: 49px;
+    background: $header-bg-color;
+    border: 3px solid #fff;
+    border-radius: 49px;
+    font-family: "OpenSansBold", sans-serif;
+    font-weight: bold;
+    font-size: $middle-font-size;
+    line-height: 49px;
+    text-transform:none;
+  }
+  &__items{
+    display: flex;
+    margin: 0px;
+    padding: 0px 14%;
+    height: 84px;
+    list-style: none;
+    justify-content: space-between;
+  }
+  /*&__item {
+    @include menu-list-item;
+    & a{
+      @include menu-list-item;
+      font-size: 0;
+      &:before {
+        @include icon;
+        width: 46px;
+        height: 57px;
+        background-position: center;
+      }
+    }
+    &--ios a:before { background-image: url("../img/icon-apple.png"); }
+    &--and a:before { background-image: url("../img/icon-android.png"); }
+    &--win a:before { background-image: url("../img/icon-windows.png"); }
+  }*/
+
+  &__item {
+    @include menu-list-item;
+    & a{
+      @include menu-list-item;
+      font-size: 0;
+      width: 46px;
+      height: 57px;
+      background-position: center;
+      background-repeat: no-repeat;
+    }
+    &--ios a { background-image: url("../img/icon-apple.png"); }
+    &--and a { background-image: url("../img/icon-android.png"); }
+    &--win a { background-image: url("../img/icon-windows.png"); }
+  }
+  &__text {
+    margin: 0;
+  }
+}

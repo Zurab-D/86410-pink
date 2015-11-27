@@ -13,7 +13,7 @@
         <a class="logo  logo--top" href="index.html">
           <img src="img/logo.png" width="75" height="25" alt="logo">
         </a>
-        <span class="menu-btn  menu-btn--close-"></span>
+        <span class="menu-btn"></span>
         <ul class="nav__list  hidden">
           <li class="nav__item  nav__item--empty"></li>
           <li class="nav__item"><a href="#">Информация</a></li>
@@ -59,6 +59,7 @@
       </div>
 
 
+
       <div class="mobile-pic"><img src="./img/phone-red.png" alt="Всем привет!" width="157" height="320"></div>
 
 
@@ -98,7 +99,8 @@
 
 
     <div class="prices">
-      <table class="prices__table  prices__table--switch-2">
+      <table class="prices__table  prices__table--switch-2" id="prices_table">
+      <!--<table class="prices__table" id="prices_table">-->
         <tr class="prices__row">
           <th class="prices__th">
             <h3 class="prices__title">База</h3>
@@ -114,31 +116,31 @@
           </th>
         </tr>
         <tr class="prices__row">
-          <td class="prices__td  prices--yes">Розовый фильтр</td>
-          <td class="prices__td  prices--yes">Розовый фильтр</td>
-          <td class="prices__td  prices--yes">Розовый фильтр</td>
+          <td class="prices__td  prices--yes">Розовый фильтр <span class="prices__sign"></span></td>
+          <td class="prices__td  prices--yes">Розовый фильтр <span class="prices__sign"></span></td>
+          <td class="prices__td  prices--yes">Розовый фильтр <span class="prices__sign"></span></td>
         </tr>
         <tr class="prices__row">
-          <td class="prices__td  prices--no" >Смайлики</td>
-          <td class="prices__td  prices--yes">Смайлики</td>
-          <td class="prices__td  prices--yes">Смайлики</td>
+          <td class="prices__td  prices--no" >Смайлики <span class="prices__sign"></span></td>
+          <td class="prices__td  prices--yes">Смайлики <span class="prices__sign"></span></td>
+          <td class="prices__td  prices--yes">Смайлики <span class="prices__sign"></span></td>
         </tr>
         <tr class="prices__row">
-          <td class="prices__td  prices--no">Комментарии</td>
-          <td class="prices__td  prices--no" >Комментарии</td>
-          <td class="prices__td  prices--yes">Комментарии</td>
+          <td class="prices__td  prices--no">Комментарии <span class="prices__sign"></span></td>
+          <td class="prices__td  prices--no" >Комментарии <span class="prices__sign"></span></td>
+          <td class="prices__td  prices--yes">Комментарии <span class="prices__sign"></span></td>
         </tr>
       </table>
 
-      <ul class="switch">
+      <ul class="switch" id="price_switch">
         <li class="switch__item">
-          <label class="switch__label" for=""></label>
+          <span class="switch__label" id="prices__table--switch-1"></span>
         </li>
         <li class="switch__item  switch__item--active">
-          <label class="switch__label" for=""></label>
+          <span class="switch__label" id="prices__table--switch-2"></span>
         </li>
         <li class="switch__item">
-          <label class="switch__label" for=""></label>
+          <span class="switch__label" id="prices__table--switch-3"></span>
         </li>
       </ul>
     </div>
@@ -150,23 +152,33 @@
 
 
     <div class="contacts">
-      <div class="contacts__item">
-        <h3 class="contacts__head">Звоните</h3>
-        <p class="contacts__text">+7(812)555-66-66</p>
-      </div>
-      <div class="contacts__item">
-        <h3 class="contacts__head">Пишите:</h3>
-        <a class="contacts__text" href="mail@htmlacademy.ru">mail@htmlacademy.ru</a>
-      </div>
-      <div class="contacts__item">
-        <h3 class="contacts__head">Приезжайте в гости</h3>
-        <p class="contacts__text">ул. Большая Конюшенная, 19/8</p>
+      <div class="wrapper">
+        <div class="contacts__item">
+          <h3 class="contacts__head">Звоните</h3>
+          <p class="contacts__text">+7(812)555-66-66</p>
+        </div>
+        <div class="contacts__item">
+          <h3 class="contacts__head">Пишите:</h3>
+          <a class="contacts__text" href="mail@htmlacademy.ru">mail@htmlacademy.ru</a>
+        </div>
+        <div class="contacts__item">
+          <h3 class="contacts__head">Приезжайте в гости</h3>
+          <p class="contacts__text">ул. Большая<br>Конюшенная, 19/8</p>
+        </div>
       </div>
     </div>
 
-
+<!--
+<div class="sign-x"></div><br>
+<div class="sign-v"></div>
+<div class="sign-vt"></div>
+-->
 
     <div class="map"></div>
   </main>
+
+
+
+  <script src="js/script.js"></script>
 </body>
 </html>
