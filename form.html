@@ -4,22 +4,20 @@
   <meta charset="UTF-8">
     <title>HTML Academy: Pink :: Form</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body class="form">
   <header class="header">
     <div class="header__wrap">
-      <nav class="nav">
+      <nav class="nav" id="nav">
         <a class="logo  logo--top" href="index.html">
           <img src="img/logo.png" width="75" height="25" alt="logo">
         </a>
-        <span class="menu-btn"></span>
-        <ul class="nav__list  hidden">
-          <li class="nav__item  nav__item--empty"></li>
+        <span class="menu-btn" id="menu_btn"></span>
+        <ul class="nav__list">
           <li class="nav__item"><a href="#">Информация</a></li>
           <li class="nav__item"><a href="blog.html">Блог</a></li>
-          <li class="nav__item"><a href="#">Отзывы</a></li>
+          <li class="nav__item"><a href="post.html">Отзывы</a></li>
           <li class="nav__item"><a href="form.html">Конкурс</a></li>
         </ul>
       </nav>
@@ -31,107 +29,123 @@
 
 
 
-  <main class="main  wrapper">
-    <p class="story">Поделитесь своей историей и получите шанс выиграть ценный приз — 1000 миль на вашу бонусную карту! <span class="story__fill-please">Пожалуйста, заполните форму ниже:</span></p>
+  <main class="main">
+    <div class="wrapper">
+      <p class="story">Поделитесь своей историей и получите шанс выиграть ценный приз — 1000 миль на вашу бонусную карту! <span class="story__fill-please">Пожалуйста, заполните форму ниже:</span></p>
+    </div>
 
     <form action="#" method="post">
       <fieldset class="fieldset  fieldset--fio">
-        <div class="fieldset__input">
-          <label class="fieldset__label" for="fio_name-f">Имя: *</label>
-          <input type="text" id="fio_name-f" placeholder="Введите ваше имя" required>
-        </div>
-        <div class="fieldset__input">
-          <label class="fieldset__label" for="fio_name-l">Фамилия: *</label>
-          <input type="text" id="fio_name-l" placeholder="Укажите фамилию" required>
-        </div>
-        <div class="fieldset__input">
-          <label class="fieldset__label" for="fio_name-m">Отчество</label>
-          <input type="text" id="fio_name-m" placeholder="Ну и отчество тоже">
+        <div class="wrapper">
+          <div class="fieldset__input">
+            <label class="fieldset__label" for="fio_name-f">Имя: *</label>
+            <input class="fieldset--control" type="text" id="fio_name-f" placeholder="Введите ваше имя" required>
+          </div>
+          <div class="fieldset__input">
+            <label class="fieldset__label" for="fio_name-l">Фамилия: *</label>
+            <input class="fieldset--control" type="text" id="fio_name-l" placeholder="Укажите фамилию" required>
+          </div>
+          <div class="fieldset__input">
+            <label class="fieldset__label" for="fio_name-m">Отчество</label>
+            <input class="fieldset--control" type="text" id="fio_name-m" placeholder="Ну и отчество тоже">
+          </div>
         </div>
       </fieldset>
 
 
 
-      <fieldset class="fieldset  fieldset--app">
-        <h3 class="fieldset__header">С каким приложением вы путешествовали? *</h3>
-        <ul>
-          <li>
-            <input class="fieldset__radio" type="radio" id="app_ios" name="app" required>
-            <label class="fieldset__label" for="app_ios">Pink для iOS</label>
-          </li>
-          <li>
-            <input class="fieldset__radio" type="radio" id="app_and" name="app">
-            <label class="fieldset__label" for="app_and">Pink на Android</label>
-          </li>
-          <li>
-            <input class="fieldset__radio" type="radio" id="app_win" name="app">
-            <label class="fieldset__label" for="app_win">Windows Phone</label>
-          </li>
-        </ul>
+      <fieldset class="fieldset  fieldset--app  fieldset--grey">
+        <div class="wrapper">
+          <h3 class="fieldset__header">С каким приложением путешествовали? *</h3>
+          <ul class="fieldset__ul">
+            <li>
+              <input class="fieldset__radio" type="radio" id="app_ios" name="app" checked required>
+              <label class="fieldset__label" for="app_ios">Pink для iOS</label>
+            </li>
+            <li>
+              <input class="fieldset__radio" type="radio" id="app_and" name="app">
+              <label class="fieldset__label" for="app_and">Pink на Android</label>
+            </li>
+            <li>
+              <input class="fieldset__radio" type="radio" id="app_win" name="app">
+              <label class="fieldset__label" for="app_win">Windows Phone</label>
+            </li>
+          </ul>
+        </div>
       </fieldset>
 
 
 
       <fieldset class="fieldset  fieldset--trip-date">
-        <h3 class="fieldset__header">Когда вы путешествовали?</h3>
-        <input type="text" id="checkin-date" required>
-        <label class="fieldset__label" for="checkin-date" required>Дата вызда</label>
-
-        <div class="calc  calc--days">
-          <button class="calc__btn-minus  btn" type="button">-</button>
-          <div class="calc__result-over">  <!-- здесь в :after пишем "дней" -->
-            <input class="calc__result" type="number" id="days_count" name="days_count" required>
+        <div class="wrapper">
+          <h3 class="fieldset__header">Когда вы путешествовали? *</h3>
+          <div class="fieldset__input">
+            <input class="fieldset--control" type="text" id="checkin-date" required>
+            <label class="fieldset__label" for="checkin-date">Дата вызда</label>
           </div>
-          <button class="calc__btn-plus  btn" type="button">+</button>
-        </div>
-        <label class="fieldset__label" for="days_count" required>Продолжительность</label>
 
-        <input type="text" id="checkout-date" disabled>
-        <label class="fieldset__label" for="checkout-date">Дата возвращения</label>
+          <div class="calc  calc--days">
+            <button class="calc__btn  calc__btn--minus  fieldset--control  btn" type="button">-</button>
+            <div class="calc__result-over">
+              <input class="calc__result  fieldset--control" data-label="дней" type="text" id="days_count" name="days_count" min="1" value="10" pattern="\d+" required>
+              <div class="calc__label  fieldset--control">дней</div>
+            </div>
+            <button class="calc__btn  calc__btn--plus  fieldset--control  btn" type="button">+</button>
+          </div>
+          <label class="fieldset__label" for="days_count">Продолжительность</label>
+
+          <div class="fieldset__input">
+            <input class="fieldset--control" type="text" id="checkout-date" value="1 апреля 2015" disabled>
+            <label class="fieldset__label" for="checkout-date">Дата возвращения</label>
+          </div>
+        </div>
       </fieldset>
 
 
 
-      <fieldset class="fieldset  fieldset--travelers">
-        <label class="fieldset__label" for="persons_count" required>Количество попутчиков</label>
-        <div class="calc  calc--persons">
-          <button class="calc__btn-minus btn" type="button">-</button>
-          <div class="calc__result-over"> <!-- здесь в :after пишем "чел" -->
-            <input class="calc__result" type="number" id="persons_count" name="persons_count" required>
+      <fieldset class="fieldset  fieldset--travelers  fieldset--grey">
+        <div class="wrapper">
+          <label class="fieldset__label" for="persons_count" required>Количество попутчиков</label>
+          <div class="calc  calc--persons">
+            <button class="calc__btn  calc__btn--minus  fieldset--control  btn" type="button">-</button>
+            <div class="calc__result-over">
+              <input class="calc__result  fieldset--control" data-label="чел" type="text" id="persons_count" name="persons_count" pattern="\d+" value="0" min="0" required>
+              <div class="calc__label  fieldset--control">чел</div>
+            </div>
+            <button class="calc__btn  calc__btn--plus  fieldset--control  btn" type="button">+</button>
           </div>
-          <button class="calc__btn-plus  btn" type="button">+</button>
-        </div>
 
-        <div class="person">
-          <div class="person__number-cover">
-            <p class="person__number-label">№</p>
-            <p class="person__number">1</p>
-          </div>
-          <div class="person__fio">
-            <div class="fieldset__input">
-              <label class="fieldset__label" for="first_name_1">Имя: *</label>
-              <input type="text" id="first_name_1" name="first_name_1" placeholder="Введите ваше имя" required>
+          <div class="person">
+            <div class="person__number-cover">
+              <p class="person__number-label">№</p>
+              <p class="person__number  fieldset--control">1</p>
             </div>
-            <div class="fieldset__input">
-              <label class="fieldset__label" for="nikname_1">Прозвище: *</label>
-              <input type="text" id="nickname_1" name="nickname_1" placeholder="Ну как же без этого!">
+            <div class="person__fio">
+              <div class="fieldset__input">
+                <label class="fieldset__label" for="first_name_1">Имя: *</label>
+                <input class="fieldset--control" type="text" id="first_name_1" name="first_name_1" placeholder="Введите ваше имя" required>
+              </div>
+              <div class="fieldset__input">
+                <label class="fieldset__label" for="nikname_1">Прозвище:</label>
+                <input class="fieldset--control" type="text" id="nickname_1" name="nickname_1" placeholder="Ну как же без этого!">
+              </div>
             </div>
           </div>
-        </div>
 
-        <div class="person">
-          <div class="person__number-cover">
-            <p class="person__number-label">№</p>
-            <p class="person__number">2</p>
-          </div>
-          <div class="person__fio">
-            <div class="fieldset__input">
-              <input type="text" id="first_name_2" name="first_name_2" placeholder="Введите ваше имя" required>
-              <label class="fieldset__label" for="first_name_2">Имя: *</label>
+          <div class="person">
+            <div class="person__number-cover">
+              <p class="person__number-label">№</p>
+              <p class="person__number  fieldset--control">2</p>
             </div>
-            <div class="fieldset__input">
-              <input type="text" id="nickname_2" name="nickname_2" placeholder="Ну как же без этого!">
-              <label class="fieldset__label" for="nikname_2">Прозвище: *</label>
+            <div class="person__fio">
+              <div class="fieldset__input">
+                <label class="fieldset__label" for="first_name_2">Имя: *</label>
+                <input class="fieldset--control" type="text" id="first_name_2" name="first_name_2" placeholder="Введите ваше имя" required>
+              </div>
+              <div class="fieldset__input">
+                <label class="fieldset__label" for="nikname_2">Прозвище:</label>
+                <input class="fieldset--control" type="text" id="nickname_2" name="nickname_2" placeholder="Ну как же без этого!">
+              </div>
             </div>
           </div>
         </div>
@@ -140,75 +154,101 @@
 
 
       <fieldset class="fieldset  fieldset--achievements">
-        <h3 class="fieldset__header">Ваши безбашенные достижения в путешествии</h3>
-        <input type="checkbox" id="cb_1" name="cb_1" checked><label class="fieldset__label" for="cb_1">Сделал селфи с акулой</label>
-        <input type="checkbox" id="cb_2" name="cb_2" checked><label class="fieldset__label" for="cb_2">Обгорел на пляже</label>
-        <input type="checkbox" id="cb_3" name="cb_3"        ><label class="fieldset__label" for="cb_3">Видел Чака Норриса</label>
-        <input type="checkbox" id="cb_4" name="cb_4"        ><label class="fieldset__label" for="cb_4">Накупил сувениров</label>
-        <input type="checkbox" id="cb_5" name="cb_5" checked><label class="fieldset__label" for="cb_5">Удержал башню</label>
-        <input type="checkbox" id="cb_6" name="cb_6"        ><label class="fieldset__label" for="cb_6">Разгромил отель</label>
+        <div class="wrapper">
+          <h3 class="fieldset__header">Ваши безбашенные достижения в путешествии</h3>
+          <ul class="fieldset__ul">
+            <li>
+              <input class="fieldset__checkbox" type="checkbox" id="cb_1" name="cb_1" checked>
+              <label class="fieldset__label" for="cb_1">Сделал селфи с акулой</label>
+            </li>
+            <li>
+              <input class="fieldset__checkbox" type="checkbox" id="cb_2" name="cb_2" checked>
+              <label class="fieldset__label" for="cb_2">Обгорел на пляже</label>
+            </li>
+            <li>
+              <input class="fieldset__checkbox" type="checkbox" id="cb_3" name="cb_3">
+              <label class="fieldset__label" for="cb_3">Видел Чака Норриса</label>
+            </li>
+            <li>
+              <input class="fieldset__checkbox" type="checkbox" id="cb_4" name="cb_4">
+              <label class="fieldset__label" for="cb_4">Накупил сувениров</label>
+            </li>
+            <li>
+              <input class="fieldset__checkbox" type="checkbox" id="cb_5" name="cb_5" checked>
+              <label class="fieldset__label" for="cb_5">Удержал башню</label>
+            </li>
+            <li>
+              <input class="fieldset__checkbox" type="checkbox" id="cb_6" name="cb_6">
+              <label class="fieldset__label" for="cb_6">Разгромил отель</label>
+            </li>
+          </ul>
+        </div>
       </fieldset>
 
 
 
-      <fieldset class="fieldset  fieldset--photo">
-        <h2 class="fieldset__header">Ваши фотографии из поездки *</h2>
-        <input type="file" id="input_file" multiple hidden>
-        <label class="load-file-label" for="input_file">Загрузить фото</label>
-        <ul class="pics__ul">
-          <li class="pics__item">
-            <a class="pics__delete" href="#pic-del"></a>
-            <figure class="figure-pic">
-              <img src="http://placehold.it/67x67" alt="" width="67" height="67">
-              <figcaption>img-1.jpg</figcaption>
-            </figure>
-          </li>
-          <li class="pics__item">
-            <a class="pics__delete" href="#pic-del"></a>
-            <figure class="figure-pic">
-              <img src="http://placehold.it/67x67" alt="" width="67" height="67">
-              <figcaption>img-2.jpg</figcaption>
-            </figure>
-          </li>
-          <li class="pics__item">
-            <a class="pics__delete" href="#pic-del"></a>
-            <figure class="figure-pic">
-              <img src="http://placehold.it/67x67" alt="" width="67" height="67">
-              <figcaption>img-3.jpg</figcaption>
-            </figure>
-          </li>
-          <li class="pics__item">
-            <a class="pics__delete" href="#pic-del"></a>
-            <figure class="figure-pic">
-              <img src="http://placehold.it/67x67" alt="" width="67" height="67">
-              <figcaption>img-4.jpg</figcaption>
-            </figure>
-          </li>
-          <li class="pics__item">
-            <a class="pics__delete" href="#pic-del"></a>
-            <figure class="figure-pic">
-              <img src="http://placehold.it/67x67" alt="" width="67" height="67">
-              <figcaption>img-5.jpg</figcaption>
-            </figure>
-          </li>
-          <li class="pics__item">
-            <a class="pics__delete" href="#pic-del"></a>
-            <figure class="figure-pic">
-              <img src="http://placehold.it/67x67" alt="" width="67" height="67">
-              <figcaption>img-6.jpg</figcaption>
-            </figure>
-          </li>
-          <li class="pics__item">
-            <a class="pics__delete" href="#pic-del"></a>
-            <figure class="figure-pic">
-              <img src="http://placehold.it/67x67" alt="" width="67" height="67">
-              <figcaption>img-7.jpg</figcaption>
-            </figure>
-          </li>
-        </ul>
+      <fieldset class="fieldset  fieldset--photo  fieldset--grey">
+        <div class="wrapper">
+          <h2 class="fieldset__header">Ваши фотографии из поездки *</h2>
+          <input type="file" id="input_file" multiple hidden>
+          <label class="load-file-label  btn" for="input_file">Загрузить фото</label>
+          <ul class="pics">
+            <li class="pics__item">
+              <a class="pics__delete" href="#pic-del"></a>
+              <figure class="figure-pic">
+                <img src="http://placehold.it/67x67" alt="" width="67" height="67">
+                <figcaption>img-1.jpg</figcaption>
+              </figure>
+            </li>
+            <li class="pics__item">
+              <a class="pics__delete" href="#pic-del"></a>
+              <figure class="figure-pic">
+                <img src="http://placehold.it/67x67" alt="" width="67" height="67">
+                <figcaption>img-2.jpg</figcaption>
+              </figure>
+            </li>
+            <li class="pics__item">
+              <a class="pics__delete" href="#pic-del"></a>
+              <figure class="figure-pic">
+                <img src="http://placehold.it/67x67" alt="" width="67" height="67">
+                <figcaption>img-3.jpg</figcaption>
+              </figure>
+            </li>
+            <li class="pics__item">
+              <a class="pics__delete" href="#pic-del"></a>
+              <figure class="figure-pic">
+                <img src="http://placehold.it/67x67" alt="" width="67" height="67">
+                <figcaption>img-4.jpg</figcaption>
+              </figure>
+            </li>
+            <li class="pics__item">
+              <a class="pics__delete" href="#pic-del"></a>
+              <figure class="figure-pic">
+                <img src="http://placehold.it/67x67" alt="" width="67" height="67">
+                <figcaption>img-5.jpg</figcaption>
+              </figure>
+            </li>
+            <li class="pics__item">
+              <a class="pics__delete" href="#pic-del"></a>
+              <figure class="figure-pic">
+                <img src="http://placehold.it/67x67" alt="" width="67" height="67">
+                <figcaption>img-6.jpg</figcaption>
+              </figure>
+            </li>
+            <li class="pics__item">
+              <a class="pics__delete" href="#pic-del"></a>
+              <figure class="figure-pic">
+                <img src="http://placehold.it/67x67" alt="" width="67" height="67">
+                <figcaption>img-7.jpg</figcaption>
+              </figure>
+            </li>
+          </ul>
+        </div>
       </fieldset>
 
-      <input class="main-btn  main-btn--blue  btn" type="submit" value="Отправить форму">
+      <div class="wrapper">
+        <input class="main-btn  main-btn--green  btn" type="submit" value="Отправить форму">
+      </div>
     </form>
 
     <p class="required-field"><span class="asterisk">*</span>&nbsp;&mdash;&nbsp;Обязательные поля</p>
@@ -218,14 +258,18 @@
 
   <footer class="footer">
     <a class="logo  logo--bottom" href="index.html">
-      <img src="img/logo.png" width="75" height="25" alt="logo">
+      <img src="img/logo-pic.png" width="145" height="40" alt="logo">
     </a>
     <ul class="socials">
       <li><a class="socials__item  socials__item--tw" href="#tw">Twitter</a></li>
       <li><a class="socials__item  socials__item--fb" href="#fb">Facebook</a></li>
       <li><a class="socials__item  socials__item--vk" href="#vk">VK</a></li>
     </ul>
-    <a class="developed" href="">Разработано</a>
+    <a class="developed" href="#dev">Разработано</a>
   </footer>
+
+
+
+  <script src="js/script.js"></script>
 </body>
 </html>
