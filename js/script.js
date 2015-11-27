@@ -44,7 +44,7 @@
   !!pricesSwitch3 && pricesSwitch3.addEventListener('click', function(event){
     switchItemsListener(this);
   });
-  
+
   menuBtn.addEventListener('click', function(event){
     event.preventDefault();
     nav.classList.toggle("nav--expand");
