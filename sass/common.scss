@@ -1,12 +1,17 @@
 html { box-sizing: border-box; }
-*, *:before, *:after { box-sizing: inherit; }
+*, *:before, *:after {
+  box-sizing: inherit;
+  transition: all .3s;
+}
+
+//* {}
 
 body {
   background-color: #fff;
   color: $base-color;
-  //font-family: "OpenSansLight", "Comic Sans MS", sans-serif;
-  font-family: "OpenSansLight", sans-serif;
-  font-weight: normal;
+  //font-family: "OpenSansLight", "Gabriola", sans-serif;
+  font-family: "OpenSans", Gabriola, sans-serif;
+  font-weight: 100;
   font-size: $base-font-size;
   line-height: $base-line-height;
   text-align: center;

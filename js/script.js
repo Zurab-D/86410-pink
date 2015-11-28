@@ -12,8 +12,7 @@
     successDlg = document.querySelector("#success"),
     successBtnClose = document.querySelector("#success_close"),
     formBtnSubmit = document.querySelector("#submit_form"),
-    veil = document.querySelector("#veil")
-  ;
+    veil = document.querySelector("#veil");
 
   function removePriceTableSwitchClasses() {
     tablePrice.classList.remove("prices__table--switch-1");
@@ -47,15 +46,15 @@
     !!successDlg && successDlg.classList.remove("success--hidden");
   }
 
-  !!pricesSwitch1 && pricesSwitch1.addEventListener("click", function(event){
+  !!pricesSwitch1 && pricesSwitch1.addEventListener("click", function(event) {
     switchItemsListener(this);
   });
 
-  !!pricesSwitch2 && pricesSwitch2.addEventListener("click", function(event){
+  !!pricesSwitch2 && pricesSwitch2.addEventListener("click", function(event) {
     switchItemsListener(this);
   });
 
-  !!pricesSwitch3 && pricesSwitch3.addEventListener("click", function(event){
+  !!pricesSwitch3 && pricesSwitch3.addEventListener("click", function(event) {
     switchItemsListener(this);
   });
 
@@ -65,7 +64,7 @@
     menuBtn.classList.toggle("menu-btn--close");
   });
 
-  !!successBtnClose && successBtnClose.addEventListener("click", function(event){
+  !!successBtnClose && successBtnClose.addEventListener("click", function(event) {
     event.preventDefault;
     !!successDlg && successDlg.classList.add("success--hidden");
     !!veil && veil.classList.add("veil--hidden");
@@ -73,8 +72,8 @@
 
 
 
-  !!formBtnSubmit && formBtnSubmit.addEventListener("click", function(event){
+  !!formBtnSubmit && formBtnSubmit.addEventListener("click", function(event) {
     event.preventDefault();
     showSuccessDlg();
   });
-})();
+}());

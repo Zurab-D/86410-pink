@@ -4,8 +4,7 @@
 
 
 .big_text {
-  font-family: "OpenSansLight", sans-serif;
-  font-weight: normal;
+  font-weight: 100;
   font-size: $header-font-size;
   line-height: $header-line-height;
   &--offer {
@@ -25,12 +24,11 @@
   }
   &__head {
     color: #000;
-    font-family: "OpenSansBold", sans-serif;
     font-weight: bold;
     font-size: $middle-font-size;
   }
   &__text {
-    font-family: "OpenSansRegular", sans-serif;
+    font-weight: normal;
     font-size: $base-font-size;
   }
 }
@@ -61,13 +59,12 @@
   &__header {
     margin: 0 0 14px;
     padding: 0;
-    font-family: "OpenSansBold", sans-serif;
     font-weight: bold;
     font-size: $middle-font-size;
     line-height: $header-line-height;
   }
   &__text {
-    font-family: "OpenSans", sans-serif;
+    font-weght: normal;
     font-size: $base-font-size;
     line-height: $header-line-height;
   }
@@ -136,7 +133,6 @@
     position: relative;
     padding: 14px 0 15px 22px;
     border: 1px solid lightgray;
-    font-family: "OpenSans", sans-serif;
     font-weight: normal;
     font-size: $base-font-size;
     line-height: $header-line-height;
@@ -145,7 +141,6 @@
   }
   &__title {
     margin: 18px 0 0;
-    font-family: "OpenSansBold", sans-serif;
     font-weight: bold;
     font-size: $middle-font-size;
     line-height: $header-line-height;
@@ -153,8 +148,7 @@
   }
   &__value {
     margin: 0 0 20px;
-    font-family: "OpenSansLight", sans-serif;
-    font-weight: normal;
+    font-weight: 100;
     font-size: $header-font-size;
     line-height: $header-line-height;
     color: #fff;
@@ -184,7 +178,6 @@
   margin: 0;
   &__head {
     margin: 0 0 -3px;
-    font-family: "OpenSansBold", sans-serif;
     font-weight: bold;
     font-size: $middle-font-size;
     line-height: $header-line-height;
@@ -193,8 +186,7 @@
   &__text {
     display: block;
     margin: 0 0 20px;
-    font-family: "OpenSansLight", sans-serif;
-    font-weight: normal;
+    font-weight: 100;
     font-size: $header-font-size;
     line-height: $header-line-height;
     color: #d22856;
@@ -223,7 +215,6 @@
 
 .story {
   margin: 0 0 10px;
-  font-family: "OpenSans", sans-serif;
   font-weight: normal;
   font-size: $base-font-size;
   line-height: $header-line-height;
@@ -241,7 +232,6 @@
   &__header {
     margin: 0 0 37px;
     padding: 0;
-    font-family: "OpenSans", sans-serif;
     font-weight: normal;
     font-size: $base-font-size;
     line-height: 18px;
@@ -254,7 +244,6 @@
     padding: 0;
     display: block;
     text-transform: uppercase;
-    font-family: "OpenSans", sans-serif;
     font-weight: normal;
     font-size: $base-font-size;
     line-height: $header-line-height;
@@ -271,7 +260,6 @@
         background-color: #fff;
         border: 2px solid $border-color;
         border-radius: 2px;
-        font-family: "OpenSans", sans-serif;
         font-weight: normal;
         font-size: $middle-font-size;
         line-height: $header-line-height;
@@ -299,7 +287,6 @@
     background-color: #fff;
     border: 2px solid $border-color;
     border-radius: 2px;
-    font-family: "OpenSans", sans-serif;
     font-weight: normal;
     font-size: $middle-font-size;
     line-height: 27px;
@@ -325,6 +312,7 @@
     margin: 0;
     padding: 0;
     font-family: "OpenSans", sans-serif;
+    font-weght: normal;
     font-size: $middle-font-size;
     line-height: $header-line-height;
     color: $base-color;
@@ -442,7 +430,6 @@
   &__number-label {
     margin: 8px 0 7px;
     text-transform: uppercase;
-    font-family: "OpenSans", sans-serif;
     font-weight: normal;
     font-size: $base-font-size;
     line-height: $header-line-height;
@@ -512,7 +499,6 @@
   margin-bottom: 33px;
   width: 100%;
   height: 59px;
-  font-family: "OpenSansBold", sans-serif;
   font-weight: bold;
   font-size: $middle-font-size;
   line-height: 59px;//$header-line-height;
@@ -539,7 +525,6 @@
 .main-btn {
   margin-top: 48px;
   width: 100%;
-  font-family: "OpenSansBold", sans-serif;
   font-weight: bold;
   font-size: $middle-font-size;
   line-height: 59px;
@@ -555,7 +540,6 @@
 .required-field {
   margin: 0;
   padding: 45px 0 0;
-  font-family: "OpenSans", sans-serif;
   font-weight: normal;
   font-size: $base-font-size;
   line-height: $header-line-height;
@@ -564,7 +548,6 @@
 
 
 .asterisk {
-  font-family: "OpenSans", sans-serif;
   font-weight: normal;
   font-size: $base-font-size;
   line-height: $header-line-height;
@@ -588,7 +571,6 @@
   }
   &__header {
     padding: 0 20px;
-    font-family: "OpenSans", sans-serif;
     font-weight: bold;
     font-size: $middle-font-size;
     line-height: 24px;
@@ -596,7 +578,6 @@
   }
   &__text {
     padding: 0 20px 32px;
-    font-family: "OpenSans", sans-serif;
     font-weight: normal;
     font-size: $base-font-size;
     line-height: 24px;
@@ -610,7 +591,6 @@
   &__btn {
     width: 100%;
     background-color: $color-green;
-    font-family: "OpenSans", sans-serif;
     font-weight: bold;
     font-size: $middle-font-size;
     line-height: 63px;
@@ -627,7 +607,6 @@
   border-bottom: 1px solid $border-color;
   text-align: left;
   text-decoration: none;
-  font-family: "OpenSans", sans-serif;
   font-weight: normal;
   font-size: $base-font-size;
   line-height: 27px;
@@ -635,7 +614,6 @@
   & a {
     text-align: left;
     text-decoration: none;
-    font-family: "OpenSans", sans-serif;
     font-weight: normal;
     font-size: $base-font-size;
     line-height: 27px;
@@ -679,7 +657,6 @@
     }
     width: 59px;
     border: 2px solid $border-color;
-    font-family: "OpenSans", sans-serif;
     font-weight: bold;
     font-size: $middle-font-size;
     line-height: 59px;
@@ -694,7 +671,6 @@
 /* --- blog.html -----------------------------------------*/
 
 .post {
-  font-family: "OpenSans", sans-serif;
   font-weight: normal;
   line-height: 27px;
   color: $base-color;
