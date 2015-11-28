@@ -3,9 +3,8 @@
   padding: 0;
   &__wrap {
     width: auto;
-    background: #2e3e4f url("../img/bg.jpg") no-repeat;
+    background: #2e3e4f url("../img/bg.jpg") center no-repeat;
     background-size: cover;
-    background-position: center;
   }
   &--blog {
     margin: 0 0 29px 0;
@@ -15,7 +14,7 @@
 
 .index .header {
   min-height: 100vh;
-  background: #1d2631;
+  background-color: #1d2631;
   flex-direction: column;
   display: flex;
 }
@@ -98,7 +97,7 @@
     left: 0;
     width: $menu-btn-width;
     height: $menu-btn-sheet-height;
-    background: #fff;
+    background-color: #fff;
   }
   &:before {top: $menu-btn-sheet-height + $menu-btn-sheet-margin;}
   &:after {top: ($menu-btn-sheet-height + $menu-btn-sheet-margin) * 2;}
@@ -146,8 +145,7 @@
   }
   &--img {
     height: 458px;//392px;
-    background: transparent url("../img/palm.png") no-repeat;
-    background-position: 10% 119%;//106px;
+    background: transparent url("../img/palm.png") 10% 119% no-repeat;
     background-size: 320px auto;
   }
 }
@@ -161,13 +159,13 @@
 .download {
   margin: 0;
   padding: 28px 20px 30px;
-  background: $header-bg-color;
+  background-color: $header-bg-color;
   color: #fff;
   &__btn {
     margin-bottom: 26px;
     padding: 20px 0 19px;
     width: 100%;
-    background: $header-bg-color;
+    background-color: $header-bg-color;
     border: 3px solid #fff;
     border-radius: 49px;
     font-weight: bold;
@@ -183,22 +181,6 @@
     list-style: none;
     justify-content: space-between;
   }
-  /*&__item {
-    @include menu-list-item;
-    & a{
-      @include menu-list-item;
-      font-size: 0;
-      &:before {
-        @include icon;
-        width: 46px;
-        height: 57px;
-        background-position: center;
-      }
-    }
-    &--ios a:before { background-image: url("../img/icon-apple.png"); }
-    &--and a:before { background-image: url("../img/icon-android.png"); }
-    &--win a:before { background-image: url("../img/icon-windows.png"); }
-  }*/
 
   &__item {
     @include menu-list-item;

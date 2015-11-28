@@ -197,18 +197,13 @@
 .map {
   height: 200px;
   width: auto;
-  background-image: url(../img/map.jpg);
+  background: url(../img/map.jpg) bottom no-repeat;
   background-size: cover;
-  background-position: bottom;
-  background-repeat: no-repeat;
 }
 
 
 .sign-x {@include sign-x(#f25b26, 35px);}
 .sign-v {@include sign-v(#3dc644, 25px);}
-
-.sign-vt {@include sign-v(transparent, 25px);}
-.sign-vt {@include sign-v(transparent, 25px);}
 
 
 /* --- form.html ---------------------------------------- */
@@ -254,17 +249,6 @@
     input[type="text"] {
       padding: 14px 20px;
       width: 100%;
-      /*
-        min-height: 59px;
-        outline: none;
-        background-color: #fff;
-        border: 2px solid $border-color;
-        border-radius: 2px;
-        font-weight: normal;
-        font-size: $middle-font-size;
-        line-height: $header-line-height;
-        color: $base-color;
-      */
       &::-webkit-input-placeholder {color: $base-color;font-weight: normal;}
       &::-moz-placeholder {color: $base-color;font-weight: normal;}
       &:-moz-placeholder {color: $base-color;font-weight: normal;}
@@ -372,7 +356,7 @@
     display: block;
     width: 57px;
     height: 59px;
-    background: #fff;
+    background-color: #fff;
     border: 2px solid $border-color;
     font-size: 0;
     &:before,
@@ -473,6 +457,7 @@
     border-radius: 50%;
     top: -15px;
     right: 7px;
+    font-size: 0;
     &:after ,
     &:before {
       @include icon;
@@ -522,7 +507,7 @@
 }
 
 
-.main-btn {
+.submit-form-btn {
   margin-top: 48px;
   width: 100%;
   font-weight: bold;
@@ -530,10 +515,8 @@
   line-height: 59px;
   border: 2px solid $color-green;
   border-radius: 2px;
-  &--green {
-    background-color: $color-green;
-    color: #fff;
-  }
+  background-color: $color-green;
+  color: #fff;
 }
 
 
