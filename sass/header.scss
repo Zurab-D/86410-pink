@@ -26,7 +26,7 @@
   margin: 0;
   height: $nav-height;
   width: 100%;
-  background-color: rgba(0, 0, 0, .3);
+  background-color: rgba(#000, .3);
   z-index: 10;
   &--expand {
     height: $nav-height + 3;
@@ -45,8 +45,6 @@
     width: 100%;
     list-style: none;
     z-index: 10;
-  }
-  &__item {
   }
   &__item a {
     display: block;
@@ -145,7 +143,7 @@
   }
   &--img {
     height: 458px;//392px;
-    background: transparent url("../img/palm.png") 10% 119% no-repeat;
+    background: url("../img/palm.png") 10% 119% no-repeat;
     background-size: 320px auto;
   }
 }
@@ -175,17 +173,15 @@
   }
   &__items{
     display: flex;
-    margin: 0px;
-    padding: 0px 14%;
+    margin: 0;
+    padding: 0 14%;
     height: 84px;
     list-style: none;
     justify-content: space-between;
   }
-
   &__item {
-    @include menu-list-item;
     & a{
-      @include menu-list-item;
+      display: inline-block;
       font-size: 0;
       width: 46px;
       height: 57px;

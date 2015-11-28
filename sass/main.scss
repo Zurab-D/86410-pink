@@ -44,8 +44,8 @@
   display: flex;
   flex-direction: column;
   &__items-wrapper {
-    height: 200px;
-    overflow: hidden;
+    min-height: 238px;
+    //overflow: hidden;
     order: 1;
   }
   &__item {
@@ -72,21 +72,23 @@
 
 
 .switch {
-  @include no-bullet-list;
   display: flex;
   justify-content: space-between;
+  padding: 0;
   margin: 40px auto;
   width: 62px;
   order: 2;
   &__item {
-    @include menu-list-item;
+    list-style: none;
   }
   &__label {
     position: relative;
     cursor: pointer;
   }
   &__label:before {
-    @include icon;
+    content: "";
+    display: block;
+    position: absolute;
     left: 0;
     top: 50%;
     transform: translateY(-50%);
@@ -117,12 +119,12 @@
   &__table {
     margin: 0 auto;
     border-collapse: collapse;
-    /*&--switch-1 { transform: translateX(0px); }
-    &--switch-2 { transform: translateX(-33.33333%); }
-    &--switch-3 { transform: translateX(-538px); }*/
-    &--switch-1 { transform: translateX(0px); }
+    &--switch-1 { transform: translateX(0); }
+    &--switch-2 { transform: translateX(-33.3%); }
+    &--switch-3 { transform: translateX(-66.6%); }
+    /*&--switch-1 { transform: translateX(0); }
     &--switch-2 { transform: translateX(-260px); }
-    &--switch-3 { transform: translateX(-538px); }
+    &--switch-3 { transform: translateX(-538px); }*/
   }
   &__th {
     min-width: 278px;
@@ -153,19 +155,15 @@
     line-height: $header-line-height;
     color: #fff;
   }
-  &__sign {
-    position: absolute;
-    float: right;
-  }
   &--yes>&__sign {
-    /*margin: -1px 18px 0 0;*/
+    position: absolute;
     @include sign-v(#3dc644, 25px);
     top: 0;
     right: 0;
     transform: translate(-18px, 20px) rotate(-45deg);
   }
   &--no>&__sign {
-    /*margin: 18px 15px 0 0;*/
+    float: right;
     @include sign-x(#f25b26, 35px);
     top: 0;
     right: 0;
@@ -195,8 +193,8 @@
 
 
 .map {
-  height: 200px;
-  width: auto;
+  //height: 200px;
+  height: 30vh;
   background: url(../img/map.jpg) bottom no-repeat;
   background-size: cover;
 }
@@ -256,7 +254,8 @@
     }
   }
   &__ul {
-    @include no-bullet-list;
+    padding-left: 0;
+    list-style: none;
     li {
       margin: 45px 0;
       margin-left: $radio-indent;
@@ -295,8 +294,7 @@
     position: relative;
     margin: 0;
     padding: 0;
-    font-family: "OpenSans", sans-serif;
-    font-weght: normal;
+    font-weight: normal;
     font-size: $middle-font-size;
     line-height: $header-line-height;
     color: $base-color;
@@ -304,7 +302,8 @@
   }
   &--app &__label:before,
   &--achievements &__label:before {
-    @include icon;
+    content: "";
+    position: absolute;
     margin-left: -1 * $radio-indent;
     width: 35px;
     height: 35px;
@@ -314,7 +313,8 @@
     border: 2px solid $border-color;
   }
   &--achievements &__label:after {
-    @include icon;
+    content: "";
+    position: absolute;
     margin-left: -1 * $radio-indent;
     width: 35px;
     height: 35px;
@@ -339,7 +339,6 @@
   &__checkbox {
     &:checked ~ label:after {
       @include sign-v($color-red, 20px);
-      //margin-left: 1px;
     }
   }
   &--photo {
@@ -361,7 +360,8 @@
     font-size: 0;
     &:before,
     &:after {
-      @include icon;
+      content: "";
+      position: absolute;
       left: 50%;
       top: 50%;
       transform: translate(-50%, -50%);
@@ -390,17 +390,15 @@
   }
   &__result {
     text-align: center;
-    width: 0px;
+    width: 0;
     outline: none;
+    border-radius: 0;
   }
   &__label {
     position: absolute;
     left: 55%;
     z-index: 1;
     text-align: left;
-  }
-  .fieldset--control {
-    border-radius: 0px;
   }
 }
 
@@ -422,7 +420,7 @@
   }
   &__number {
     padding: 14px 20px;
-    border-right-width: 0px;
+    border-right-width: 0;
     text-align: center;
   }
   &__fio {
@@ -430,52 +428,6 @@
   }
   .fieldset--control {
     margin: 0;
-  }
-}
-
-
-.pics {
-  position: relative;
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  @include no-bullet-list;
-  margin: 0 -20px;
-  padding: 35px 0 0 0;
-  &__item {
-    position: relative;
-  }
-  &__delete {
-    /*&:before {
-      @include icon;
-    }*/
-    position: absolute;
-    width: 33px;
-    height: 33px;
-    border: 2px solid #e5e5e5;
-    background-color: #fff;
-    border-radius: 50%;
-    top: -15px;
-    right: 7px;
-    font-size: 0;
-    &:after ,
-    &:before {
-      @include icon;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      width: 50%;
-      height: 2px;
-      //border-radius: 1px;
-      transform-origin: 50% 50%;
-      background-color: #c9c9c9;
-    }
-    &:before {
-      transform: translate(-50%, -50%) rotate(-45deg);
-    }
-    &:after {
-      transform: translate(-50%, -50%) rotate(45deg);
-    }
   }
 }
 
@@ -493,9 +445,52 @@
 }
 
 
+.pics {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  list-style: none;
+  margin: 0 -15px;
+  padding: 35px 0 0 0;
+  &__item {
+    position: relative;
+  }
+  &__delete {
+    position: absolute;
+    width: 33px;
+    height: 33px;
+    border: 2px solid #e5e5e5;
+    background-color: #fff;
+    border-radius: 50%;
+    top: -15px;
+    right: 7px;
+    font-size: 0;
+    &:after ,
+    &:before {
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 50%;
+      height: 2px;
+      transform-origin: 50% 50%;
+      background-color: #c9c9c9;
+    }
+    &:before {
+      transform: translate(-50%, -50%) rotate(-45deg);
+    }
+    &:after {
+      transform: translate(-50%, -50%) rotate(45deg);
+    }
+  }
+}
+
+
 .figure-pic {
   margin: 0;
-  padding: 0 20px 22px 20px;
+  padding: 0 15px 22px 15px;
   font-size: 50px;
   figcaption {
     margin: 7px 0 0 0;
@@ -537,6 +532,7 @@
   color: $color-red;
   text-transform: uppercase;
 }
+
 
 .success {
   position: fixed;
@@ -695,7 +691,8 @@
       position: relative;
       margin: 20px 0;
       &:before {
-        @include icon;
+        content: "";
+        position: absolute;
         left: -22px;
         top: 50%;
         transform: translateY(-50%);
