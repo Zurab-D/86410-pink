@@ -10,6 +10,18 @@
   outline: 1px dashed lime;
 }
 
+@mixin fieldset-control {
+  min-height: 59px;
+  outline: none;
+  background-color: #fff;
+  border: 2px solid $border-color;
+  border-radius: 2px;
+  font-weight: normal;
+  font-size: $middle-font-size;
+  line-height: 27px;
+  color: $base-color;
+}
+
 @mixin sign-x($color: #000, $size: 30px, $line-width: 2px, $bg-color: transparent) {
   position: relative;
   width: $size;
