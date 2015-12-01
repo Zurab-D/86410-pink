@@ -4,8 +4,12 @@
   padding: 0;
   &__wrap {
     width: auto;
+    min-height: 237px;
     background: #2e3e4f url("../img/bg.jpg") center no-repeat;
     background-size: cover;
+    @media (min-width: $screen-md) {
+      min-height: 440px;
+    }
   }
   &--blog {
     margin: 0 0 29px 0;
@@ -30,6 +34,9 @@
   width: 100%;
   background-color: rgba(#000, .3);
   z-index: 10;
+  @media (min-width: $screen-md) {
+    height: 110px;
+  }
   &--expand {
     height: $nav-height + 3;
     border-bottom: 1px solid #000;
@@ -130,7 +137,7 @@
 }
 
 
-.palm {
+.front {
   margin: 0;
   padding: 66px 0 0 0;
   width: auto;
@@ -138,10 +145,22 @@
     height: 458px;//392px;
     background: url("../img/palm.png") 30% 119% no-repeat;
     background-size: 320px auto;
+    @media (min-width: $screen_md) {
+      height: $palm-height-tablet;//730px;
+      background: url("../img/palm-tablet.png") 60% 100% no-repeat;
+    }
   }
-  @media (min-width: $screen_md) {
-    height: $palm-height-tablet;//730px;
-    background: url("../img/palm-tablet.png") 60% 100% no-repeat;
+  &__text {
+    padding: 14px 20px;
+    font-weight: 100;
+    font-size: 24px;
+    line-height: $header-line-height;
+    color: #fff;
+    @media (min-width: $screen_md) {
+      padding-top: 82px;
+      font-size: 50px;
+      line-height: 59px;
+    }
   }
 }
 

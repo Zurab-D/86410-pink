@@ -710,6 +710,8 @@
   &__img {
     margin: 0;
     padding: 0 15px 22px 15px;
+    width: 67px;
+    height: 67px;
     font-size: 50px;
     figcaption {
       margin: 7px 0 0 0;
@@ -717,6 +719,10 @@
       font-size: 12px;
       line-height: 18px;
       text-transform: uppercase;
+    }
+    @media (min-width: $screen-md) {
+      width: 120px;
+      height: 120px;
     }
   }
 }

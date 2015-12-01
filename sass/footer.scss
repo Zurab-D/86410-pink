@@ -21,7 +21,7 @@
 
 .socials {
   margin: 0 auto;
-  margin-bottom: 47px;
+  margin-bottom: 65px;
   padding: 0;
   list-style: none;
   display: flex;
@@ -96,14 +96,15 @@
   &__developed {
     position: relative;
     display: block;
-    margin-bottom: 60px;
+    margin: 0 auto;
+    margin-bottom: 54px;
+    width: 125px;
     font-weight: normal;
     font-size: $base-font-size;
     line-height: 18px;
     color: $base-color;
     text-decoration: none;
-    width: 170px;
-    margin: 0 auto;
+    text-align: justify;
     @media (min-width: $screen-md) {
       margin: 0;
     }
