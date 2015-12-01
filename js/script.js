@@ -23,7 +23,7 @@
   // обработчик переключателей слайдера
   function switchItemsListener(self) {
     removePriceSwitchClasses();
-    tablePrice.classList.add(self.id);
+    !!tablePrice && tablePrice.classList.add(self.id);
     self.parentNode.classList.add("switch__item--active");
   }
 

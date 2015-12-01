@@ -1,3 +1,10 @@
+.logo-svg {
+  fill: lime;
+  &__part {
+    fill: green;
+  }
+}
+
 .wrapper {
   padding: 0 20px;
   @media (min-width: $screen_md) {
@@ -243,7 +250,20 @@
 
 
 .prices {
-  overflow-x: hidden;
+  //overflow-x: hidden;
+  overflow: hidden;
+  &__1st-col,
+  &__th:first-child,
+  &__td:first-child {
+    display: none;
+    background-color: #fff;
+    @media (min-width: $screen_md) {
+      display: table-cell;
+    }
+  }
+  &__th:first-child {
+    border: none;
+  }
   &__table {
     margin: 0 auto;
     border-collapse: collapse;
@@ -260,18 +280,31 @@
   }
   &__th {
     min-width: 278px;
-    border: 1px solid $border-color;
+    border: 2px solid $border-color;
     background-color: $base-color;
+    @media (min-width: $screen_md) {
+      min-width: 154px;
+      &:nth-child(odd) {
+        min-width: 155px;
+      }
+    }
   }
   &__td {
     position: relative;
     padding: 14px 0 15px 22px;
-    border: 1px solid lightgray;
+    border: 2px solid lightgray;
     font-weight: normal;
     font-size: $base-font-size;
     line-height: $header-line-height;
     text-transform: uppercase;
     text-align: left;
+    @media (min-width: $screen_md) {
+      padding: 8px 0 8px 22px;
+      text-transform: none;
+      &:not(:first-child) {
+        font-size: 0;
+      }
+    }
   }
   &__title {
     margin: 18px 0 0;
@@ -279,6 +312,11 @@
     font-size: $middle-font-size;
     line-height: $header-line-height;
     color: #fff;
+    @media (min-width: $screen_md) {
+      margin-top: 12px;
+      font-size: $middle-font-size - 2;
+      text-transform: uppercase;
+    }
   }
   &__value {
     margin: 0 0 20px;
@@ -286,13 +324,21 @@
     font-size: $header-font-size;
     line-height: $header-line-height;
     color: #fff;
+    @media (min-width: $screen_md) {
+      margin-bottom: 13px;
+      font-size: $middle-font-size;
+      line-height: $header-line-height - 6;
+    }
   }
   &--yes>&__sign {
     position: absolute;
     @include sign-v(#3dc644, 25px);
     top: 0;
     right: 0;
-    transform: translate(-18px, 20px) rotate(-45deg);
+    transform: translate(-18px, 15px) rotate(-45deg);
+    @media (min-width: $screen_md) {
+      left: 55%;
+    }
   }
   &--no>&__sign {
     float: right;
@@ -300,7 +346,15 @@
     top: 0;
     right: 0;
     transform: translate(-13px, 18px);
+    @media (min-width: $screen_md) {
+      left: -35%;
+    }
   }
+  /*&__sign {
+    @media (min-width: $screen_md) {
+      left: 50%;
+    }
+  }*/
   .switch {
     @media (min-width: $screen_md) {
       display: none;
