@@ -1,4 +1,5 @@
 .header {
+  position: relative;
   margin: 0 0 47px 0;
   padding: 0;
   &__wrap {
@@ -13,7 +14,8 @@
 
 
 .index .header {
-  min-height: 100vh;
+  height: 100vh;
+  min-height: 730px;
   background-color: #1d2631;
   flex-direction: column;
   display: flex;
@@ -128,48 +130,75 @@
 }
 
 
-.face {
-  position: relative;
+.palm {
   margin: 0;
   padding: 66px 0 0 0;
   width: auto;
-  &__text {
-    margin: 0;
-    padding: 31px 20px 41px; //51px;
-    font-weight: 100;
-    font-size: $header-font-size;
-    line-height: $header-line-height;
-    color: #fff;
-  }
   &--img {
     height: 458px;//392px;
-    background: url("../img/palm.png") 10% 119% no-repeat;
+    background: url("../img/palm.png") 30% 119% no-repeat;
     background-size: 320px auto;
   }
-}
-
-
-.index .download {
-  margin: auto;
+  @media (min-width: $screen_md) {
+    height: $palm-height-tablet;//730px;
+    background: url("../img/palm-tablet.png") 60% 100% no-repeat;
+  }
 }
 
 
 .download {
-  margin: 0;
+  position: absolute;
+  display: flex;
+  flex-direction: column;
   padding: 28px 20px 30px;
-  background-color: $header-bg-color;
+  top: 0;
+  margin: 0;
+  height: 100vh;
+  width: 100%;
   color: #fff;
+  @media (min-width: $screen_md) {
+    width: 50%;
+    top: $nav-height;
+    height: $palm-height-tablet - $nav-height;
+  }
+  &__header {
+    margin: 0;
+    padding: 57px 20px 0;
+    min-height: 460px;
+    font-weight: 100;
+    font-size: $header-font-size;
+    line-height: $header-line-height;
+    color: #fff;
+    @media (min-width: $screen_md) {
+      padding-top: 174px;
+      padding-bottom: 28px;
+      min-height: 0;
+      font-weight: 100;
+      font-size: 40px; //$header-font-size;
+      line-height: 49px; //$header-line-height;
+    }
+  }
+  &__inner {
+    margin: auto;
+    @media (min-width: $screen_md) {
+      //margin: 0;
+      //margin-bottom: 205px;
+    }
+  }
   &__btn {
     margin-bottom: 26px;
-    padding: 20px 0 19px;
+    padding: 16px 0 17px;
     width: 100%;
     background-color: $header-bg-color;
     border: 3px solid #fff;
     border-radius: 49px;
     font-weight: bold;
     font-size: $middle-font-size;
-    line-height: 18px;
+    line-height: $middle-font-size;
     text-transform:none;
+    @media (min-width: $screen_md) {
+      background-color: transparent;
+    }
   }
   &__items{
     display: flex;
@@ -194,5 +223,15 @@
   }
   &__text {
     margin: 0;
+    @media (min-width: $screen_md) {
+      font-weight: 100;
+      font-size: 18px;
+      line-height: 24px;
+    }
   }
+}
+
+
+.index .download {
+  margin: auto;
 }

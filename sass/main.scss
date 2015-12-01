@@ -1,5 +1,8 @@
 .wrapper {
   padding: 0 20px;
+  @media (min-width: $screen_md) {
+    padding: 0 40px;
+  }
 }
 
 
@@ -9,61 +12,186 @@
   line-height: $header-line-height;
   &--offer {
     margin-top: -6px;
+    margin-bottom: 0px;
   }
   &--ask {
     margin-bottom: 34px;
+    @media (min-width: $screen_md) {
+      margin-top: 50px;
+      font-size: 40px;
+      line-height: 47px;
+    }
   }
 }
 
 
 .benefits {
-  margin: 93px 0 0 0;
-  line-height: $base-line-height;
+  @media (min-width: $screen_md) {
+    margin-bottom: 18px;//70px;
+    text-align: left;
+    &:after {
+      @include clearfix;
+    }
+  }
+  &__items {
+    margin: 93px 0 0 0;
+    line-height: $base-line-height;
+    @media (min-width: $screen_md) {
+      margin-top: 128px;
+      //width: 50%;
+      width: calc(100% - 290px);
+      &:after {
+        @include clearfix;
+      }
+      float: right;
+    }
+  }
   &__item {
     margin-bottom: 40px;
+    @media (min-width: $screen_md) {
+      margin-bottom: 35px;
+    }
   }
   &__head {
+    margin: 0 0 24px;
     color: #000;
     font-weight: bold;
     font-size: $middle-font-size;
+    @media (min-width: $screen_md) {
+      margin-bottom: 11px;
+    }
   }
   &__text {
+    margin: 0;
     font-weight: normal;
     font-size: $base-font-size;
+  }
+  &__pic {
+    margin: 0 0 39px;
+    padding: 0;
+    height: 278px;
+    background: url(../img/phone-red.png) no-repeat top center;
+    background-size: 155px 320px;
+    @media (min-width: $screen_md) {
+      float: left;
+      margin-top: 55px;
+      //margin-right: 20px;
+      height: 481px;//548px;
+      //width: 50%;
+      width: 268px;
+      background: url(../img/phone-red-tablet.png) no-repeat;
+      background-size: 268px 548px;
+      //background-size: cover;
+    }
   }
 }
 
 
-.mobile-pic {
-  margin: 0 0 39px;
-  padding: 0;
+.effect24 {
+  display: none;
+  padding-bottom: 58px;
+  @media (min-width: $screen_md) {
+    display: flex;
+    justify-content: space-between;
+  }
+  &__icon-wrapper {
+    position: relative;
+    width: 262px;
+    height: 302px;
+    background: url(../img/timer.svg) no-repeat;
+    background-size: contain;
+  }
+  &__icon {
+    position: absolute;
+    top: 65px;
+    left: -1px;
+    margin-left: 25px;
+    width: 214px;
+    height: 214px;
+    font-weight: bold;
+    font-size: 104.6px;
+    line-height: 188px;
+    color: $color-red;
+    border: 11px solid $color-red;
+    border-radius: 50%;
+    flex-basis: 214;
+    align-self: center;
+  }
+  &__info {
+    padding-left: 50px;
+    text-align: left;
+    width: 100px;
+    flex-grow: 1;
+    align-self: center;
+  }
+  &__header {
+    padding-right: 50%;
+    margin-bottom: 10px;
+    font-weight: bold;
+    font-size: 30px;
+    line-height: 36px;
+  }
+  &__text,
+  &__more {
+    font-size: 14px;
+    line-height: 24px;
+  }
+  &__more {
+    color: $color-red;
+    text-decoration: underline;
+  }
 }
 
 
 .slider-review {
   display: flex;
   flex-direction: column;
+  //margin-bottom: 100px;
+  width: 100%;
+  min-height: 365px;
+  line-height: $header-line-height;
   &__items-wrapper {
-    min-height: 238px;
     order: 1;
+    @media (min-width: $screen_md) {
+      //min-height: 150px;
+    }
   }
   &__item {
     display: none;
+    flex-direction: column;
     &--active {
-      display: block;
+      display: flex;
     }
   }
-  &__header {
+  &__author {
     margin: 0 0 14px;
     padding: 0;
     font-weight: bold;
     font-size: $middle-font-size;
-    line-height: $header-line-height;
+    order: 1;
+    @media (min-width: $screen_md) {
+      font-size: 20px;
+      margin-bottom: 3px;
+    }
+  }
+  &__author-description {
+    display: none;
+    font-size: $base-font-size;
+    order: 2;
+    @media (min-width: $screen_md) {
+      display: block;
+    }
   }
   &__text {
-    font-weght: normal;
+    font-weight: normal;
     font-size: $base-font-size;
-    line-height: $header-line-height;
+    //line-height: $header-line-height;
+    order: 3;
+    @media (min-width: $screen_md) {
+      font-size: $middle-font-size;
+      margin-bottom: 35px;
+      order: 0;
+    }
   }
 }
 
@@ -75,6 +203,9 @@
   margin: 40px auto;
   width: 62px;
   order: 2;
+  align-self: flex-end;
+  //margin: auto;
+  //flex-grow: 9;
   &__item {
     list-style: none;
   }
@@ -106,7 +237,7 @@
   &__radio:nth-child(1):checked ~ .slider-review__items-wrapper .slider-review__item:nth-child(1),
   &__radio:nth-child(2):checked ~ .slider-review__items-wrapper .slider-review__item:nth-child(2),
   &__radio:nth-child(3):checked ~ .slider-review__items-wrapper .slider-review__item:nth-child(3) {
-    display: block;
+    display: flex;
   }
 }
 
@@ -119,6 +250,13 @@
     &--switch-1 { transform: translateX(0); }
     &--switch-2 { transform: translateX(-33.3%); }
     &--switch-3 { transform: translateX(-66.6%); }
+    @media (min-width: $screen_md) {
+      &--switch-1,
+      &--switch-2,
+      &--switch-3 {
+        transform: none;
+      }
+    }
   }
   &__th {
     min-width: 278px;
@@ -163,11 +301,49 @@
     right: 0;
     transform: translate(-13px, 18px);
   }
+  .switch {
+    @media (min-width: $screen_md) {
+      display: none;
+    }
+  }
 }
 
 
 .contacts {
-  margin: 0;
+  display: flex;
+  //flex-direction: column;
+  //margin: 0;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: flex-start;
+  &__item {
+    //outline: 1px solid lime;
+    //display: inline-block;
+    flex-basis: 285px;
+    //width: 250px;
+    //margin: auto;
+    margin-bottom: 24px;
+    flex-grow: 1;
+    &:nth-child(1) {
+      order: 1;
+    }
+    &:nth-child(2) {
+      order: 2;
+    }
+    &:nth-child(3) {
+      order: 3;
+    }
+    @media (min-width: $screen_lg) {
+      &:nth-child(2) {
+        order: 4;
+      }
+    }
+  }
+  &__item:last-child &__text{
+    //padding: 0 20%;
+    width: 208px;
+    margin: 0 auto;
+  }
   &__head {
     margin: 0 0 -3px;
     font-weight: bold;
@@ -191,6 +367,10 @@
   height: 30vh;
   background: url(../img/map.jpg) bottom no-repeat;
   background-size: cover;
+  @media (min-width: $screen_md) {
+    height: 50vh;
+    background: url(../img/map-big.jpg) 46% 57% no-repeat;
+  }
 }
 
 

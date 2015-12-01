@@ -21,19 +21,20 @@
           <li class="nav__item"><a href="form.html">Конкурс</a></li>
         </ul>
       </nav>
-      <div class="face  face--img">
-        <h1 class="face__text">Взгляните на жизнь иначе!</h1>
-      </div>
+      <div class="palm  palm--img"></div>
     </div>
 
     <div class="download">
-      <a class="download__btn btn" href="">Скачать приложение</a>
-      <ul class="download__items">
-        <li class="download__item  download__item--ios"><a href="#ios">iOS</a></li>
-        <li class="download__item  download__item--and"><a href="#and">Android</a></li>
-        <li class="download__item  download__item--win"><a href="#win">Windows Phone</a></li>
-      </ul>
-      <p class="download__text">Доступно для iPhone, iPad, Android, Windows Phone, OS X, Windows 8</p>
+      <h1 class="download__header">Взгляните на жизнь иначе!</h1>
+      <div class="download__inner">
+        <a class="download__btn btn" href="">Скачать приложение</a>
+        <ul class="download__items">
+          <li class="download__item  download__item--ios"><a href="#ios">iOS</a></li>
+          <li class="download__item  download__item--and"><a href="#and">Android</a></li>
+          <li class="download__item  download__item--win"><a href="#win">Windows Phone</a></li>
+        </ul>
+        <p class="download__text">Доступно для iPhone, iPad, Android, Windows Phone, OS X, Windows 8</p>
+      </div>
     </div>
   </header>
 
@@ -42,32 +43,69 @@
   <main class="main">
     <div class="wrapper">
       <h2 class="big_text  big_text--offer">Устали от серости мегаполиса?<br><span class="show-for-mobile"><br></span>Нам есть, что вам<br>предложить!</h2>
+
+
+
       <div class="benefits">
-        <div class="benefits__item">
-          <h3 class="benefits__head">Поднимает настроение</h3>
-          <p class="benefits__text">Приложение позволит вам победить осеннюю хандру и деперессию буквально в несколько кликов!</p>
+        <div class="benefits__items">
+          <div class="benefits__item">
+            <h3 class="benefits__head">Поднимает настроение</h3>
+            <p class="benefits__text">Приложение позволит вам победить осеннюю хандру и деперессию буквально в несколько кликов!</p>
+          </div>
+
+          <div class="benefits__item">
+            <h3 class="benefits__head">Меняет мир вокруг</h3>
+            <p class="benefits__text">Сделайте снимок и украсьте его смайликом или текстовой подписью, чтобы усилить эффект</p>
+          </div>
+
+          <div class="benefits__item">
+            <h3 class="benefits__head">Заводит новых друзей</h3>
+            <p class="benefits__text">Ставьте лайки, комментируте, делитесь фотографиями с друзьями и заводите новых</p>
+          </div>
         </div>
-        <div class="benefits__item">
-          <h3 class="benefits__head">Меняет мир вокруг</h3>
-          <p class="benefits__text">Сделайте снимок и украсьте его смайликом или текстовой подписью, чтобы усилить эффект</p>
-        </div>
-        <div class="benefits__item">
-          <h3 class="benefits__head">Заводит новых друзей</h3>
-          <p class="benefits__text">Ставьте лайки, комментируте, делитесь фотографиями с друзьями и заводите новых</p>
+
+        <div class="benefits__pic">
+<!--          <img src="./img/phone-red.png" alt="Всем привет!" width="157" height="320">-->
         </div>
       </div>
 
 
 
-      <div class="mobile-pic"><img src="./img/phone-red.png" alt="Всем привет!" width="157" height="320"></div>
+      <div class="effect24">
+        <div class="effect24__icon-wrapper">
+          <div class="effect24__icon">24</div>
+        </div>
+        <div class="effect24__info">
+          <div class="effect24__header">Эффект на&nbsp;24&nbsp;часа!</div>
+          <div class="effect24__text">Британские ученые провели исследования и доказали, что положительный эффект от использования приложения длится целые сутки!</div>
+          <a class="effect24__more" href="#more">Узнать больше об исследовании</a>
+        </div>
+      </div>
 
 
 
-      <div class="slider-review">
+      <div class="slider-review  outline-">
         <input class="switch__radio" type="radio" name="review_pages" id="review_pages_1" checked hidden>
         <input class="switch__radio" type="radio" name="review_pages" id="review_pages_2" hidden>
         <input class="switch__radio" type="radio" name="review_pages" id="review_pages_3" hidden>
-        <ul class="switch">
+        <div class="slider-review__items-wrapper">
+          <div class="slider-review__item">
+            <h3 class="slider-review__author">Николай Петров</h3>
+            <span class="slider-review__author-description">25 лет, водитель трамвая</span>
+            <p class="slider-review__text">«Это приложение перевернуло мой мир и позволило по-новому взглянуть на привычные серые вещи! А еще я познакомился со своей будущей женой в комментариях к выложенной фотографии!»</p>
+          </div>
+          <div class="slider-review__item">
+            <h3 class="slider-review__author">Lorem ipsum</h3>
+            <div class="slider-review__author-description">qwerty uiop</div>
+            <p class="slider-review__text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eius, beatae in accusamus cumque! Amet consequatur consequuntur, reprehenderit error ad quo fugit veniam reiciendis doloribus impedit, excepturi quas mollitia ullam autem.</p>
+          </div>
+          <div class="slider-review__item">
+            <h3 class="slider-review__author">Lorem ipsum!</h3>
+            <div class="slider-review__author-description">asdf ghjkl</div>
+            <p class="slider-review__text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Inventore, ad?</p>
+          </div>
+        </div>
+        <ul class="switch outline-">
           <li class="switch__item">
             <label class="switch__label" for="review_pages_1">&bull;</label>
           </li>
@@ -78,20 +116,6 @@
             <label class="switch__label" for="review_pages_3">&bull;</label>
           </li>
         </ul>
-        <div class="slider-review__items-wrapper">
-          <div class="slider-review__item">
-            <h3 class="slider-review__header">Николай Петров</h3>
-            <p class="slider-review__text">«Это приложение перевернуло мой мир и позволило по-новому взглянуть на привычные серые вещи! А еще я познакомился со своей будущей женой в комментариях к выложенной фотографии!»</p>
-          </div>
-          <div class="slider-review__item">
-            <h3 class="slider-review__header">Lorem ipsum</h3>
-            <p class="slider-review__text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eius, beatae in accusamus cumque! Amet consequatur consequuntur, reprehenderit error ad quo fugit veniam reiciendis doloribus impedit, excepturi quas mollitia ullam autem.</p>
-          </div>
-          <div class="slider-review__item">
-            <h3 class="slider-review__header">Lorem ipsum!</h3>
-            <p class="slider-review__text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Inventore, ad?</p>
-          </div>
-        </div>
       </div>
     </div>
 
@@ -150,8 +174,8 @@
 
 
 
-    <div class="contacts">
-      <div class="wrapper">
+    <div class="contacts  wrapper">
+<!--      <div class="wrapper">-->
         <div class="contacts__item">
           <h3 class="contacts__head">Звоните</h3>
           <p class="contacts__text">+7(812)555-66-66</p>
@@ -162,15 +186,29 @@
         </div>
         <div class="contacts__item">
           <h3 class="contacts__head">Приезжайте в гости</h3>
-          <p class="contacts__text">ул. Большая Конюшенная,&nbsp;19/8</p>
+          <p class="contacts__text">ул.&nbsp;Большая Конюшенная,&nbsp;19/8</p>
         </div>
-      </div>
+<!--      </div>-->
     </div>
 
 
 
     <div class="map"></div>
   </main>
+
+
+
+  <footer class="footer">
+    <a class="logo  logo--bottom" href="index.html">
+      <img src="img/logo-pic.png" width="145" height="40" alt="logo">
+    </a>
+    <ul class="socials">
+      <li><a class="socials__item  socials__item--tw" href="#tw">Twitter</a></li>
+      <li><a class="socials__item  socials__item--fb" href="#fb">Facebook</a></li>
+      <li><a class="socials__item  socials__item--vk" href="#vk">VK</a></li>
+    </ul>
+    <a class="developed" href="#dev">Разработано</a>
+  </footer>
 
 
 

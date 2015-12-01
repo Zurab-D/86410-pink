@@ -65,6 +65,6 @@ body {
   }
 }
 
-//input[type=text]n{
-//  @include fieldset-control;
-//}
+.hide-for-mobile {
+  display: none;
+}
