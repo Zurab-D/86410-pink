@@ -2,6 +2,12 @@
   position: relative;
   margin: 0 0 47px 0;
   padding: 0;
+  &--blog &__wrap {
+    min-height: 197px;
+    @media (min-width: $screen-md) {
+      min-height: 376px;
+    }
+  }
   &__wrap {
     width: auto;
     min-height: 237px;
@@ -9,6 +15,9 @@
     background-size: cover;
     @media (min-width: $screen-md) {
       min-height: 440px;
+    }
+    @media (min-width: $screen-md) {
+      margin-bottom: 90px;
     }
   }
   &--blog {
@@ -75,10 +84,32 @@
   position: absolute;
   display: block;
   padding: 0;
-  width: 74px;
+  width: 75px;
   height: 23px;
   &--top {
+    position: relative;
     margin: 21px 20px;
+    &:before {
+      position: absolute;
+      content: "";
+      display: block;
+      width: 75px;
+      height: 23px;
+      background-size: 75px 23px;
+      background: url(../img/logotype-white-mobile.svg) no-repeat center;
+      @media (min-width: $screen-md) {
+        width: 147px;
+        height: 41px;
+        background-size: 147px 41px;
+        background: url(../img/logotype-white-tablet.svg) no-repeat center;
+      }
+      @media (min-width: $screen-lg) {
+        width: 147px;
+        height: 41px;
+        background-size: 147px 41px;
+        background: url(../img/logotype-white-desktop.svg) no-repeat center;
+      }
+    }
   }
 }
 

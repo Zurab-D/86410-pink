@@ -5,14 +5,6 @@
   }
 }
 
-.wrapper {
-  padding: 0 20px;
-  @media (min-width: $screen_md) {
-    padding: 0 40px;
-  }
-}
-
-
 .big_text {
   font-weight: 100;
   font-size: $header-font-size;
@@ -135,13 +127,13 @@
     padding-right: 50%;
     margin-bottom: 10px;
     font-weight: bold;
-    font-size: 30px;
+    font-size: $header-font-size;
     line-height: 36px;
   }
   &__text,
   &__more {
-    font-size: 14px;
-    line-height: 24px;
+    font-size: $base-font-size;
+    line-height: $header-font-size;
   }
   &__more {
     color: $color-red;
@@ -439,8 +431,14 @@
   font-weight: normal;
   font-size: $base-font-size;
   line-height: $header-line-height;
+  @media (min-width: $screen-md) {
+    font-size: $middle-font-size;
+  }
   &__fill-please {
     display: none;
+    @media (min-width: $screen-md) {
+      display: inline-block;
+    }
   }
 }
 
@@ -450,6 +448,32 @@
   padding: 37px 0;
   border: none;
   text-align: left;
+  @media (min-width: $screen-md) {
+    &--fio &__wrapper {
+      padding-top: 0;
+      border: none;
+    }
+    &--trip-date &__wrapper {
+      display: flex;
+    }
+    &--trip-date &__wrapper {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+    }
+    &--trip-date &__input,
+    &--trip-date .calc__wrapper {
+      flex-basis: 47.5%;
+    }
+  }
+  &__wrapper {
+    position: relative;
+    @include wrapper;
+    @media (min-width: $screen-md) {
+      border: 2px solid $border-color;
+      padding-top: 42px;
+    }
+  }
   &__header {
     margin: 0 0 37px;
     padding: 0;
@@ -459,6 +483,15 @@
     color: $color-red;
     text-transform: uppercase;
     text-align: center;
+    @media (min-width: $screen-md) {
+      position: absolute;
+      padding: 0 20px;
+      top: -10px;
+      left: 50%;
+      transform: translateX(-50%);
+      white-space: pre;
+      background-color: #fff;
+    }
   }
   &__label {
     margin: 20px 0 7px 23px;
@@ -487,6 +520,14 @@
     li {
       margin: 45px 0;
       margin-left: $radio-indent;
+      @media (min-width: $screen-md) {
+        &:first-child {
+          margin-top: 15px;
+        }
+      }
+    }
+    @media (min-width: $screen-md) {
+      margin-top: 0px;//54px;
     }
   }
   &--fio {
@@ -495,20 +536,31 @@
   &__control {
     @include fieldset-control;
   }
-  &--grey {
+  &--app,
+  &--travelers,
+  &--photo {
     background-color: $color-bg-grey;
+    @media (min-width: $screen-md) {
+      background-color: transparent;
+    }
   }
   &--trip-date &__label {
     margin-top: 9px;
-    margin-bottom: 17px;
+    margin-bottom: 31px;
     text-align: center;
   }
   &--travelers &__label {
     margin-top: 8px;
   }
-  &--travelers .calc {
+  /*&--travelers .calc {
     margin-top: 20px;
-  }
+    @media (min-width: $screen-md) {
+      &__result,
+      &__rem {
+        border: 0;
+      }
+    }
+  }*/
   &--app &__label,
   &--achievements &__label {
     position: relative;
@@ -570,10 +622,23 @@
 .calc {
   position: relative;
   display: flex;
+  &--persons {
+    @media (min-width: $screen-md) {
+      width: 252px;
+      padding-bottom: 40px;
+      //border-bottom: 2px solid $border-color;
+    }
+  }
+  &--persons &__result,
+  &--persons &__rem {
+    @media (min-width: $screen-md) {
+      border: 0;
+    }
+  }
   &__btn {
     position: relative;
     display: block;
-    width: 57px;
+    width: 63px;//57px;
     height: 59px;
     background-color: #fff;
     border: 2px solid $border-color;
@@ -601,6 +666,9 @@
     flex-grow: 1;
     display: flex;
     justify-content: space-between;
+    @media (min-width: $screen-md) {
+      flex-grow: 1;
+    }
   }
   &__result {
     text-align: center;
@@ -608,15 +676,21 @@
     outline: none;
     border-radius: 0;
     @include fieldset-control;
+    @media (min-width: $screen-md) {
+      padding-right: 27%;
+    }
   }
-  &__label {
+  &__rem {
     position: absolute;
     left: 55%;
     z-index: 1;
     text-align: left;
     @include fieldset-control;
+    @media (min-width: $screen-md) {
+      left: 50%;
+    }
   }
-  &__label,
+  &__rem,
   &__result {
     flex-basis: 100%;
     border-left-width: 0;
@@ -629,8 +703,15 @@
 .person {
   display: flex;
   margin-bottom: 30px;
+  &:nth-of-type(2) {
+    @media (min-width: $screen-md) {
+      padding-top: 23px;
+      border-top: 2px solid $border-color;
+    }
+  }
   &__number-cover {
-    flex-basis: 69px;
+    flex-basis: 63px;
+    flex-shrink: 0;
   }
   &__number-label {
     margin: 8px 0 7px;
@@ -647,9 +728,37 @@
     padding: 14px 20px;
     border-right-width: 0;
     text-align: center;
+    @media (min-width: $screen-md) {
+      border-right-width: 2px;
+    }
   }
   &__fio {
     flex-grow: 1;
+    @media (min-width: $screen-md) {
+      padding-left: 20px;
+    }
+  }
+  &__delete-wrapper {
+    display: none;
+    flex-basis: 115px;
+    flex-shrink: 0;
+    margin: 0;
+    padding: 46px 0 0;
+    @media (min-width: $screen-md) {
+      display: block;
+    }
+  }
+  &__delete {
+    height: 57px;
+    width: 100%;
+    border: none;
+    background: transparent;
+    font-weight: normal;
+    font-size: $base-font-size;
+    line-height: $header-line-height;
+    color: $base-color;
+    text-transform: uppercase;
+    outline: none;
   }
 }
 
@@ -685,9 +794,10 @@
     border: 2px solid #e5e5e5;
     background-color: #fff;
     border-radius: 50%;
-    top: -15px;
-    right: 7px;
+    top: 8px;
+    right: 10px;
     font-size: 0;
+    z-index: 1;
     &:after ,
     &:before {
       content: "";
@@ -708,46 +818,98 @@
     }
   }
   &__img {
-    margin: 0;
-    padding: 0 15px 22px 15px;
+    //margin: 0;
+    //padding: 0 15px 22px 15px;
+    position: relative;
+    overflow: hidden;
+    display: block;
     width: 67px;
     height: 67px;
+    @media (min-width: $screen-md) {
+      width: 120px;
+      height: 120px;
+    }
+    
+    /*padding: 0 0 21px 0;
+    margin: 0 15px 0px 15px;*/
+    margin: 25px;
     font-size: 50px;
+
+    img {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      display: block;
+      width: auto;
+      height: 100%;
+      
+      //display: none;
+      /*max-width: 67px;
+      max-height: 67px;*/
+      /*@media (min-width: $screen-md) {
+        max-width: 120px;
+        max-height: 120px;
+        
+        
+        width: 120px;
+        height: 120px;
+        
+      }*/
+    }
     figcaption {
-      margin: 7px 0 0 0;
+      position: absolute;
+      bottom: -25px;
+      margin: 6px 0 0 0;
       padding: 0;
       font-size: 12px;
       line-height: 18px;
       text-transform: uppercase;
     }
-    @media (min-width: $screen-md) {
-      width: 120px;
-      height: 120px;
-    }
   }
 }
 
 
-.submit-form-btn {
-  margin-top: 48px;
-  width: 100%;
-  font-weight: bold;
-  font-size: $middle-font-size;
-  line-height: 59px;
-  border: 2px solid $color-green;
-  border-radius: 2px;
-  background-color: $color-green;
-  color: #fff;
-}
-
-
-.required-field {
-  margin: 0;
-  padding: 45px 0 0;
-  font-weight: normal;
-  font-size: $base-font-size;
-  line-height: $header-line-height;
-  text-transform: uppercase;
+.submit {
+  margin: 0 0 63px;
+  padding: 0 20px;
+  @media (min-width: $screen-md) {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 40px;
+  }
+  &__btn {
+    display: block;
+    margin-top: 48px;
+    width: 100%;
+    font-weight: bold;
+    font-size: $middle-font-size;
+    line-height: 59px;
+    border: 2px solid $color-green;
+    border-radius: 2px;
+    background-color: $color-green;
+    color: #fff;
+    @media (min-width: $screen-md) {
+      margin-top: 60px;
+      width: auto;
+      flex-grow: 1;
+    }
+  }
+  &__required-note {
+    display: block;
+    margin: 0;
+    padding: 45px 0 0;
+    font-weight: normal;
+    font-size: $base-font-size;
+    line-height: $header-line-height;
+    text-transform: uppercase;
+    @media (min-width: $screen-md) {
+      flex-grow: 1;
+      width: auto;
+      text-align: right;
+    }
+  }
 }
 
 
@@ -779,14 +941,14 @@
     padding: 0 20px;
     font-weight: bold;
     font-size: $middle-font-size;
-    line-height: 24px;
+    line-height: $header-font-size;
     color: #000;
   }
   &__text {
     padding: 0 20px 32px;
     font-weight: normal;
     font-size: $base-font-size;
-    line-height: 24px;
+    line-height: $header-font-size;
     color: $base-color;
   }
   &__btn-overlay {
@@ -809,13 +971,17 @@
 .post-preview {
   margin: 0 0 20px 0;
   padding: 5px 0 21px;
-  border-bottom: 1px solid $border-color;
   text-align: left;
   text-decoration: none;
   font-weight: normal;
   font-size: $base-font-size;
   line-height: 27px;
   color: $base-color;
+  border-bottom: 1px solid $border-color;
+  @media (min-width: $screen-md) {
+    margin-bottom: 64px;
+    border-bottom: none;
+  }
   & a {
     text-align: left;
     text-decoration: none;
@@ -825,10 +991,26 @@
     color: $base-color;
   }
   &__header {
+    position: relative;
     margin: 0 0 2px;
     padding: 0;
     font-size: $middle-font-size;
     font-weight: bold;
+    @media (min-width: $screen-md) {
+      margin-bottom: 8px;
+      font-size: 27px;
+    }
+    &:before {
+      position: absolute;
+      content: "";
+      display: block;
+      width: 28px;
+      height: 26px;
+      background-size: 28px 26px;
+      background: url(../img/blog-post-icon.svg) no-repeat center;
+      left: -58px;
+      top: 5px;
+    }
   }
   &__subheader {
     margin: 0 0 12px 0;
@@ -836,10 +1018,17 @@
     font-size: 12px;
     color: $color-red;
     text-transform: uppercase;
+    @media (min-width: $screen-md) {
+      margin-bottom: 22px;
+      font-size: $base-font-size;
+    }
   }
   &__text {
     margin: 0;
     padding: 0;
+    @media (min-width: $screen-md) {
+      font-size: $middle-font-size; 
+    }
   }
   &:last-of-type {
     margin-bottom: 29px;
@@ -849,9 +1038,25 @@
 
 
 .pager {
+  position: relative;
   display: flex;
   justify-content: flex-start;
   text-align: center;
+  margin-bottom: 40px;
+  @media (min-width: $screen-md) {
+    &:before {
+      position: absolute;
+      content: "Стр.";
+      display: block;
+      top: 50%;
+      transform: translateY(-50%);
+      left: -60px;
+      font-weight: bold;
+      font-size: $middle-font-size;
+      line-height: $header-line-height;
+      text-transform: uppercase;
+    }
+  }
   & a {
     text-decoration: none;
   }
@@ -873,7 +1078,7 @@
 }
 
 
-/* --- blog.html -----------------------------------------*/
+/* --- post.html -----------------------------------------*/
 
 .post {
   font-weight: normal;
@@ -883,29 +1088,50 @@
   &__header {
     text-align: center;
     font-weight: bold;
-    font-size: 30px;
+    font-size: $header-font-size;
     line-height: 36px;
+    @media (min-width: $screen-md) {
+      font-size: 50px;
+      line-height: 60px;
+    }
   }
   &__subheader{
     text-align: center;
     font-size: 12px;
     text-transform: uppercase;
     color: $color-red;
+    @media (min-width: $screen-md) {
+      font-size: $base-font-size;
+      line-height: $header-line-height;
+    }
   }
   &__preview {
     text-align: center;
     font-size: 16px;
     border-bottom: 1px solid $border-color;
+    @media (min-width: $screen-md) {
+      font-size: $header-font-size;
+      line-height: 40px;
+    }
   }
   &__subtitle {
     font-weight: bold;
-    font-size: 18px;
+    font-size: $middle-font-size;
     line-height: $header-line-height;
+    @media (min-width: $screen-md) {
+      font-size: $header-font-size;
+      line-height: $header-line-height;
+      text-transform: uppercase;
+    }
   }
   &__text,
   &__link {
-    font-size: 14px;
+    font-size: $base-font-size;
     line-height: 27px;
+    @media (min-width: $screen-md) {
+      font-size: $middle-font-size;
+      line-height: $header-line-height;
+    }
   }
   &__link {
     color: $color-red;
@@ -939,4 +1165,9 @@
       font-style: italic;
     }
   }
+}
+
+
+.wrapper {
+  @include wrapper;
 }

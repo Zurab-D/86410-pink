@@ -6,9 +6,11 @@
   clear: both;
 }
 
+
 @mixin outline {
   outline: 1px dashed lime;
 }
+
 
 @mixin fieldset-control {
   min-height: 59px;
@@ -21,6 +23,16 @@
   line-height: 27px;
   color: $base-color;
 }
+
+
+@mixin wrapper {
+  padding: 0 20px;
+  @media (min-width: $screen_md) {
+    margin: 0 40px;
+    padding: 0 60px;
+  }
+}
+
 
 @mixin sign-x($color: #000, $size: 30px, $line-width: 2px, $bg-color: transparent) {
   position: relative;
@@ -44,6 +56,7 @@
   }
 }
 
+
 @mixin sign-v($color: #000, $size: 30px, $line-width: 2px, $bg-color: transparent) {
   width: $size;
   height: $size/100*45;
@@ -53,6 +66,7 @@
   transform: rotate(-45deg);
   background-color: $bg-color;
 }
+
 
 /*
 @mixin sign-y($size: 20px, $color: #000, $bg-color: transparent) {
