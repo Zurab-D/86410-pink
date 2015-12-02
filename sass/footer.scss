@@ -21,13 +21,14 @@
 }
 
 .socials {
+  //outline: 1px solid lime;
   margin: 0 auto;
   margin-bottom: 65px;
   padding: 0;
   list-style: none;
   display: flex;
   justify-content: space-between;
-  width: 176px;
+  width: 128px; //176px;
   @media (min-width: $screen-md) {
     margin-bottom: 0;//47px;
     height: 45px;

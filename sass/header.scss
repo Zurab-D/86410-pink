@@ -23,15 +23,13 @@
   &--blog {
     margin: 0 0 29px 0;
   }
-}
-
-
-.index .header {
-  height: 100vh;
-  min-height: 730px;
-  background-color: #1d2631;
-  flex-direction: column;
-  display: flex;
+  &--index {
+    height: 100vh;
+    min-height: 730px;
+    background-color: #1d2631;
+    flex-direction: column;
+    display: flex;
+  }
 }
 
 
@@ -282,6 +280,6 @@
 }
 
 
-.index .download {
+.download {
   margin: auto;
 }
