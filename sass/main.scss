@@ -5,20 +5,24 @@
   }
 }
 
+
 .big_text {
   font-weight: 100;
   font-size: $header-font-size;
   line-height: $header-line-height;
+  @media (min-width: $screen_md) {
+    margin-top: 50px;
+    font-size: 40px;
+    line-height: 47px;
+  }
   &--offer {
     margin-top: -6px;
     margin-bottom: 0px;
   }
   &--ask {
-    margin-bottom: 34px;
+    margin: 55px 0 31px 0;
     @media (min-width: $screen_md) {
-      margin-top: 50px;
-      font-size: 40px;
-      line-height: 47px;
+      margin: 105px 0 41px 0;
     }
   }
 }
@@ -38,7 +42,7 @@
     @media (min-width: $screen_md) {
       margin-top: 128px;
       //width: 50%;
-      width: calc(100% - 290px);
+      width: calc(97% - 290px);
       &:after {
         @include clearfix;
       }
@@ -368,7 +372,7 @@
     flex-basis: 285px;
     //width: 250px;
     //margin: auto;
-    margin-bottom: 24px;
+    margin-bottom: 20px;
     flex-grow: 1;
     &:nth-child(1) {
       order: 1;
@@ -378,6 +382,9 @@
     }
     &:nth-child(3) {
       order: 3;
+    }
+    @media (min-width: $screen_md) {
+      margin-bottom: 42px;
     }
     @media (min-width: $screen_lg) {
       &:nth-child(2) {
@@ -399,7 +406,8 @@
   }
   &__text {
     display: block;
-    margin: 0 0 20px;
+    //margin: 0 0 20px;
+    margin: 0;
     font-weight: 100;
     font-size: $header-font-size;
     line-height: $header-line-height;
@@ -428,6 +436,7 @@
 
 .story {
   margin: 0 0 10px;
+  //padding: 0 100px;
   font-weight: normal;
   font-size: $base-font-size;
   line-height: $header-line-height;
@@ -470,8 +479,9 @@
     position: relative;
     @include wrapper;
     @media (min-width: $screen-md) {
+      margin: 0 40px;
+      padding: 42px 58px 0;
       border: 2px solid $border-color;
-      padding-top: 42px;
     }
   }
   &__header {
@@ -532,6 +542,11 @@
   }
   &--fio {
     padding-top: 0;
+  }
+  &--fio &__wrapper {
+    margin: 0;
+    padding: 0;
+    @include wrapper;
   }
   &__control {
     @include fieldset-control;
@@ -636,6 +651,7 @@
     }
   }
   &__btn {
+    @include fieldset-control;
     position: relative;
     display: block;
     width: 63px;//57px;
@@ -643,7 +659,6 @@
     background-color: #fff;
     border: 2px solid $border-color;
     font-size: 0;
-    @include fieldset-control;
     &:before,
     &:after {
       content: "";
@@ -659,7 +674,8 @@
       display: none;
     }
     &--plus:after {
-      transform: translateX(-50%) rotate(90deg);
+      /*transform: translateX(-50%) rotate(90deg);*/
+      transform: translate(-50%, -50%) rotate(90deg);
     }
   }
   &__result-over {
@@ -818,23 +834,17 @@
     }
   }
   &__img {
-    //margin: 0;
-    //padding: 0 15px 22px 15px;
     position: relative;
     overflow: hidden;
     display: block;
     width: 67px;
     height: 67px;
+    margin: 25px 15px;
+    font-size: 50px;
     @media (min-width: $screen-md) {
       width: 120px;
       height: 120px;
     }
-
-    /*padding: 0 0 21px 0;
-    margin: 0 15px 0px 15px;*/
-    margin: 25px;
-    font-size: 50px;
-
     img {
       position: absolute;
       top: 50%;
@@ -843,19 +853,6 @@
       display: block;
       width: auto;
       height: 100%;
-
-      //display: none;
-      /*max-width: 67px;
-      max-height: 67px;*/
-      /*@media (min-width: $screen-md) {
-        max-width: 120px;
-        max-height: 120px;
-
-
-        width: 120px;
-        height: 120px;
-
-      }*/
     }
     figcaption {
       position: absolute;
@@ -1203,13 +1200,21 @@
 
 .wrapper {
   @include wrapper;
+  &--form {
+    @media (min-width: $screen_md) {
+      margin: 0 40px;
+      padding: 0 60px;
+    }
+  }
+  &--post {
+    @media (min-width: $screen_md) {
+      padding: 0 100px;
+    }
+  }
 }
 
 
 .post-wrapper {
+  @include wrapper;
   overflow: hidden;
-  padding: 0 20px;
-  @media (min-width: $screen_md) {
-    padding: 0 40px;
-  }
 }

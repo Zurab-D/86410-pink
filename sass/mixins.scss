@@ -28,8 +28,7 @@
 @mixin wrapper {
   padding: 0 20px;
   @media (min-width: $screen_md) {
-    margin: 0 40px;
-    padding: 0 60px;
+    padding: 0 40px;
   }
 }
 
