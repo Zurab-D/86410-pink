@@ -55,14 +55,13 @@
   margin: 0;
   height: $nav-height;
   width: 100%;
-  background-color: rgba(#000, .3);
+  background-color: rgba(#000, .33333);
   z-index: 5;
   @media (min-width: $screen-md) {
     height: $nav-height-tablet;
   }
   @media (min-width: $screen-lg) {
     float: right;
-    background-color: rgba(#000, .3);
   }
   &--expand {
     height: $nav-height + 3;
@@ -71,7 +70,7 @@
     @media (min-width: $screen-lg) {
       height: $nav-height-tablet;
       border-bottom-width: 0;
-      background-color: rgba(#000, .3);
+      background-color: rgba(#000, .33333);
     }
   }
   &--expand &__list {
@@ -91,7 +90,7 @@
       margin: 0 auto;
       padding-right: 95px;
       top: 0;
-      background-color: rgba(#000, .3);
+      //background-color: transparent;
     }
   }
   &__item a {
@@ -111,7 +110,7 @@
       display: inline-block;
       padding: 0 35px;
       height: $nav-height-tablet;
-      background-color: rgba(#000, .3);
+      background-color: transparent;
       border-width: 0;
       font-weight: normal;
       font-size: $middle-font-size;
@@ -128,6 +127,7 @@
   padding: 0;
   width: 75px;
   height: 23px;
+  font-size: 0;
   &--top {
     position: relative;
     margin: 21px 20px;
@@ -152,6 +152,22 @@
         background-size: 147px 41px;
         background: url(../img/logotype-white-desktop.svg) no-repeat center;
       }
+    }
+  }
+  &--bottom {
+    position: static;
+    display: block;
+    margin: 0 auto;
+    margin-top: 56px;
+    margin-bottom: 40px;
+    width: 145px;
+    height: 40px;
+    background: url(../img/logotype-blue-tablet.svg) no-repeat center;
+    @media (min-width: $screen-md) {
+      margin: 0;
+    }
+    @media (min-width: $screen-lg) {
+      background: url(../img/logotype-blue-desktop.svg) no-repeat center;
     }
   }
 }
@@ -341,8 +357,3 @@
     }
   }
 }
-
-
-/*.download {
-  margin: auto;
-}*/

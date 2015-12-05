@@ -1,25 +1,5 @@
 /* --- footer --------------------------------------------*/
 
-.logo {
-  &--bottom {
-    position: static;
-    display: block;
-    margin: 0 auto;
-    margin-top: 56px;
-    margin-bottom: 40px;
-    width: 145px;
-    height: 40px;
-    background: url(../img/logotype-blue-tablet.svg) no-repeat center;
-    font-size: 0;
-    @media (min-width: $screen-md) {
-      margin: 0;
-    }
-    @media (min-width: $screen-lg) {
-      background: url(../img/logotype-blue-desktop.svg) no-repeat center;
-    }
-  }
-}
-
 .socials {
   //outline: 1px solid lime;
   margin: 0 auto;
