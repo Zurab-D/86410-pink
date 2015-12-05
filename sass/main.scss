@@ -24,35 +24,53 @@
     @media (min-width: $screen_md) {
       margin: 105px 0 41px 0;
     }
+    @media (min-width: $screen_lg) {
+      margin: 165px 0 55px 0;
+    }
   }
 }
 
 
 .benefits {
   @media (min-width: $screen_md) {
+    display: flex;
     margin-bottom: 18px;//70px;
     text-align: left;
     &:after {
       @include clearfix;
     }
   }
+  @media (min-width: $screen_lg) {
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    padding-top: 77px; 
+  }
   &__items {
     margin: 93px 0 0 0;
     line-height: $base-line-height;
     @media (min-width: $screen_md) {
       margin-top: 128px;
-      //width: 50%;
       width: calc(97% - 290px);
-      &:after {
-        @include clearfix;
-      }
-      float: right;
+      order: 2;
+    }
+    @media (min-width: $screen_lg) {
+      display: flex;
+      justify-content: space-between;
+      margin: 65px 0 41px;
+      width: 100%;
     }
   }
   &__item {
     margin-bottom: 40px;
     @media (min-width: $screen_md) {
       margin-bottom: 35px;
+    }
+    @media (min-width: $screen_lg) {
+      margin-bottom: 0;
+      padding: 0 25px;
+      flex-basis: 292px;
+      text-align: center;
     }
   }
   &__head {
@@ -63,28 +81,76 @@
     @media (min-width: $screen_md) {
       margin-bottom: 11px;
     }
+    @media (min-width: $screen_lg) {
+      margin-bottom: 25px;
+      font-size: $header-line-height;
+      line-height: $header-line-height;
+    }
   }
   &__text {
     margin: 0;
     font-weight: normal;
     font-size: $base-font-size;
+    @media (min-width: $screen_lg) {
+      font-size: $middle-font-size;
+      line-height: $header-line-height;
+    }
+  }
+  &__pictures {
+    @media (min-width: $screen_md) {
+      padding-right: 40px;
+      order: 1;
+    }
+    @media (min-width: $screen_lg) {
+      display: flex;
+      width: 100%;
+      justify-content: space-between;
+    }
   }
   &__pic {
     margin: 0 0 39px;
     padding: 0;
-    height: 278px;
-    background: url(../img/phone-red.png) no-repeat top center;
+    //height: 157px;
     background-size: 155px 320px;
+    &--1, &--2 { display: none; }
+    &--3 {
+      height: 278px;
+      width: auto;
+      background:
+        url(../img/iphone-screen-mobile-3@1x.png) no-repeat center 34px,
+        url(../img/iphone-case-mobile@1x.png) no-repeat top;
+      background-size: 
+        141px,
+        157px;
+    }
     @media (min-width: $screen_md) {
       float: left;
       margin-top: 55px;
-      //margin-right: 20px;
-      height: 481px;//548px;
-      //width: 50%;
+      height: 481px;
       width: 268px;
-      background: url(../img/phone-red-tablet.png) no-repeat;
-      background-size: 268px 548px;
-      //background-size: cover;
+      background-size: 268px 481px;
+      &--3 {
+        background: url(../img/iphone-screen-tablet-3@1x.png) no-repeat;
+      }
+    }
+    @media (min-width: $screen_lg) {
+      flex-shrink: 1;
+      margin: 0;
+      height: 302px;
+      flex-basis: 292px;
+      background-size: 292px 302px;
+      &--1 {
+        display: block;
+        background: url(../img/iphone-screen-desktop-1@1x.png) no-repeat;
+      }
+      &--2 {
+        display: block;
+        background: url(../img/iphone-screen-desktop-2@1x.png) no-repeat;
+      }
+      &--3 {
+        display: block;
+        background: url(../img/iphone-screen-desktop-3@1x.png) no-repeat;
+      }
     }
   }
 }
@@ -96,6 +162,10 @@
   @media (min-width: $screen_md) {
     display: flex;
     justify-content: space-between;
+    padding-bottom: 45px;
+  }
+  @media (min-width: $screen_lg) {
+    padding-bottom: 190px;
   }
   &__icon-wrapper {
     position: relative;
@@ -165,10 +235,14 @@
     &--active {
       display: flex;
     }
+    @media (min-width: $screen_lg) {
+      width: 760px;
+    }
   }
   &__author {
     margin: 0 0 14px;
     padding: 0;
+    
     font-weight: bold;
     font-size: $middle-font-size;
     order: 1;
@@ -194,6 +268,11 @@
       font-size: $middle-font-size;
       margin-bottom: 35px;
       order: 0;
+    }
+  }
+  &__quote {
+    @media (min-width: $screen_lg) {
+      display: none;
     }
   }
 }
@@ -246,8 +325,10 @@
 
 
 .prices {
-  //overflow-x: hidden;
   overflow: hidden;
+  @media (min-width: $screen_lg) {
+    width: 100%;
+  }
   &__1st-col,
   &__th:first-child,
   &__td:first-child {
@@ -273,6 +354,9 @@
         transform: none;
       }
     }
+    @media (min-width: $screen_lg) {
+      width: 100%;
+    }
   }
   &__th {
     min-width: 278px;
@@ -283,6 +367,9 @@
       &:nth-child(odd) {
         min-width: 155px;
       }
+    }
+    @media (min-width: $screen_lg) {
+      width: calc(25% - 4px);
     }
   }
   &__td {
@@ -367,7 +454,6 @@
   justify-content: space-between;
   align-items: flex-start;
   &__item {
-    //outline: 1px solid lime;
     //display: inline-block;
     flex-basis: 285px;
     //width: 250px;
@@ -925,7 +1011,7 @@
   position: fixed;
   top: 50%;
   transform: translateY(-50%);
-  z-index: 10;
+  z-index: 15;
   &__inner {
     margin: auto;
     max-width: 500px;

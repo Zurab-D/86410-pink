@@ -38,6 +38,9 @@
     @media (max-width: $screen-lg - 1) {
       height: 100vh;
     }
+    @media (min-width: $screen_md) {
+      margin-bottom: 78px;
+    }
     min-height: 730px;
     background-color: #1d2631;
     flex-direction: column;
@@ -53,17 +56,23 @@
   height: $nav-height;
   width: 100%;
   background-color: rgba(#000, .3);
-  z-index: 10;
+  z-index: 5;
   @media (min-width: $screen-md) {
-    height: 110px;
+    height: $nav-height-tablet;
   }
   @media (min-width: $screen-lg) {
     float: right;
+    background-color: rgba(#000, .3);
   }
   &--expand {
     height: $nav-height + 3;
     border-bottom: 1px solid #000;
     background-color: $base-color;
+    @media (min-width: $screen-lg) {
+      height: $nav-height-tablet;
+      border-bottom-width: 0;
+      background-color: rgba(#000, .3);
+    }
   }
   &--expand &__list {
     display: block;
@@ -76,17 +85,13 @@
     top: $nav-height + 3;
     width: 100%;
     list-style: none;
-    z-index: 10;
+    z-index: 5;
     @media (min-width: $screen-lg) {
       display: block;
       margin: 0 auto;
+      padding-right: 95px;
       top: 0;
-      background-color: transparent;
-    }
-  }
-  &__item {
-    @media (min-width: $screen-lg) {
-      display: inline-block;
+      background-color: rgba(#000, .3);
     }
   }
   &__item a {
@@ -102,7 +107,16 @@
     color: #fff;
     text-decoration: none;
     @media (min-width: $screen-lg) {
+      float: right;
       display: inline-block;
+      padding: 0 35px;
+      height: $nav-height-tablet;
+      background-color: rgba(#000, .3);
+      border-width: 0;
+      font-weight: normal;
+      font-size: $middle-font-size;
+      line-height: $nav-height-tablet;
+      text-transform: capitalize;
     }
   }
 }
@@ -121,6 +135,7 @@
       position: absolute;
       content: "";
       display: block;
+      z-index: 6;
       width: 75px;
       height: 23px;
       background-size: 75px 23px;
@@ -149,7 +164,7 @@
   height: ($menu-btn-sheet-height * 3) + ($menu-btn-sheet-margin * 2);
   width: $menu-btn-width;
   cursor: pointer;
-  z-index: 10;
+  z-index: 6;
 
   /* кнопка меню "гамбургер" */
   box-shadow: inset 0 4px 0 0 #fff;
