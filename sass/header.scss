@@ -60,9 +60,6 @@
   @media (min-width: $screen-md) {
     height: $nav-height-tablet;
   }
-  @media (min-width: $screen-lg) {
-    float: right;
-  }
   &--expand {
     height: $nav-height + 3;
     border-bottom: 1px solid #000;
@@ -86,11 +83,12 @@
     list-style: none;
     z-index: 5;
     @media (min-width: $screen-lg) {
-      display: block;
+      display: flex;
+      flex-direction: row;
+      justify-content: flex-end;
       margin: 0 auto;
       padding-right: 95px;
       top: 0;
-      //background-color: transparent;
     }
   }
   &__item a {
@@ -106,7 +104,6 @@
     color: #fff;
     text-decoration: none;
     @media (min-width: $screen-lg) {
-      float: right;
       display: inline-block;
       padding: 0 35px;
       height: $nav-height-tablet;

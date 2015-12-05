@@ -330,7 +330,7 @@
     @include wrapper;
   }
   &__table {
-width: 240%;
+    width: 240%;
     margin: 0 auto;
     border-collapse: collapse;
     &--switch-1 { transform: translateX(4%    /*0*/     ); }
