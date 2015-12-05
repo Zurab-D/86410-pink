@@ -20,12 +20,12 @@
     margin-bottom: 0px;
   }
   &--ask {
-    margin: 55px 0 31px 0;
+    margin: 55px 0 31px;
     @media (min-width: $screen_md) {
-      margin: 105px 0 41px 0;
+      margin: 105px 0 41px;
     }
     @media (min-width: $screen_lg) {
-      margin: 165px 0 55px 0;
+      margin: 165px 0 55px;
     }
   }
 }
@@ -47,7 +47,7 @@
     padding-top: 77px;
   }
   &__items {
-    margin: 93px 0 0 0;
+    margin: 93px 0 0;
     line-height: $base-line-height;
     @media (min-width: $screen_md) {
       margin-top: 128px;
@@ -191,7 +191,7 @@
     align-self: center;
   }
   &__info {
-    padding-left: 50px;
+    padding-left: 46px;
     text-align: left;
     width: 100px;
     flex-grow: 1;
@@ -329,16 +329,13 @@
   @media (min-width: $screen_md) {
     @include wrapper;
   }
-  @media (min-width: $screen_lg) {
-    @include wrapper;
-    //width: 100%;
-  }
   &__table {
+width: 240%;
     margin: 0 auto;
     border-collapse: collapse;
-    &--switch-1 { transform: translateX(0); }
-    &--switch-2 { transform: translateX(-31.7%); }
-    &--switch-3 { transform: translateX(-66.6%); }
+    &--switch-1 { transform: translateX(4%    /*0*/     ); }
+    &--switch-2 { transform: translateX(-29.2%/*-31.7%*/); }
+    &--switch-3 { transform: translateX(-62.4%/*-66.6%*/); }
     @media (min-width: $screen_md) {
       width: 100%;
       &--switch-1,
@@ -346,8 +343,6 @@
       &--switch-3 {
         transform: none;
       }
-    }
-    @media (min-width: $screen_lg) {
     }
   }
   &__1st-col,
@@ -363,7 +358,8 @@
     border: none;
   }
   &__th {
-    min-width: 278px;
+    min-width: 0;//278px;
+    width: 33.33333%;
     border: 2px solid $border-color;
     background-color: $base-color;
     @media (min-width: $screen_md) {
@@ -882,7 +878,7 @@
   flex-wrap: wrap;
   list-style: none;
   margin: 0 -15px;
-  padding: 35px 0 0 0;
+  padding: 35px 0 0;
   &__item {
     position: relative;
   }
@@ -940,7 +936,7 @@
     figcaption {
       position: absolute;
       bottom: -25px;
-      margin: 6px 0 0 0;
+      margin: 6px 0 0;
       padding: 0;
       font-size: 12px;
       line-height: 18px;
@@ -1049,7 +1045,7 @@
 /* --- blog.html -----------------------------------------*/
 
 .post-preview {
-  margin: 0 0 20px 0;
+  margin: 0 0 20px;
   padding: 5px 0 21px;
   text-align: left;
   text-decoration: none;
@@ -1093,7 +1089,7 @@
     }
   }
   &__subheader {
-    margin: 0 0 12px 0;
+    margin: 0 0 12px;
     padding: 0;
     font-size: 12px;
     color: $color-red;

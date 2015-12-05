@@ -12,3 +12,4 @@ node_modules/
 css/*.css
 ex_files
 Thumbs.db
+.gitignore

@@ -17,6 +17,23 @@ body {
   text-align: center;
   max-width: 1200px;
   margin: 0 auto;
+  &:after {
+    content: "";
+    position: fixed;
+    display: none;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    //background-color: rgba(111, 111, 111, .7);
+    background-color: rgba(#6d6d6f, .7);
+    z-index: 10;
+  }
+  &.show-overlay {
+    &:after {
+      display: block;
+    }
+  }
 }
 
 .hidden {
@@ -60,7 +77,8 @@ body {
   top: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(111, 111, 111, .7);
+  //background-color: rgba(111, 111, 111, .7);
+  background-color: rgba(#6d6d6f, .7);
   z-index: 10;
   &--hidden {
     display: none;
