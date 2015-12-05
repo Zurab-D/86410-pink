@@ -6,13 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/style.css">
 </head>
-<body class="form">
+<body>
   <header class="header  header--blog">
     <div class="header__wrap">
       <nav class="nav" id="nav">
-        <a class="logo  logo--top" href="index.html">
-          <img src="img/logo.png" width="75" height="25" alt="logo">
-        </a>
+        <a class="logo  logo--top" href="index.html">Главная</a>
         <span class="menu-btn" id="menu_btn"></span>
         <ul class="nav__list">
           <li class="nav__item"><a href="#">Информация</a></li>
@@ -21,19 +19,21 @@
           <li class="nav__item"><a href="form.html">Конкурс</a></li>
         </ul>
       </nav>
-      <div class="face">
-        <h1 class="face__text">Блог путешественников, пользователей Пинк</h1>
+      <div class="front">
+        <h1 class="front__text">Блог путешественников, пользователей Пинк</h1>
       </div>
     </div>
   </header>
 
 
 
-  <main class="main  wrapper">
+  <main class="post-wrapper">
     <article class="post">
       <h1 class="post__header">Антон и Надя в Тайланде</h1>
-      <p class="post__subheader">Опубликовано: 6 месяцев назад</p>
-      <p class="post__preview">Читайте рассказ о том, как семейная пара посещала Тайланд, стараясь максимально избегать избитых туристических мест и районов.</p>
+      <div class="post__preview-wrapper">
+        <p class="post__subheader">Опубликовано: 6 месяцев назад</p>
+        <p class="post__preview">Читайте рассказ о том, как семейная пара посещала Тайланд, стараясь максимально избегать избитых туристических мест и районов.</p>
+      </div>
 
       <h2 class="post__subtitle">Предыстория</h2>
       <p class="post__text">В Азию нам хотелось попасть уже давно, но все время что-то останавливало. Также не давал покоя вопрос гигиены и чистоты вокруг. Были сомнения и на счет местной еды. Однако, увидев выгодные билеты на <a href="#skyscanner.ru" class="post__link">skyscanner.ru</a> мы все-таки решились!</p>
@@ -62,15 +62,13 @@
 
 
   <footer class="footer">
-    <a class="logo  logo--bottom" href="index.html">
-      <img src="img/logo-pic.png" width="145" height="40" alt="logo">
-    </a>
+    <a class="logo  logo--bottom" href="index.html">Pink</a>
     <ul class="socials">
       <li><a class="socials__item  socials__item--tw" href="#tw">Twitter</a></li>
       <li><a class="socials__item  socials__item--fb" href="#fb">Facebook</a></li>
-      <li><a class="socials__item  socials__item--vk" href="#vk">VK</a></li>
+      <li><a class="socials__item  socials__item--yu" href="#yu">VK</a></li>
     </ul>
-    <a class="developed" href="#dev">Разработано</a>
+    <a class="footer__developed" href="#dev">Разработано</a>
   </footer>
 
 

@@ -6,34 +6,32 @@
   clear: both;
 }
 
-@mixin icon {
-  content: "";
-  display: block;
-  position: absolute;
-  background-color: transparent;
-  background-repeat: no-repeat;
-}
-
-@mixin reset-indents {
-  margin: 0px;
-  padding: 0px;
-}
-
-@mixin menu-list-item {
-  margin: 0px;
-  padding: 0px;
-  list-style: none;
-  display: inline-block;
-}
-
-@mixin no-bullet-list {
-  padding-left: 0px;
-  list-style: none;
-}
 
 @mixin outline {
   outline: 1px dashed lime;
 }
+
+
+@mixin fieldset-control {
+  min-height: 59px;
+  outline: none;
+  background-color: #fff;
+  border: 2px solid $border-color;
+  border-radius: 2px;
+  font-weight: normal;
+  font-size: $middle-font-size;
+  line-height: 27px;
+  color: $base-color;
+}
+
+
+@mixin wrapper {
+  padding: 0 20px;
+  @media (min-width: $screen_md) {
+    padding: 0 40px;
+  }
+}
+
 
 @mixin sign-x($color: #000, $size: 30px, $line-width: 2px, $bg-color: transparent) {
   position: relative;
@@ -42,11 +40,11 @@
   background-color: $bg-color;
   &:after ,
   &:before {
-    @include icon;
+    content: "";
+    position: absolute;
     width: 100%;
     height: $line-width;
-    //border-radius: 1px;
-    transform-origin: 50% 50%;
+    transform-origin: center;
     background-color: $color;
   }
   &:before {
@@ -57,15 +55,17 @@
   }
 }
 
+
 @mixin sign-v($color: #000, $size: 30px, $line-width: 2px, $bg-color: transparent) {
   width: $size;
   height: $size/100*45;
   border-left: $line-width solid $color;
   border-bottom: $line-width solid $color;
-  transform-origin: (center);
+  transform-origin: center;
   transform: rotate(-45deg);
   background-color: $bg-color;
 }
+
 
 /*
 @mixin sign-y($size: 20px, $color: #000, $bg-color: transparent) {
@@ -75,11 +75,12 @@
   background-color: $bg-color;
   &:after ,
   &:before {
-    @include icon;
+    content: "";
+    position: absolute;
     width: 100%;
     height: 3px;
     //border-radius: 1px;
-    transform-origin: 50% 50%;
+    transform-origin: center;
     background-color: $color;
   }
   &:before {
@@ -88,7 +89,7 @@
     transform: rotate(-45deg);
   }
   &:after {
-    transform-origin: 0px 0;
+    transform-origin: 0 0;
     //transform: translate(4px, 15px) rotate(45deg);
     transform: translate((6.5*$size)/ 35, (15.5*$size)/35) rotate(45deg);
     width: 35%;

@@ -1,53 +1,69 @@
 (function () {
+  "use strict";
   var
-    pricesSwitch1 = document.querySelector("#prices__table--switch-1"),
-    pricesSwitch2 = document.querySelector("#prices__table--switch-2"),
-    pricesSwitch3 = document.querySelector("#prices__table--switch-3"),
-    tablePrice = document.querySelector("#prices_table"),
     priceSwitch = document.querySelector("#price_switch"),
-    priceSwitchLi = !!priceSwitch && priceSwitch.querySelectorAll("li"),
+    priceSwitchItems = !!priceSwitch && priceSwitch.querySelectorAll(".switch__item"),
+    priceSwitchLabels = !!priceSwitch && priceSwitch.querySelectorAll(".switch__label"),
+    tablePrice = document.querySelector("#prices_table"),
     nav = document.querySelector("#nav"),
-    menuBtn = document.querySelector("#menu_btn")
-  ;
+    menuBtn = document.querySelector("#menu_btn"),
+    successDlg = document.querySelector("#success"),
+    successBtnClose = document.querySelector("#success_close"),
+    formBtnSubmit = document.querySelector("#submit_form"),
+    veil = document.querySelector("#veil");
 
-  function removePriceTableSwitchClasses() {
-    tablePrice.classList.remove("prices__table--switch-1");
-    tablePrice.classList.remove("prices__table--switch-2");
-    tablePrice.classList.remove("prices__table--switch-3");
-  };
-
+  // удаляем пометки (классы) активности у таблицы и у переключателей слайдера цен
   function removePriceSwitchClasses() {
-    /*priceSwitchLi.forEach(function (item, i, priceSwitchLi){
-      alert(1);
-      item.classList.remove("switch__item--active");
-    })*/
-    for (var i = 0; i < priceSwitchLi.length; i++) {
-      priceSwitchLi[i].classList.remove("switch__item--active");
+    tablePrice.className = "prices__table";
+    for (var i = 0; i < priceSwitchItems.length; i++) {
+      priceSwitchItems[i].classList.remove("switch__item--active");
     }
-  };
+  }
 
+  // обработчик переключателей слайдера
   function switchItemsListener(self) {
-    removePriceTableSwitchClasses();
-    tablePrice.classList.add(self.id);
     removePriceSwitchClasses();
+    !!tablePrice && tablePrice.classList.add(self.id);
     self.parentNode.classList.add("switch__item--active");
   }
 
-  !!pricesSwitch1 && pricesSwitch1.addEventListener('click', function(event){
-    switchItemsListener(this);
-  });
+  // показать полупрозрачную вуаль
+  function showVeil() {
+    !!veil && veil.classList.remove("veil--hidden");
+  }
 
-  !!pricesSwitch2 && pricesSwitch2.addEventListener('click', function(event){
-    switchItemsListener(this);
-  });
+  // показать диалог успеха
+  function showSuccessDlg() {
+    showVeil();
+    !!successDlg && successDlg.classList.remove("success--hidden");
+  }
 
-  !!pricesSwitch3 && pricesSwitch3.addEventListener('click', function(event){
-    switchItemsListener(this);
-  });
+  // назначаем обработчики переключателям слайдера цен
+  if (!!priceSwitchLabels) {
+    for (var i = 0; i < priceSwitchLabels.length; i++) {
+      !!priceSwitchLabels[i] && priceSwitchLabels[i].addEventListener("click", function(event) {
+        event.preventDefault();
+        switchItemsListener(this);
+      })
+  }}
 
-  menuBtn.addEventListener('click', function(event){
+  // спрятать / показать мобильное меню
+  !!menuBtn && menuBtn.addEventListener("click", function(event){
     event.preventDefault();
     nav.classList.toggle("nav--expand");
     menuBtn.classList.toggle("menu-btn--close");
-  })
-})();
+  });
+
+  // закрыть диалог успеха
+  !!successBtnClose && successBtnClose.addEventListener("click", function(event) {
+    event.preventDefault;
+    !!successDlg && successDlg.classList.add("success--hidden");
+    !!veil && veil.classList.add("veil--hidden");
+  });
+
+  // показать диалог успеха
+  !!formBtnSubmit && formBtnSubmit.addEventListener("click", function(event) {
+    event.preventDefault();
+    showSuccessDlg();
+  });
+}());

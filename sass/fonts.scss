@@ -1,58 +1,37 @@
 @font-face
 {
-    font-family: 'OpenSansBold';
+    font-family: 'OpenSans';
     font-weight: bold;
     font-style: normal;
 
-    src: url('#{$dirfont}/opensans-bold.eot');
-    src: url('#{$dirfont}/opensans-bold.eot?#iefix') format('embedded-opentype'),
-    url('#{$dirfont}/opensans-bold.woff') format('woff'),
-    url('#{$dirfont}/opensans-bold.ttf') format('truetype');
+    src: url('#{$dirfont}/opensans-bold.woff') format('woff');
 }
 
 @font-face
 {
-    font-family: 'OpenSansBoldItalic';
+    font-family: 'OpenSans';
     font-weight: bold;
+    font-style: italic;
 
-    src: url('#{$dirfont}/opensans-bolditalic.eot');
-    src: url('#{$dirfont}/opensans-bolditalic.eot?#iefix') format('embedded-opentype'),
-    url('#{$dirfont}/opensans-bolditalic.woff') format('woff'),
-    url('#{$dirfont}/opensans-bolditalic.ttf') format('truetype');
+    src: url('#{$dirfont}/opensans-bolditalic.woff') format('woff');
 }
 
 @font-face
 {
-    font-family: 'OpenSansItalic';
+    font-family: 'OpenSans';
     font-weight: normal;
-
-    src: url('#{$dirfont}/opensans-italic.eot');
-    src: url('#{$dirfont}/opensans-italic.eot?#iefix') format('embedded-opentype'),
-    url('#{$dirfont}/opensans-italic.woff') format('woff'),
-    url('#{$dirfont}/opensans-italic.ttf') format('truetype');
-}
-
-@font-face
-{
-    font-family: 'OpenSansLightItalic';
-    font-weight: normal;
-
-    src: url('#{$dirfont}/opensans-lightitalic.eot');
-    src: url('#{$dirfont}/opensans-lightitalic.eot?#iefix') format('embedded-opentype'),
-    url('#{$dirfont}/opensans-lightitalic.woff') format('woff'),
-    url('#{$dirfont}/opensans-lightitalic.ttf') format('truetype');
-}
-
-@font-face
-{
-    font-family: 'OpenSansRegular';
-    font-weight: 100;
     font-style: normal;
 
-    src: url('#{$dirfont}/opensans-regular.eot');
-    src: url('#{$dirfont}/opensans-regular.eot?#iefix') format('embedded-opentype'),
-    url('#{$dirfont}/opensans-regular.woff') format('woff'),
-    url('#{$dirfont}/opensans-regular.ttf') format('truetype');
+    src: url('#{$dirfont}/opensans-regular.woff') format('woff');
+}
+
+@font-face
+{
+    font-family: 'OpenSans';
+    font-weight: normal;
+    font-style: italic;
+
+    src: url('#{$dirfont}/opensans-italic.woff') format('woff');
 }
 
 @font-face
@@ -61,20 +40,14 @@
     font-weight: 100;
     font-style: normal;
 
-    src: url('#{$dirfont}/opensans-regular.eot');
-    src: url('#{$dirfont}/opensans-regular.eot?#iefix') format('embedded-opentype'),
-    url('#{$dirfont}/opensans-regular.woff') format('woff'),
-    url('#{$dirfont}/opensans-regular.ttf') format('truetype');
+    src: url('#{$dirfont}/opensans-light.woff') format('woff');
 }
 
 @font-face
 {
-    font-family: 'OpenSansLight';
+    font-family: 'OpenSans';
     font-weight: 100;
-    font-style: normal;
+    font-style: italic;
 
-    src: url('#{$dirfont}/opensans-light.eot');
-    src: url('#{$dirfont}/opensans-light.eot?#iefix') format('embedded-opentype'),
-    url('#{$dirfont}/opensans-light.woff') format('woff'),
-    url('#{$dirfont}/opensans-light.ttf') format('truetype');
+    src: url('#{$dirfont}/opensans-lightitalic.woff') format('woff');
 }
