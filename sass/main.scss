@@ -441,32 +441,27 @@
 
 .contacts {
   display: flex;
-  //flex-direction: column;
-  //margin: 0;
   flex-wrap: wrap;
   justify-content: space-between;
   align-items: flex-start;
   &__item {
-    //display: inline-block;
     flex-basis: 285px;
-    //width: 250px;
-    //margin: auto;
     margin-bottom: 20px;
     flex-grow: 1;
-    &:nth-child(1) {
+    &--phone {
       order: 1;
     }
-    &:nth-child(2) {
+    &--email {
       order: 2;
     }
-    &:nth-child(3) {
+    &--address {
       order: 3;
     }
     @media (min-width: $screen_md) {
       margin-bottom: 42px;
     }
     @media (min-width: $screen_lg) {
-      &:nth-child(2) {
+      &--email {
         order: 4;
       }
     }

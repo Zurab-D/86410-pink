@@ -26,12 +26,15 @@ body {
     width: 100%;
     height: 100%;
     //background-color: rgba(111, 111, 111, .7);
-    background-color: rgba(#6d6d6f, .7);
+    background-color: rgba(#000, .7);
     z-index: 10;
   }
   &.show-overlay {
     &:after {
       display: block;
+      @media (min-width: $screen-lg) {
+        //display: none;
+      }
     }
   }
 }
@@ -78,7 +81,7 @@ body {
   width: 100%;
   height: 100%;
   //background-color: rgba(111, 111, 111, .7);
-  background-color: rgba(#6d6d6f, .7);
+  background-color: rgba(#000, .7);
   z-index: 10;
   &--hidden {
     display: none;

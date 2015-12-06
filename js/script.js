@@ -75,6 +75,7 @@
     event.preventDefault();
     nav.classList.toggle("nav--expand");
     menuBtn.classList.toggle("menu-btn--close");
+    document.querySelector("body").classList.toggle("show-overlay");
   });
 
 
