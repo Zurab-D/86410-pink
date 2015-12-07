@@ -73,6 +73,9 @@
     padding-bottom: 13px;
     height: 127px;
   }
+  @media (min-width: $screen-md) {
+    height: 196px;
+  }
 
   &__developed {
     position: relative;
@@ -106,6 +109,8 @@
     }
     @media (min-width: $screen-lg) {
       width: 155px;
+      font-size: $middle-font-size;
+      line-height: normal;
     }
   }
 }

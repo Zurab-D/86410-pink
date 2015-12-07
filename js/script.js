@@ -1,7 +1,7 @@
 (function () {
   "use strict";
   var
-    priceSwitch = document.querySelector("#price_switch"),
+    priceSwitch = document.querySelector(".price_switch"),
     priceSwitchItems = !!priceSwitch && priceSwitch.querySelectorAll(".switch__item"),
     priceSwitchLabels = !!priceSwitch && priceSwitch.querySelectorAll(".switch__label"),
     tablePrice = document.querySelector(".prices__table"),

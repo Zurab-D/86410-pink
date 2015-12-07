@@ -1,6 +1,6 @@
 .header {
   position: relative;
-  margin: 0 0 47px 0;
+  margin: 0 0 47px;
   padding: 0;
   &--blog &__wrap {
     min-height: 197px;
@@ -16,7 +16,7 @@
     background-size: cover;
   }
   &--blog {
-    margin: 0 0 29px 0;
+    margin: 0 0 29px;
   }
   &--index &__wrap {
     @media (min-width: $screen-md) {
@@ -42,10 +42,16 @@
     flex-direction: column;
     display: flex;
   }
+  &--form {
+    @media (min-width: $screen-lg) {
+      margin: 0 0 92px;
+    }
+  }
 }
 
 
 .nav {
+  //@include wrapper;
   position: absolute;
   padding: 0;
   margin: 0;
@@ -81,6 +87,7 @@
     margin: 0;
     padding: 0;
     top: $nav-height + 3;
+    right: 0;
     width: 100%;
     list-style: none;
     z-index: 5;
@@ -129,9 +136,13 @@
   font-size: 0;
   &--top {
     position: relative;
-    margin: 21px 20px;
+    margin-top: 21px;
+    //margin-left:20px;
     @media (min-width: $screen-md) {
-      margin-left: 40px;
+      //margin-left: 40px;
+    }
+    @media (min-width: $screen-md) {
+      //margin-left: 130px;
     }
     &:before {
       position: absolute;
@@ -230,7 +241,7 @@
 
 .front {
   margin: 0;
-  padding: 66px 0 0 0;
+  padding: 66px 0 0;
   width: auto;
   &--img {
     height: $palm-height-mobile;
@@ -260,10 +271,12 @@
     line-height: $header-line-height;
     color: #fff;
     @media (min-width: $screen_md) {
-      padding-top: 82px;
-      padding-bottom: 80px;
+      padding: 82px 20px 80px 20px;
       font-size: 50px;
       line-height: 59px;
+    }
+    @media (min-width: $screen_md) {
+      padding: 82px 231px 94px;
     }
   }
 }
@@ -288,7 +301,6 @@
   @media (min-width: $screen_lg) {
     margin-left: 10%;//126px;
     width: 342px;
-    //padding: 28px 160px 30px;
   }
   &__header {
     margin: 0;
@@ -299,26 +311,22 @@
     line-height: $header-line-height;
     color: #fff;
     @media (min-width: $screen_md) {
-      padding-top: 108px;//174px;
+      padding-top: 108px;;
       padding-bottom: 28px;
       min-height: 0;
-      font-size: 40px; //$header-font-size;
-      line-height: 49px; //$header-line-height;
+      font-size: 40px;
+      line-height: 49px;
     }
     @media (min-width: $screen_lg) {
-      font-size: 50px; //$header-font-size;
-      line-height: 59px; //$header-line-height;
+      font-size: 50px;
+      line-height: 59px;
     }
   }
   &__inner {
     margin: 0 auto;
-    @media (min-width: $screen_md) {
-      //margin: 0;
-      //margin-bottom: 205px;
-    }
   }
   &__btn {
-    margin-bottom: 43px;//26px;
+    margin-bottom: 43px;
     padding: 16px 0 17px;
     width: 100%;
     background-color: $header-bg-color;

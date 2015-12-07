@@ -16,7 +16,7 @@
   min-height: 59px;
   outline: none;
   background-color: #fff;
-  border: 2px solid $border-color;
+  border: 2px solid $color-border;
   border-radius: 2px;
   font-weight: normal;
   font-size: $middle-font-size;
@@ -26,12 +26,22 @@
 
 
 @mixin wrapper {
-  padding: 0 20px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 20px;
+  padding-right: 20px;
   @media (min-width: $screen_md) {
-    padding: 0 40px;
+    padding-left: 40px;
+    padding-right: 40px;
   }
   @media (min-width: $screen_lg) {
-    padding: 0 130px;
+    //padding: 0 130px;
+    padding-left: 0;
+    padding-right: 0;
+    width: 940px;
+    //margin: 0 auto;
+    //margin-left: auto;
+    //margin-right: auto;
   }
 }
 

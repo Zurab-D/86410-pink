@@ -4,8 +4,6 @@ html { box-sizing: border-box; }
   transition: .3s;
 }
 
-//* {}
-
 body {
   background-color: #fff;
   color: $base-color;
@@ -15,8 +13,11 @@ body {
   font-size: $base-font-size;
   line-height: $base-line-height;
   text-align: center;
-  max-width: 1200px;
+  //max-width: 1200px;
   margin: 0 auto;
+  @media (min-width: $screen-lg) {
+    font-weight: normal;
+  }
   &:after {
     content: "";
     position: fixed;
@@ -33,7 +34,7 @@ body {
     &:after {
       display: block;
       @media (min-width: $screen-lg) {
-        //display: none;
+        display: none;
       }
     }
   }

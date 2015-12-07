@@ -15,6 +15,10 @@
     font-size: 40px;
     line-height: 47px;
   }
+  @media (min-width: $screen_lg) {
+    font-size: 50px;
+    line-height: 60px;
+  }
   &--offer {
     margin-top: -6px;
     margin-bottom: 0px;
@@ -44,7 +48,7 @@
     display: flex;
     flex-direction: column;
     margin: 0 auto;
-    padding-top: 77px;
+    padding-top: 75px;
   }
   &__items {
     margin: 93px 0 0;
@@ -57,7 +61,7 @@
     @media (min-width: $screen_lg) {
       display: flex;
       justify-content: space-between;
-      margin: 65px 0 41px;
+      margin: 66px 0 65px;
       width: 100%;
     }
   }
@@ -102,54 +106,55 @@
       order: 1;
     }
     @media (min-width: $screen_lg) {
-      display: flex;
+      padding: 0;
       width: 100%;
+      display: flex;
       justify-content: space-between;
     }
-  }
-  &__pic {
-    margin: 0 0 39px;
-    padding: 0;
-    //height: 157px;
-    background-size: 155px 320px;
-    &--1, &--2 { display: none; }
-    &--3 {
-      height: 278px;
-      width: auto;
-      background:
-        url(../img/iphone-screen-mobile-3@1x.png) no-repeat center 34px,
-        url(../img/iphone-case-mobile@1x.png) no-repeat top;
-      background-size:
-        141px,
-        157px;
-    }
-    @media (min-width: $screen_md) {
-      float: left;
-      margin-top: 55px;
-      height: 481px;
-      width: 268px;
-      background-size: 268px 481px;
+    &-item {
+      margin: 0 0 39px;
+      padding: 0;
+      //height: 157px;
+      background-size: 155px 320px;
+      &--1, &--2 { display: none; }
       &--3 {
-        background: url(../img/iphone-screen-tablet-3@1x.png) no-repeat;
+        height: 278px;
+        width: auto;
+        background:
+          url(../img/iphone-screen-mobile-3@1x.png) no-repeat center 34px,
+          url(../img/iphone-case-mobile@1x.png) no-repeat top;
+        background-size:
+          141px,
+          157px;
       }
-    }
-    @media (min-width: $screen_lg) {
-      flex-shrink: 1;
-      margin: 0;
-      height: 302px;
-      flex-basis: 292px;
-      background-size: 292px 302px;
-      &--1 {
-        display: block;
-        background: url(../img/iphone-screen-desktop-1@1x.png) no-repeat;
+      @media (min-width: $screen_md) {
+        float: left;
+        margin-top: 55px;
+        height: 481px;
+        width: 268px;
+        background-size: 268px 481px;
+        &--3 {
+          background: url(../img/iphone-screen-tablet-3@1x.png) no-repeat;
+        }
       }
-      &--2 {
-        display: block;
-        background: url(../img/iphone-screen-desktop-2@1x.png) no-repeat;
-      }
-      &--3 {
-        display: block;
-        background: url(../img/iphone-screen-desktop-3@1x.png) no-repeat;
+      @media (min-width: $screen_lg) {
+        flex-shrink: 1;
+        margin: 0;
+        height: 302px;
+        flex-basis: 292px;
+        background-size: 292px 302px;
+        &--1 {
+          display: block;
+          background: url(../img/iphone-screen-desktop-1@1x.png) no-repeat;
+        }
+        &--2 {
+          display: block;
+          background: url(../img/iphone-screen-desktop-2@1x.png) no-repeat;
+        }
+        &--3 {
+          display: block;
+          background: url(../img/iphone-screen-desktop-3@1x.png) no-repeat;
+        }
       }
     }
   }
@@ -165,7 +170,7 @@
     padding-bottom: 45px;
   }
   @media (min-width: $screen_lg) {
-    padding-bottom: 190px;
+    padding-bottom: 235px;
   }
   &__icon-wrapper {
     position: relative;
@@ -173,6 +178,10 @@
     height: 302px;
     background: url(../img/timer.svg) no-repeat;
     background-size: contain;
+    @media (min-width: $screen_lg) {
+      width: 299px;
+      height: 346px;
+    }
   }
   &__icon {
     position: absolute;
@@ -189,6 +198,15 @@
     border-radius: 50%;
     flex-basis: 214;
     align-self: center;
+    @media (min-width: $screen_lg) {
+      top: 72px;
+      left: 0;
+      width: 248px;
+      height: 248px;
+      font-size: 120px;
+      line-height: 222px;
+      border: 13px solid $color-red;
+    }
   }
   &__info {
     padding-left: 46px;
@@ -203,11 +221,21 @@
     font-weight: bold;
     font-size: $header-font-size;
     line-height: 36px;
+    @media (min-width: $screen_lg) {
+      padding-right: 0;
+      font-size: $header-line-height;
+      line-height: $header-line-height;
+    }
   }
   &__text,
   &__more {
     font-size: $base-font-size;
     line-height: $header-font-size;
+    @media (min-width: $screen_lg) {
+      font-weight: normal;
+      font-size: $middle-font-size;
+      line-height: $header-line-height;
+    }
   }
   &__more {
     color: $color-red;
@@ -217,6 +245,7 @@
 
 
 .slider-review {
+  position: relative;
   display: flex;
   flex-direction: column;
   //margin-bottom: 100px;
@@ -230,6 +259,7 @@
     }
   }
   &__item {
+    margin: 0 auto;
     display: none;
     flex-direction: column;
     &--active {
@@ -250,6 +280,9 @@
       font-size: 20px;
       margin-bottom: 3px;
     }
+    @media (min-width: $screen_lg) {
+      font-size: 24px;
+    }
   }
   &__author-description {
     display: none;
@@ -257,6 +290,13 @@
     order: 2;
     @media (min-width: $screen_md) {
       display: block;
+      font-weight: normal;
+      font-size: $middle-font-size;
+    }
+  }
+  &__quote {
+    @media (min-width: $screen_lg) {
+      display: none;
     }
   }
   &__text {
@@ -270,9 +310,23 @@
       order: 0;
     }
   }
-  &__quote {
-    @media (min-width: $screen_lg) {
-      display: none;
+  &__arrow {
+    display: none;
+    position: absolute;
+    top: 12%;
+    width: 22px;
+    height: 42px;
+    background-size: 22px 42px;
+    cursor: pointer;
+    &--lef {
+      background: url(../img/review-arrow-left.svg) no-repeat center;
+    }
+    &--right {
+      background: url(../img/review-arrow-right.svg) no-repeat center;
+      right: 0;
+    }
+    @media (min-width: $screen-lg) {
+      display: block;
     }
   }
 }
@@ -360,7 +414,7 @@
   &__th {
     min-width: 0;//278px;
     width: 33.33333%;
-    border: 2px solid $border-color;
+    border: 2px solid $color-border;
     background-color: $base-color;
     @media (min-width: $screen_md) {
       min-width: 0;
@@ -370,7 +424,7 @@
   &__td {
     position: relative;
     padding: 14px 0 15px 22px;
-    border: 2px solid $border-color;
+    border: 2px solid $color-border;
     font-weight: normal;
     font-size: $base-font-size;
     line-height: $header-line-height;
@@ -444,6 +498,7 @@
   flex-wrap: wrap;
   justify-content: space-between;
   align-items: flex-start;
+  @include wrapper;
   &__item {
     flex-basis: 285px;
     margin-bottom: 20px;
@@ -510,12 +565,15 @@
 
 .story {
   margin: 0 0 10px;
-  //padding: 0 100px;
   font-weight: normal;
   font-size: $base-font-size;
   line-height: $header-line-height;
   @media (min-width: $screen-md) {
     font-size: $middle-font-size;
+  }
+  @media (min-width: $screen-lg) {
+    //margin-bottom: 55px;
+    margin: 0 0 45px;
   }
   &__fill-please {
     display: none;
@@ -532,10 +590,6 @@
   border: none;
   text-align: left;
   @media (min-width: $screen-md) {
-    &--fio &__wrapper {
-      padding-top: 0;
-      border: none;
-    }
     &--trip-date &__wrapper {
       display: flex;
     }
@@ -549,13 +603,23 @@
       flex-basis: 47.5%;
     }
   }
+  @media (min-width: $screen-lg) {
+    padding: 63px 0 0;
+    &--trip-date &__input,
+    &--trip-date .calc__wrapper {
+      flex-basis: 240px;
+    }
+  }
   &__wrapper {
     position: relative;
     @include wrapper;
     @media (min-width: $screen-md) {
       margin: 0 40px;
       padding: 42px 58px 0;
-      border: 2px solid $border-color;
+      border: 2px solid $color-border;
+    }
+    @media (min-width: $screen-lg) {
+      margin: 0 auto;
     }
   }
   &__header {
@@ -596,6 +660,9 @@
       &::-moz-placeholder {color: $base-color;font-weight: normal;}
       &:-moz-placeholder {color: $base-color;font-weight: normal;}
       &:disabled {background-color: $color-bg-grey}
+      @media (min-width: $screen-lg) {
+        flex-basis: 284px;
+      }
     }
   }
   &__ul {
@@ -609,6 +676,9 @@
           margin-top: 15px;
         }
       }
+      @media (min-width: $screen-lg) {
+        margin: 0;
+      }
     }
     @media (min-width: $screen-md) {
       margin-top: 0px;//54px;
@@ -621,6 +691,14 @@
     margin: 0;
     padding: 0;
     @include wrapper;
+    @media (min-width: $screen-md) {
+      padding-top: 0;
+      border: none;
+    }
+    @media (min-width: $screen-lg) {
+      display: flex;
+      justify-content: space-between;
+    }
   }
   &__control {
     @include fieldset-control;
@@ -628,28 +706,30 @@
   &--app,
   &--travelers,
   &--photo {
+    padding-bottom: 5px;
     background-color: $color-bg-grey;
     @media (min-width: $screen-md) {
       background-color: transparent;
     }
   }
+  &--photo &__wrapper {
+    @media (min-width: $screen-lg) {
+      display: block;
+    }
+  }
   &--trip-date &__label {
     margin-top: 9px;
-    margin-bottom: 31px;
+    margin-bottom: 14px;
     text-align: center;
   }
   &--travelers &__label {
     margin-top: 8px;
   }
-  /*&--travelers .calc {
-    margin-top: 20px;
-    @media (min-width: $screen-md) {
-      &__result,
-      &__rem {
-        border: 0;
-      }
+  &--travelers &__wrapper {
+    @media (min-width: $screen-lg) {
+      padding-bottom: 46px;
     }
-  }*/
+  }
   &--app &__label,
   &--achievements &__label {
     position: relative;
@@ -671,7 +751,7 @@
     left: 0;
     top: 50%;
     transform: translateY(-50%);
-    border: 2px solid $border-color;
+    border: 2px solid $color-border;
   }
   &--achievements &__label:after {
     content: "";
@@ -682,12 +762,32 @@
     left: 8px;
     top: 8px;
   }
+  &--achievements &__ul {
+    @media (min-width: $screen-lg) {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      li {
+        flex-basis: 33%;
+      }
+    }
+  }
   &--app &__label:before {
     border: 10px solid #fff;
     border-radius: 50%;
-    box-shadow: 0 0 0 2px $border-color;
+    box-shadow: 0 0 0 2px $color-border;
   }
-  &--achievements &__label:before {}
+  &--app &__ul {
+    @media (min-width: $screen-lg) {
+      display: flex;
+      align-items: center;
+      justify-content: space-around;
+    }
+  }
+  &--app &__wrapper {
+    padding: 42px 41px;
+  }
   &__radio,
   &__checkbox {
     display: none;
@@ -702,9 +802,6 @@
       @include sign-v($color-red, 20px);
     }
   }
-  &--photo {
-    padding-bottom: 5px;
-  }
 }
 
 
@@ -715,7 +812,7 @@
     @media (min-width: $screen-md) {
       width: 252px;
       padding-bottom: 40px;
-      //border-bottom: 2px solid $border-color;
+      //border-bottom: 2px solid $color-border;
     }
   }
   &--persons &__result,
@@ -731,7 +828,7 @@
     width: 63px;//57px;
     height: 59px;
     background-color: #fff;
-    border: 2px solid $border-color;
+    border: 2px solid $color-border;
     font-size: 0;
     &:before,
     &:after {
@@ -793,10 +890,13 @@
 .person {
   display: flex;
   margin-bottom: 30px;
+  @media (min-width: $screen-lg) {
+    margin-bottom: 13px;
+  }
   &:nth-of-type(2) {
     @media (min-width: $screen-md) {
       padding-top: 23px;
-      border-top: 2px solid $border-color;
+      border-top: 2px solid $color-border;
     }
   }
   &__number-cover {
@@ -826,6 +926,15 @@
     flex-grow: 1;
     @media (min-width: $screen-md) {
       padding-left: 20px;
+    }
+    @media (min-width: $screen-lg) {
+      display: flex;
+      justify-content: space-between;
+    }
+    .fieldset__input {
+      @media (min-width: $screen-lg) {
+        flex-basis: 301px; //48.4%;
+      }
     }
   }
   &__delete-wrapper {
@@ -861,7 +970,7 @@
   font-size: $middle-font-size;
   line-height: 59px;//$header-line-height;
   color: $base-color;
-  border: 2px solid $border-color;
+  border: 2px solid $color-border;
   background-color: #fff;
 }
 
@@ -1048,7 +1157,7 @@
   font-size: $base-font-size;
   line-height: 27px;
   color: $base-color;
-  border-bottom: 1px solid $border-color;
+  border-bottom: 1px solid $color-border;
   @media (min-width: $screen-md) {
     margin-bottom: 64px;
     border-bottom: none;
@@ -1137,7 +1246,7 @@
       margin-right: 0;
     }
     width: 59px;
-    border: 2px solid $border-color;
+    border: 2px solid $color-border;
     font-weight: bold;
     font-size: $middle-font-size;
     line-height: 59px;
@@ -1204,13 +1313,13 @@
   &__preview {
     text-align: center;
     font-size: 16px;
-    border-bottom: 1px solid $border-color;
+    border-bottom: 1px solid $color-border;
     @media (min-width: $screen-md) {
       margin: 0;
       padding-bottom: 44px;
       font-size: $header-font-size;
       line-height: 40px;
-      border-bottom: 2px dotted $border-color;
+      border-bottom: 2px dotted $color-border;
       order: 1;
     }
   }
@@ -1278,6 +1387,10 @@
     @media (min-width: $screen_md) {
       margin: 0 40px;
       padding: 0 60px;
+    }
+    @media (min-width: $screen_lg) {
+      padding: 0 80px;
+      margin: 0 auto;
     }
   }
   &--post {
