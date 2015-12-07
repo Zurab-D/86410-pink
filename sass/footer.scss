@@ -63,20 +63,22 @@
 }
 
 .footer {
-  &--index {
-    display: none;
-  }
+  @include wrapper;
   @media (min-width: $screen-md) {
     display: flex;
     align-items: center;
-    justify-content: space-around;
+    justify-content: space-between;
     padding-bottom: 13px;
     height: 127px;
   }
-  @media (min-width: $screen-md) {
+  @media (min-width: $screen-lg) {
     height: 196px;
   }
-
+  &--index {
+    @media (max-width: $screen-md) {
+      display: none;
+    }
+  }
   &__developed {
     position: relative;
     display: block;
@@ -92,9 +94,11 @@
     @media (min-width: $screen-md) {
       margin: 0;
     }
-    /*@media (min-width: $screen-md) {
-      margin: 0;
-    }*/
+    @media (min-width: $screen-lg) {
+      width: 155px;
+      font-size: $middle-font-size;
+      line-height: normal;
+    }
     &:after {
       position: absolute;
       content: "";
@@ -106,11 +110,6 @@
       right: 0;
       background: url(../img/htmlacademy.svg) no-repeat center;
       background-size: 27px;
-    }
-    @media (min-width: $screen-lg) {
-      width: 155px;
-      font-size: $middle-font-size;
-      line-height: normal;
     }
   }
 }

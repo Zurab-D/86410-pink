@@ -592,9 +592,6 @@
   @media (min-width: $screen-md) {
     &--trip-date &__wrapper {
       display: flex;
-    }
-    &--trip-date &__wrapper {
-      display: flex;
       justify-content: space-between;
       flex-wrap: wrap;
     }
@@ -762,14 +759,23 @@
     left: 8px;
     top: 8px;
   }
+  &--achievements &__wrapper {
+    @media (min-width: $screen-lg) {
+      padding: 55px 0 0 115px;
+    }
+  }
   &--achievements &__ul {
     @media (min-width: $screen-lg) {
+      margin-bottom: 9px;
       display: flex;
       flex-wrap: wrap;
       justify-content: space-between;
       align-items: center;
+      align-content: space-around;
+      height: 100%;
       li {
-        flex-basis: 33%;
+        margin: 0 0 48px;
+        flex-basis: 26%;
       }
     }
   }
@@ -963,6 +969,7 @@
 
 
 .load-file-label {
+  position: relative;
   margin-bottom: 33px;
   width: 100%;
   height: 59px;
@@ -972,6 +979,19 @@
   color: $base-color;
   border: 2px solid $color-border;
   background-color: #fff;
+  @media (min-width: $screen-md) {
+    margin-bottom: 41px;
+    &:after {
+      content: "";
+      display: block;
+      position: absolute;
+      width: 100%;
+      height: 2px;
+      background-color: $color-border;
+      left: 0;
+      bottom: -45px;
+    }
+  }
 }
 
 
@@ -983,6 +1003,9 @@
   list-style: none;
   margin: 0 -15px;
   padding: 35px 0 0;
+  @media (min-width: $screen-md) {
+    padding-top: 42px;
+  }
   &__item {
     position: relative;
   }
@@ -994,9 +1017,15 @@
     background-color: #fff;
     border-radius: 50%;
     top: 8px;
-    right: 10px;
+    right: 0px;
     font-size: 0;
     z-index: 1;
+    @media (min-width: $screen-md) {
+      width: 55px;
+      height: 55px;
+      top: -1px;
+      right: -11px;
+    }
     &:after ,
     &:before {
       content: "";
@@ -1018,7 +1047,7 @@
   }
   &__img {
     position: relative;
-    overflow: hidden;
+    //overflow: hidden;
     display: block;
     width: 67px;
     height: 67px;
@@ -1034,8 +1063,12 @@
       left: 50%;
       transform: translate(-50%, -50%);
       display: block;
-      width: auto;
-      height: 100%;
+      width: 67px;//auto;
+      height: 67px;//100%;
+      @media (min-width: $screen-md) {
+        width: 120px;
+        height: 120px;
+      }
     }
     figcaption {
       position: absolute;
@@ -1052,12 +1085,16 @@
 
 .submit {
   margin: 0 0 63px;
-  padding: 0 20px;
+  //padding: 0 20px;
+  @include wrapper;
   @media (min-width: $screen-md) {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0 40px;
+    //padding: 0 40px;
+  }
+  @media (min-width: $screen-lg) {
+    margin-bottom: 0;
   }
   &__btn {
     display: block;
