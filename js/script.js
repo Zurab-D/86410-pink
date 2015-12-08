@@ -9,7 +9,13 @@
     menuBtn = document.querySelector("#menu_btn"),
     successDlg = document.querySelector(".success"),
     successBtnClose = document.querySelector(".success__btn"),
-    formBtnSubmit = document.querySelector(".submit__btn")
+    formBtnSubmit = document.querySelector(".submit__btn"),
+    daysCount = document.querySelector("#days_count"),
+    daysCountMinus = document.querySelector("#days_count_minus"),
+    daysCountPlus = document.querySelector("#days_count_plus"),
+    personsCount = document.querySelector("#persons_count"),
+    personsCountMinus = document.querySelector("#persons_count_minus"),
+    personsCountPlus = document.querySelector("#persons_count_plus")
   ;
 
 
@@ -36,11 +42,11 @@
   // показать полупрозрачную вуаль
   function showOverlay() {
     document.querySelector("body").classList.add("show-overlay");
-  }
+  };
   // скрыть полупрозрачную вуаль
   function hideOverlay() {
     document.querySelector("body").classList.remove("show-overlay");
-  }
+  };
 
 
 
@@ -55,7 +61,7 @@
     event.preventDefault;
     !!successDlg && successDlg.classList.add("success--hidden");
     hideOverlay();
-  }
+  };
 
 
 
@@ -66,7 +72,7 @@
         event.preventDefault();
         switchItemsListener(this);
       })
-  }}
+  }};
 
 
 
@@ -87,5 +93,49 @@
   // закрыть диалог успеха
   !!successBtnClose && successBtnClose.addEventListener("click", function(event) {
     hideSuccessDlg(event);
+  });
+
+
+
+  // увеличить значение поля input.value
+  function inputValueInc(input, event) {
+    if (!!input) {
+      event.preventDefault();
+      var sum = parseInt(input.value);
+      !!sum || sum === 0 ? sum = sum + 1 : null;
+      !!sum ? input.value = sum : null;
+    }
+  };
+  // уменьшить значение поля input.value
+  function inputValueDec(input, event) {
+    if (!!input) {
+      event.preventDefault();
+      var sum = parseInt(input.value);
+      !!sum ? sum = sum - 1 : null;
+      !!sum || sum === 0 ? input.value = sum : null;
+    }
+  };
+
+
+
+  // количество дней - минус
+  !!daysCountMinus && daysCountMinus.addEventListener("click", function(event) {
+    inputValueDec(daysCount, event);
+  });
+  // количество дней - плюс
+  !!daysCountPlus && daysCountPlus.addEventListener("click", function(event) {
+   inputValueInc(daysCount, event);
+  });
+
+
+
+  // количество попутчиков - минус
+  !!personsCountMinus && personsCountMinus.addEventListener("click", function(event) {
+    inputValueDec(personsCount, event);
+  });
+  // количество попутчиков - плюс
+  !!personsCountPlus && personsCountPlus.addEventListener("click", function(event) {
+    event.preventDefault();
+   inputValueInc(personsCount, event);
   });
 }());

@@ -2,6 +2,45 @@
   position: relative;
   margin: 0 0 47px;
   padding: 0;
+  &__front {
+    margin: 0;
+    padding: 66px 0 0;
+    width: auto;
+    &--img {
+      height: $palm-height-mobile;
+      background: url("../img/palm.png") 50% 119% no-repeat;
+      background-size: 320px auto;
+      /*background: url("../img/iphone-hand-mobile.png") bottom no-repeat;
+      background-size: auto 268px;*/
+      @media (min-width: $screen_md) {
+        height: $palm-height-tablet;
+        background: url("../img/palm-tablet.png") 60% 100% no-repeat;
+        /*height: 100%;
+        background: url("../img/iphone-hand-tablet@1x.png") bottom no-repeat;
+        background-size: auto 545px;*/
+      }
+      @media (min-width: $screen-lg) {
+        height: $palm-height-desktop;
+        background: url("../img/iphone-hand-desktop@1x.png") 100% 100% no-repeat;
+      }
+    }
+    &-text {
+      margin: 0;
+      padding: 14px 20px;
+      font-weight: 100;
+      font-size: 24px;
+      line-height: $header-line-height;
+      color: #fff;
+      @media (min-width: $screen_md) {
+        padding: 82px 20px 80px 20px;
+        font-size: 50px;
+        line-height: 59px;
+      }
+      @media (min-width: $screen_lg) {
+        padding: 108px 231px 101px;
+      }
+    }
+  }
   &--blog &__wrap {
     min-height: 197px;
     @media (min-width: $screen-md) {
@@ -12,11 +51,25 @@
     position: relative;
     width: auto;
     min-height: 237px;
-    background: #2e3e4f url("../img/bg.jpg") center no-repeat;
+    background: #2e3e4f url("../img/background-fullsize.jpg") center no-repeat;
     background-size: cover;
+    @media (min-width: $screen-md) {
+      background: #2e3e4f url("../img/background-fullsize.jpg") no-repeat 50% 26%;
+      background-size: 1285px;
+    }
+    @media (min-width: $screen-lg) {
+      background: #2e3e4f url("../img/background-fullsize.jpg") no-repeat center top;
+      background-size: 1285px;
+    }
   }
   &--blog {
     margin: 0 0 29px;
+    @media (min-width: $screen-md) {
+      margin-bottom: 90px;
+    }
+    @media (min-width: $screen-lg) {
+      margin-bottom: 100px;
+    }
   }
   &--index &__wrap {
     @media (min-width: $screen-md) {
@@ -67,9 +120,12 @@
     //z-index: 5;
   }
   &--expand {
-    height: $nav-height + 3;
     border-bottom: 1px solid #000;
     background-color: $base-color;
+    height: $nav-height + 3;
+    @media (min-width: $screen-md) {
+      height: $nav-height-tablet + 3;
+    }
     @media (min-width: $screen-lg) {
       height: $nav-height-tablet;
       border-bottom-width: 0;
@@ -87,11 +143,14 @@
     display: none;
     margin: 0;
     padding: 0;
-    top: $nav-height + 3;
     right: 0;
     width: 100%;
     list-style: none;
     z-index: 5;
+    top: $nav-height + 3;
+    @media (min-width: $screen-md) {
+      top: $nav-height-tablet + 3;
+    }
     @media (min-width: $screen-lg) {
       position: static;
       display: flex;
@@ -115,6 +174,12 @@
     text-transform: uppercase;
     color: #fff;
     text-decoration: none;
+    &:hover {
+      color: $color-red;
+    }
+    &:active {
+      color: rgba($color-red, .3);
+    }
     @media (min-width: $screen-lg) {
       display: inline-block;
       padding: 0 35px;
@@ -125,6 +190,24 @@
       font-size: $middle-font-size;
       line-height: $nav-height-tablet;
       text-transform: capitalize;
+      &:hover {
+        position: relative;
+        top: -2px;
+        color: #fff;
+      }
+      &:hover:before {
+        position: relative;
+        content: "";
+        display: block;
+        height: 2px;
+        width: 100%;
+        background-color: #fff;
+        bottom: -78px;
+      }
+      &:active,
+      &focus {
+        opacity: .3;
+      }
     }
   }
 }
@@ -139,14 +222,12 @@
   font-size: 0;
   &--top {
     position: relative;
-    margin-top: 21px;
-    //margin-left:20px;
+    margin-top: ($nav-height - $logo-height) / 2;
     @media (min-width: $screen-md) {
-      //margin-left: 40px;
+      margin-top: (($nav-height-tablet - $logo-height) / 2) - ($logo-height-tablet - $logo-height);
     }
     @media (min-width: $screen-lg) {
       position: absolute;
-      //margin-left: 130px;
     }
     &:before {
       position: absolute;
@@ -170,6 +251,26 @@
         background: url(../img/logotype-white-desktop.svg) no-repeat center;
       }
     }
+    &:hover:before {
+      background: url(../img/logotype-white-mobile--hover.svg) no-repeat center;
+      @media (min-width: $screen-md) {
+        background: url(../img/logotype-white-tablet--hover.svg) no-repeat center;
+      }
+      @media (min-width: $screen-lg) {
+        background: url(../img/logotype-white-desktop--hover.svg) no-repeat center;
+      }
+    }
+    //&:focus:before,
+    &:active:before {
+      opacity: 0.3;
+      background: url(../img/logotype-white-mobile.svg) no-repeat center;
+      @media (min-width: $screen-md) {
+        background: url(../img/logotype-white-tablet.svg) no-repeat center;
+      }
+      @media (min-width: $screen-lg) {
+        background: url(../img/logotype-white-desktop.svg) no-repeat center;
+      }
+    }
   }
   &--bottom {
     position: static;
@@ -186,24 +287,40 @@
     @media (min-width: $screen-lg) {
       background: url(../img/logotype-blue-desktop.svg) no-repeat center;
     }
+    &:hover {
+      background: url(../img/logotype-blue-tablet--hover.svg) no-repeat center;
+      @media (min-width: $screen-lg) {
+        background: url(../img/logotype-blue-desktop--hover.svg) no-repeat center;
+      }
+    }
+    //&:focus,
+    &:active {
+      opacity: 0.3;
+      background: url(../img/logotype-blue-tablet.svg) no-repeat center;
+      @media (min-width: $screen-lg) {
+        background: url(../img/logotype-blue-desktop.svg) no-repeat center;
+      }
+    }
   }
 }
 
 
 .menu-btn {
   position: absolute;
-  top: 21px;
   right: 20px;
-  height: ($menu-btn-sheet-height * 3) + ($menu-btn-sheet-margin * 2);
+  height: $menu-btn-height;
   width: $menu-btn-width;
+  top: ($nav-height - $menu-btn-height) / 2;
   cursor: pointer;
   z-index: 6;
   @media (min-width: $screen-md) {
+    top: ($nav-height-tablet - $menu-btn-height) / 2;
     right: 40px;
   }
   @media (min-width: $screen-lg) {
     display: none;
   }
+
   /* кнопка меню "гамбургер" */
   box-shadow: inset 0 4px 0 0 #fff;
   &:before,
@@ -221,6 +338,24 @@
   &:before {top: $menu-btn-sheet-height + $menu-btn-sheet-margin;}
   &:after {top: ($menu-btn-sheet-height + $menu-btn-sheet-margin) * 2;}
 
+  &:hover:before,
+  &:hover:after {
+    background-color: $color-red;
+  }
+  &:hover {
+    box-shadow: inset 0 4px 0 0 $color-red;
+  }
+  &:active:before,
+  &:active:after {
+    background-color: $color-red;
+    //opacity: .3;
+  }
+  &:active {
+    box-shadow: inset 0 4px 0 0 $color-red;
+    opacity: .3;
+  }
+
+
   /* кнопка "крестик" для закрытия меню */
   &--close {
     width: 22px;
@@ -237,50 +372,12 @@
     }
     &:before { transform: rotate(45deg); }
     &:after { transform: rotate(-45deg); }
-    &:active:before,
-    &:active:after { background-color: #b7dff8; }
-  }
-}
-
-
-.front {
-  margin: 0;
-  padding: 66px 0 0;
-  width: auto;
-  &--img {
-    height: $palm-height-mobile;
-    background: url("../img/palm.png") 50% 119% no-repeat;
-    background-size: 320px auto;
-    /*background: url("../img/iphone-hand-mobile.png") bottom no-repeat;
-    background-size: auto 268px;*/
-    @media (min-width: $screen_md) {
-      height: $palm-height-tablet;
-      background: url("../img/palm-tablet.png") 60% 100% no-repeat;
-      /*height: 100%;
-      background: url("../img/iphone-hand-tablet@1x.png") bottom no-repeat;
-      background-size: auto 545px;*/
-    }
-    @media (min-width: $screen-lg) {
-      height: $palm-height-desktop;
-      background: url("../img/iphone-hand-desktop@1x.png") 100% 100% no-repeat;
-      /*height: 100%;
-      background: url("../img/iphone-hand-desktop@1x.png") bottom no-repeat;
-      background-size: auto 645px;*/
-    }
-  }
-  &__text {
-    padding: 14px 20px;
-    font-weight: 100;
-    font-size: 24px;
-    line-height: $header-line-height;
-    color: #fff;
-    @media (min-width: $screen_md) {
-      padding: 82px 20px 80px 20px;
-      font-size: 50px;
-      line-height: 59px;
-    }
-    @media (min-width: $screen_md) {
-      padding: 82px 231px 94px;
+    /*&:active:before,
+    &:active:after { background-color: #b7dff8; }*/
+    &:hover,
+    &:focus,
+    &:active {
+      box-shadow: none;
     }
   }
 }
@@ -305,6 +402,7 @@
   @media (min-width: $screen_lg) {
     margin-left: 10%;//126px;
     width: 342px;
+    height: 750px;
   }
   &__header {
     margin: 0;
@@ -322,6 +420,7 @@
       line-height: 49px;
     }
     @media (min-width: $screen_lg) {
+      padding: 126px 20px 53px;
       font-size: 50px;
       line-height: 59px;
     }
@@ -343,6 +442,17 @@
     @media (min-width: $screen_md) {
       background-color: transparent;
     }
+    @media (min-width: $screen_lg) {
+      margin-bottom: 63px;
+    }
+    &:hover {
+      background-color: #fff;
+      color: $color-red;
+    }
+    //&:focus,
+    &:active {
+      color: rgba($color-red, .3);
+    }
   }
   &__items{
     display: flex;
@@ -351,6 +461,9 @@
     height: 84px;
     list-style: none;
     justify-content: space-between;
+    @media (min-width: $screen_lg) {
+      height: 113px;
+    }
   }
   &__item {
     & a{
@@ -361,9 +474,9 @@
       background-position: center;
       background-repeat: no-repeat;
     }
-    &--ios a { background-image: url("../img/icon-apple.png"); }
-    &--and a { background-image: url("../img/icon-android.png"); }
-    &--win a { background-image: url("../img/icon-windows.png"); }
+    &--ios a { background-image: url("../img/apple-logo.svg"); }
+    &--and a { background-image: url("../img/android-logo.svg"); }
+    &--win a { background-image: url("../img/microsoft-logo.svg"); }
   }
   &__text {
     margin: 0;

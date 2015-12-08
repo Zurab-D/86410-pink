@@ -1,7 +1,7 @@
 html { box-sizing: border-box; }
 *, *:before, *:after {
   box-sizing: inherit;
-  transition: .3s;
+  //transition: .3s;
 }
 
 body {
@@ -34,7 +34,7 @@ body {
     &:after {
       display: block;
       @media (min-width: $screen-lg) {
-        display: none;
+        //display: none;
       }
     }
   }
@@ -92,5 +92,15 @@ body {
 .show-for-mobile {
   @media (min-width: $screen-md) {
     display: none;
+  }
+}
+
+input[type=text] {
+  &:hover {
+    border-color: $base-color;
+  }
+  &:focus,
+  &:active {
+    border-color: $color-red;
   }
 }

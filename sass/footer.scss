@@ -19,7 +19,6 @@
     &:before {
       left: -23px;
       top: -17px;
-
       position: absolute;
       content: "";
       display: block;
@@ -31,6 +30,13 @@
         //left: 0;
         //top: -8.5px;
       }
+    }
+    &:hover:before {
+      border-color: $base-color;
+    }
+    //&:focus:before,
+    &:active:before {
+      border-color: $color-light-blue-border;
     }
     &:after {
       position: absolute;
@@ -110,6 +116,13 @@
       right: 0;
       background: url(../img/htmlacademy.svg) no-repeat center;
       background-size: 27px;
+    }
+    &:hover:after {
+      background: url(../img/htmlacademy--hover.svg) no-repeat center;
+      background-size: 27px;
+    }
+    &:active:after {
+      opacity: .3;
     }
   }
 }

@@ -21,8 +21,8 @@
           </ul>
         </div>
       </nav>
-      <div class="front">
-        <h1 class="front__text">Конкурс на самое безбашенное путешествие с Пинк</h1>
+      <div class="header__front">
+        <h1 class="header__front-text">Конкурс на самое безбашенное путешествие с Пинк</h1>
       </div>
     </div>
   </header>
@@ -86,12 +86,12 @@
 
           <div class="calc__wrapper">
             <div class="calc  calc--days">
-              <button class="calc__btn  calc__btn--minus  btn" type="button">-</button>
+              <button class="calc__btn  calc__btn--minus  btn" id="days_count_minus" type="button">-</button>
               <div class="calc__result-over">
                 <input class="calc__result" type="text" id="days_count" name="days_count" data-label="дней" min="1" value="10" pattern="\d+" required>
                 <div class="calc__rem">дней</div>
               </div>
-              <button class="calc__btn  calc__btn--plus  btn" type="button">+</button>
+              <button class="calc__btn  calc__btn--plus  btn" id="days_count_plus" type="button">+</button>
             </div>
             <div class="fieldset__label" for="days_count">Продолжительность</div>
           </div>
@@ -109,12 +109,12 @@
         <div class="fieldset__wrapper">
           <h3 class="fieldset__header"><label for="persons_count">Количество попутчиков *</label></h3>
           <div class="calc  calc--persons">
-            <button class="calc__btn  calc__btn--minus  btn" type="button">-</button>
+            <button class="calc__btn  calc__btn--minus  btn" id="persons_count_minus" type="button">-</button>
             <div class="calc__result-over">
               <input class="calc__result" type="text" id="persons_count" name="persons_count" data-label="чел" pattern="\d+" value="0" min="0" required>
               <div class="calc__rem">чел</div>
             </div>
-            <button class="calc__btn  calc__btn--plus  btn" type="button">+</button>
+            <button class="calc__btn  calc__btn--plus  btn" id="persons_count_plus" type="button">+</button>
           </div>
 
           <div class="person">
