@@ -17,22 +17,27 @@ $header-wrap-hight: 458px;
 $header-wrap-hight-small: 237px;
 
 $nav-height: 66px;
+$nav-height-tablet: 110px;
 $nav-item-height: 62px;
 
-$menu-btn-width: 50px;
 $menu-btn-sheet-height: 4px;
 $menu-btn-sheet-margin: 6px;
+$menu-btn-width: 50px;
+$menu-btn-height: (($menu-btn-sheet-height * 3) + ($menu-btn-sheet-margin * 2)) * 1.2;
+
+$logo-height: 23px;
+$logo-height-tablet: 41px;
 
 $dirfont: "../fonts";
 
-$border-color: silver;//#e5e5e5;
-$color-bg-grey: lightcyan;//#f2f2f2;
+$color-border: silver; /*#e5e5e5;*/
+$color-bg-grey: lightcyan; /*#f2f2f2;*/
+$color-light-blue-border: lightblue; /*#e9ebec;*/
 $color-red: #d22856;
 $color-green: #2aab6d;
-$color-light-blue-border: lightblue; //#e9ebec;
 
-$radio-indent: 60px;
+$radio-indent: 57px;
 
-$palm-height-mobile: 458px;//392px;
+$palm-height-mobile: 458px;
 $palm-height-tablet: 730px;
-$palm-height-desktop: 860px;//645px;
+$palm-height-desktop: 860px;

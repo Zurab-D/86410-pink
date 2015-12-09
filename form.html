@@ -7,20 +7,22 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-  <header class="header">
+  <header class="header  header--form">
     <div class="header__wrap">
-      <nav class="nav" id="nav">
-        <a class="logo  logo--top" href="index.html">Главная</a>
-        <span class="menu-btn" id="menu_btn"></span>
-        <ul class="nav__list">
-          <li class="nav__item"><a href="#">Информация</a></li>
-          <li class="nav__item"><a href="blog.html">Блог</a></li>
-          <li class="nav__item"><a href="post.html">Отзывы</a></li>
-          <li class="nav__item"><a href="form.html">Конкурс</a></li>
-        </ul>
+      <nav class="nav">
+        <div class="wrapper">
+          <a class="logo  logo--top" href="index.html">Главная</a>
+          <span class="menu-btn" id="menu_btn"></span>
+          <ul class="nav__list">
+            <li class="nav__item"><a href="#">Информация</a></li>
+            <li class="nav__item"><a href="blog.html">Блог</a></li>
+            <li class="nav__item"><a href="post.html">Отзывы</a></li>
+            <li class="nav__item"><a href="form.html">Конкурс</a></li>
+          </ul>
+        </div>
       </nav>
-      <div class="front">
-        <h1 class="front__text">Конкурс на самое безбашенное путешествие с Пинк</h1>
+      <div class="header__front">
+        <h1 class="header__front-text">Конкурс на самое безбашенное путешествие с Пинк</h1>
       </div>
     </div>
   </header>
@@ -84,12 +86,12 @@
 
           <div class="calc__wrapper">
             <div class="calc  calc--days">
-              <button class="calc__btn  calc__btn--minus  btn" type="button">-</button>
+              <button class="calc__btn  calc__btn--minus  btn" id="days_count_minus" type="button">-</button>
               <div class="calc__result-over">
                 <input class="calc__result" type="text" id="days_count" name="days_count" data-label="дней" min="1" value="10" pattern="\d+" required>
                 <div class="calc__rem">дней</div>
               </div>
-              <button class="calc__btn  calc__btn--plus  btn" type="button">+</button>
+              <button class="calc__btn  calc__btn--plus  btn" id="days_count_plus" type="button">+</button>
             </div>
             <div class="fieldset__label" for="days_count">Продолжительность</div>
           </div>
@@ -107,12 +109,12 @@
         <div class="fieldset__wrapper">
           <h3 class="fieldset__header"><label for="persons_count">Количество попутчиков *</label></h3>
           <div class="calc  calc--persons">
-            <button class="calc__btn  calc__btn--minus  btn" type="button">-</button>
+            <button class="calc__btn  calc__btn--minus  btn" id="persons_count_minus" type="button">-</button>
             <div class="calc__result-over">
               <input class="calc__result" type="text" id="persons_count" name="persons_count" data-label="чел" pattern="\d+" value="0" min="0" required>
               <div class="calc__rem">чел</div>
             </div>
-            <button class="calc__btn  calc__btn--plus  btn" type="button">+</button>
+            <button class="calc__btn  calc__btn--plus  btn" id="persons_count_plus" type="button">+</button>
           </div>
 
           <div class="person">
@@ -202,50 +204,49 @@
             <li class="pics__item">
               <a class="pics__delete" href="#pic-del">&times;</a>
               <figure class="pics__img">
-                <!--<img src="http://placehold.it/67x67" alt="" width="" height="">-->
-                <img src="http://placehold.it/567x267" alt="" width="" height="">
+                <img src="http://placehold.it/567x267" alt="" width="67" height="67">
                 <figcaption>img-1.jpg</figcaption>
               </figure>
             </li>
             <li class="pics__item">
               <a class="pics__delete" href="#pic-del">&times;</a>
               <figure class="pics__img">
-                <img src="http://placehold.it/67x67" alt="" width="" height="">
+                <img src="http://placehold.it/67x67" alt="" width="67" height="67">
                 <figcaption>img-2.jpg</figcaption>
               </figure>
             </li>
             <li class="pics__item">
               <a class="pics__delete" href="#pic-del">&times;</a>
               <figure class="pics__img">
-                <img src="http://placehold.it/67x67" alt="" width="" height="">
+                <img src="http://placehold.it/67x67" alt="" width="67" height="67">
                 <figcaption>img-3.jpg</figcaption>
               </figure>
             </li>
             <li class="pics__item">
               <a class="pics__delete" href="#pic-del">&times;</a>
               <figure class="pics__img">
-                <img src="http://placehold.it/67x67" alt="" width="" height="">
+                <img src="http://placehold.it/67x67" alt="" width="67" height="67">
                 <figcaption>img-4.jpg</figcaption>
               </figure>
             </li>
             <li class="pics__item">
               <a class="pics__delete" href="#pic-del">&times;</a>
               <figure class="pics__img">
-                <img src="http://placehold.it/67x67" alt="" width="" height="">
+                <img src="http://placehold.it/67x67" alt="" width="67" height="67">
+                <figcaption>img-5.jpg</figcaption>
               </figure>
-              <figcaption>img-5.jpg</figcaption>
             </li>
             <li class="pics__item">
               <a class="pics__delete" href="#pic-del">&times;</a>
               <figure class="pics__img">
-                <img src="http://placehold.it/67x67" alt="" width="" height="">
+                <img src="http://placehold.it/67x67" alt="" width="67" height="67">
                 <figcaption>img-6.jpg</figcaption>
               </figure>
             </li>
             <li class="pics__item">
               <a class="pics__delete" href="#pic-del">&times;</a>
               <figure class="pics__img">
-                <img src="http://placehold.it/67x367" alt="" width="" height="">
+                <img src="http://placehold.it/67x367" alt="" width="67" height="67">
                 <figcaption>img-7.jpg</figcaption>
               </figure>
             </li>
@@ -254,7 +255,7 @@
       </fieldset>
 
       <div class="submit">
-        <input class="submit__btn  btn" id="submit_form" type="submit" value="Отправить форму">
+        <input class="submit__btn  btn" type="submit" value="Отправить форму">
         <p class="submit__required-note"><span class="asterisk">*</span>&nbsp;&mdash;&nbsp;Обязательные поля</p>
       </div>
     </form>
@@ -275,20 +276,16 @@
 
 
 
-  <div class="success  success--hidden" id="success">
+  <div class="success  success--hidden">
     <div class="success__inner">
       <h3 class="success__header">Ваша заявка отправлена</h3>
       <p class="success__text">Спасибо за ваше участие, ваша заявка уже поступила к нам. В ближайшее время мы рассмотрим ее и
       оповестим вас.</p>
       <div class="success__btn-overlay">
-        <button class="success__btn  btn" id="success_close">Закрыть окно</button>
+        <button class="success__btn  btn">Закрыть окно</button>
       </div>
     </div>
   </div>
-
-
-
-  <div class="veil  veil--hidden" id="veil"></div>
 
 
 
