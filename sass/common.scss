@@ -96,6 +96,7 @@ body {
 }
 
 input[type=text] {
+  transition: all .3s;
   &:hover {
     border-color: $base-color;
   }
@@ -104,3 +105,4 @@ input[type=text] {
     border-color: $color-red;
   }
 }
+

@@ -45,8 +45,12 @@
   }
 }
 
+@mixin transition {
+  transition: all .3s;
+}
 
 @mixin sign-x($color: #000, $size: 30px, $line-width: 2px, $bg-color: transparent) {
+  @include transition;
   position: relative;
   width: $size;
   height: $size;
@@ -70,6 +74,7 @@
 
 
 @mixin sign-v($color: #000, $size: 30px, $line-width: 2px, $bg-color: transparent) {
+  @include transition;
   width: $size;
   height: $size/100*45;
   border-left: $line-width solid $color;

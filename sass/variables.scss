@@ -23,7 +23,7 @@ $nav-item-height: 62px;
 $menu-btn-sheet-height: 4px;
 $menu-btn-sheet-margin: 6px;
 $menu-btn-width: 50px;
-$menu-btn-height: ($menu-btn-sheet-height * 3) + ($menu-btn-sheet-margin * 2);
+$menu-btn-height: (($menu-btn-sheet-height * 3) + ($menu-btn-sheet-margin * 2)) * 1.2;
 
 $logo-height: 23px;
 $logo-height-tablet: 41px;

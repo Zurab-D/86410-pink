@@ -15,7 +15,9 @@
     daysCountPlus = document.querySelector("#days_count_plus"),
     personsCount = document.querySelector("#persons_count"),
     personsCountMinus = document.querySelector("#persons_count_minus"),
-    personsCountPlus = document.querySelector("#persons_count_plus")
+    personsCountPlus = document.querySelector("#persons_count_plus"),
+    sliderReviewArrowLeft = document.querySelector(".slider-review__arrow--left"),
+    sliderReviewArrowRight = document.querySelector(".slider-review__arrow--right")
   ;
 
 
@@ -136,6 +138,62 @@
   // количество попутчиков - плюс
   !!personsCountPlus && personsCountPlus.addEventListener("click", function(event) {
     event.preventDefault();
-   inputValueInc(personsCount, event);
+    inputValueInc(personsCount, event);
+  });
+
+
+
+  // индекс предыдущей страницы слайдера
+  function getSliderPrevIndex (currentIndex, sliderItemCount) {
+    /*  ВОПРОС!
+      Нужно ли обязательно проверять: переданы ли параметры и тип параметров?
+    */
+    currentIndex = currentIndex - 1;
+    if (currentIndex < 0) {currentIndex = sliderItemCount - 1}
+    return currentIndex;
+  };
+  // индекс следующей страницы слайдера
+  function getSliderNextIndex(currentIndex, sliderItemCount) {
+    return (currentIndex + 1) % sliderItemCount;
+  };
+
+
+
+
+  // процедура сдвига слайдера на radio - влево
+  function sliderRadioGoLeft (switchClassSelector) {
+    var switches = document.querySelectorAll(switchClassSelector);
+    for (var i = 0; i < switches.length; i++) {
+      if (switches[i].checked) {
+        var prevIndex = getSliderPrevIndex(i, 3);
+        switches[prevIndex].checked = 1;
+        return prevIndex;
+      }
+    }
+  };
+  // процедура сдвига слайдера на radio - вправо
+  function sliderRadioGoRight (switchClassSelector) {
+    var switches = document.querySelectorAll(switchClassSelector);
+    for (var i = 0; i < switches.length; i++) {
+      if (switches[i].checked) {
+        var nextIndex = getSliderNextIndex(i, 3);
+        switches[nextIndex].checked = 1;
+        return nextIndex;
+      }
+    }
+  };
+
+
+
+
+  // слайдер slider-review - влево
+  !!sliderReviewArrowLeft && sliderReviewArrowLeft.addEventListener("click", function(event) {
+    event.preventDefault();
+    sliderRadioGoLeft(".switch__radio");
+  });
+  // слайдер slider-review - вправо
+  !!sliderReviewArrowRight && sliderReviewArrowRight.addEventListener("click", function(event) {
+    event.preventDefault();
+    sliderRadioGoRight(".switch__radio");
   });
 }());

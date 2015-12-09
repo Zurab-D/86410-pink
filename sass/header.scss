@@ -313,6 +313,7 @@
   top: ($nav-height - $menu-btn-height) / 2;
   cursor: pointer;
   z-index: 6;
+  transition: all .3s;
   @media (min-width: $screen-md) {
     top: ($nav-height-tablet - $menu-btn-height) / 2;
     right: 40px;
@@ -358,20 +359,21 @@
 
   /* кнопка "крестик" для закрытия меню */
   &--close {
-    width: 22px;
-    height: 22px;
+    width: $menu-btn-width;
+    height: $menu-btn-height;
     border-radius: 2px;
     box-shadow: none;
     &:before,
     &:after {
+      left: 50%;
       top: 50%;
       width: 31px;
       height: 4px;
       background-color: #fff;
       transform-origin: 50% 50%;
     }
-    &:before { transform: rotate(45deg); }
-    &:after { transform: rotate(-45deg); }
+    &:before { transform: translate(-50%, -50%) rotate(45deg); }
+    &:after { transform: translate(-50%, -50%) rotate(-45deg); }
     /*&:active:before,
     &:active:after { background-color: #b7dff8; }*/
     &:hover,

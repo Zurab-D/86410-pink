@@ -41,11 +41,11 @@
 
 
   <main class="main">
+    <h2 class="big_text  big_text--offer  wrapper">Устали от серости мегаполиса?<br><span class="show-for-mobile"><br></span>Нам есть, что вам<br>предложить!</h2>
+
+
+
     <div class="wrapper">
-      <h2 class="big_text  big_text--offer">Устали от серости мегаполиса?<br><span class="show-for-mobile"><br></span>Нам есть, что вам<br>предложить!</h2>
-
-
-
       <div class="benefits">
         <div class="benefits__items">
           <div class="benefits__item">
@@ -128,6 +128,22 @@
 
 
     <div class="prices">
+      <div class="svg-hide-wrapper" style="display: none;">
+        <svg version="1.0" id="yes" display-="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+           width="30.375px" height="21.688px" viewBox="0 0 30.375 21.688" enable-background="new 0 0 30.375 21.688" xml:space="preserve">
+        <path d="M29.936,0.439c-0.586-0.586-1.535-0.586-2.121,0L10.188,18.066l-7.627-7.627c-0.586-0.586-1.535-0.586-2.121,0
+          s-0.586,1.535,0,2.121l8.688,8.688c0.293,0.293,0.677,0.439,1.061,0.439s0.768-0.146,1.061-0.439L29.936,2.561
+          C30.521,1.975,30.521,1.025,29.936,0.439z"/>
+        </svg>
+        <svg version="1.0" id="no" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+           width="26.752px" height="26.752px" viewBox="0 0 26.752 26.752" enable-background="new 0 0 26.752 26.752" xml:space="preserve">
+        <path d="M15.497,13.376L26.312,2.562c0.586-0.585,0.586-1.535,0-2.121s-1.535-0.586-2.121,0L13.376,11.255L2.562,0.439
+          c-0.586-0.586-1.535-0.586-2.121,0c-0.586,0.585-0.586,1.535,0,2.121l10.814,10.815L0.439,24.19c-0.586,0.586-0.586,1.535,0,2.121
+          c0.293,0.293,0.677,0.439,1.061,0.439s0.768-0.146,1.061-0.439l10.815-10.814L24.19,26.312c0.293,0.293,0.677,0.439,1.061,0.439
+          s0.768-0.146,1.061-0.439c0.586-0.586,0.586-1.535,0-2.121L15.497,13.376z"/>
+        </svg>
+      </div>
+
       <table class="prices__table  prices__table--switch-2">
         <tr class="prices__row">
           <th class="prices__th  prices--1st-col"></th>
@@ -135,7 +151,7 @@
             <h3 class="prices__title">База</h3>
             <p class="prices__value">1,99 USD</p>
           </th>
-          <th class="prices__th">
+          <th class="prices__th  prices__hit">
             <h3 class="prices__title">Стандарт</h3>
             <p class="prices__value">3,99 USD</p>
           </th>
@@ -146,21 +162,21 @@
         </tr>
         <tr class="prices__row">
           <td class="prices__td  prices--1st-col">Розовый фильтр</td>
-          <td class="prices__td  prices--yes">Розовый фильтр <span class="prices__sign"></span></td>
-          <td class="prices__td  prices--yes">Розовый фильтр <span class="prices__sign"></span></td>
-          <td class="prices__td  prices--yes">Розовый фильтр <span class="prices__sign"></span></td>
+          <td class="prices__td">Розовый фильтр <svg class="prices__sign-yes"><use xlink:href="#yes"></use></svg></td>
+          <td class="prices__td">Розовый фильтр <svg class="prices__sign-yes"><use xlink:href="#yes"></use></svg></td>
+          <td class="prices__td">Розовый фильтр <svg class="prices__sign-yes"><use xlink:href="#yes"></use></svg></td>
         </tr>
         <tr class="prices__row">
           <td class="prices__td  prices__1st-col" >Смайлики</td>
-          <td class="prices__td  prices--no" >Смайлики <span class="prices__sign"></span></td>
-          <td class="prices__td  prices--yes">Смайлики <span class="prices__sign"></span></td>
-          <td class="prices__td  prices--yes">Смайлики <span class="prices__sign"></span></td>
+          <td class="prices__td" >Смайлики <svg class="prices__sign-no"><use xlink:href="#no"></use></svg></td>
+          <td class="prices__td">Смайлики <svg class="prices__sign-yes"><use xlink:href="#yes"></use></svg></td>
+          <td class="prices__td">Смайлики <svg class="prices__sign-yes"><use xlink:href="#yes"></use></svg></td>
         </tr>
         <tr class="prices__row">
           <td class="prices__td  prices__1st-col">Комментарии</td>
-          <td class="prices__td  prices--no">Комментарии <span class="prices__sign"></span></td>
-          <td class="prices__td  prices--no" >Комментарии <span class="prices__sign"></span></td>
-          <td class="prices__td  prices--yes">Комментарии <span class="prices__sign"></span></td>
+          <td class="prices__td">Комментарии <svg class="prices__sign-no"><use xlink:href="#no"></use></svg></td>
+          <td class="prices__td" >Комментарии <svg class="prices__sign-no"><use xlink:href="#no"></use></svg></td>
+          <td class="prices__td">Комментарии <svg class="prices__sign-yes"><use xlink:href="#yes"></use></svg></td>
         </tr>
       </table>
 

@@ -402,6 +402,7 @@
     width: 240%;
     margin: 0 auto;
     border-collapse: collapse;
+    @include transition;
     &--switch-1 { transform: translateX(4%    /*0*/     ); }
     &--switch-2 { transform: translateX(-29.2%/*-31.7%*/); }
     &--switch-3 { transform: translateX(-62.4%/*-66.6%*/); }
@@ -480,25 +481,39 @@
       line-height: $header-line-height - 6;
     }
   }
-  &--yes>&__sign {
-    position: absolute;
-    @include sign-v(#3dc644, 25px);
-    top: 0;
-    right: 0;
-    transform: translate(-18px, 15px) rotate(-45deg);
-    @media (min-width: $screen_md) {
-      left: 55%;
+  &__hit {
+    position: relative;
+    &:after {
+      content: "";
+      position: absolute;
+      display: block;
+      width: 74px;
+      height: 73px;
+      top: 0px;
+      left: -2px;
+      background: transparent url(../img/hit.png) no-repeat top left;
+      background-size: 74px 73px;
     }
   }
-  &--no>&__sign {
-    float: right;
-    @include sign-x(#f25b26, 35px);
-    top: 0;
-    right: 0;
-    transform: translate(-13px, 18px);
+  &__sign-yes,
+  &__sign-no {
+    position: absolute;
+    display: block;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 15px;
+    width: 30px;
+    height: 30px;
     @media (min-width: $screen_md) {
-      left: -35%;
+      left: calc(50%);
+      transform: translate(-50%, -50%);
     }
+  }
+  &__sign-yes {
+    fill: $color-green;
+  }
+  &__sign-no {
+    fill: $color-red;
   }
   .switch {
     @media (min-width: $screen_md) {
@@ -579,10 +594,6 @@
     background: url(../img/map-big.jpg) 46% 57% no-repeat;
   }
 }
-
-
-.sign-x {@include sign-x(#f25b26, 35px);}
-.sign-v {@include sign-v(#3dc644, 25px);}
 
 
 .wrapper {
@@ -851,23 +862,30 @@
     }
   }
   &__checkbox {
-    &:checked ~ label:after {
-      @include sign-v($color-red, 20px);
+    &:checked ~ label {
+      @include transition;
+      &:after {
+        @include sign-v($color-red, 20px);
+      }
     }
   }
   &__ul &__radio+&__label {
     &:hover:before {
+      @include transition;
       box-shadow: 0 0 0 2px $base-color;
     }
     &:active:before {
+      @include transition;
       box-shadow: 0 0 0 2px $color-red;
     }
   }
   &__ul &__checkbox+&__label {
     &:hover:before {
+      @include transition;
       border-color: $base-color;
     }
     &:active:before {
+      @include transition;
       border-color: $color-red;
     }
   }
@@ -1102,9 +1120,11 @@
     }
   }
   &:hover {
+    @include transition;
     border-color: $base-color;
   }
   &:active {
+    @include transition;
     border-color: $base-color;
     background-color: $base-color;
     color: #fff;
