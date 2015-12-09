@@ -126,7 +126,7 @@
   });
   // количество дней - плюс
   !!daysCountPlus && daysCountPlus.addEventListener("click", function(event) {
-   inputValueInc(daysCount, event);
+    inputValueInc(daysCount, event);
   });
 
 
