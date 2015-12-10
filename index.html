@@ -7,6 +7,14 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+  <!-- ПРАВИЛЬНО ЛИ ТАК ДЕЛАТЬ ПРЕДЗАГРУЗКУ КАРТИНОК? (стили в common.scss)
+  <div class="preloader">
+    <div class="preloader__logo-top"></div>
+    <div class="preloader__logo-top-hover"></div>
+    <div class="preloader__logo-bottom"></div>
+    <div class="preloader__logo-bottom-hover"></div>
+  </div>
+  -->
   <header class="header  header--index">
     <div class="header__wrap">
       <nav class="nav">
@@ -14,6 +22,7 @@
           <a class="logo  logo--top" href="index.html">Главная</a>
           <span class="menu-btn" id="menu_btn"></span>
           <ul class="nav__list">
+            <!--<li class="nav__item"><a href="#">Информация 11111 222222 33333 44444 555555</a></li>-->
             <li class="nav__item"><a href="#">Информация</a></li>
             <li class="nav__item"><a href="blog.html">Блог</a></li>
             <li class="nav__item"><a href="post.html">Отзывы</a></li>
@@ -90,6 +99,7 @@
         <input class="switch__radio" type="radio" name="review_pages" id="review_pages_1" checked hidden>
         <input class="switch__radio" type="radio" name="review_pages" id="review_pages_2" hidden>
         <input class="switch__radio" type="radio" name="review_pages" id="review_pages_3" hidden>
+        <button class="slider-review__arrow  slider-review__arrow--left">&lt;</button>
         <div class="slider-review__items-wrapper">
           <div class="slider-review__item">
             <h3 class="slider-review__author">Николай Петров</h3>
@@ -109,6 +119,7 @@
             <p class="slider-review__text"><span class="slider-review__quote">«</span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Inventore, ad?<span class="slider-review__quote">»</span></p>
           </div>
         </div>
+        <button class="slider-review__arrow  slider-review__arrow--right">&gt;</button>
         <ul class="switch">
           <li class="switch__item">
             <label class="switch__label" for="review_pages_1">&bull;</label>
@@ -120,8 +131,6 @@
             <label class="switch__label" for="review_pages_3">&bull;</label>
           </li>
         </ul>
-        <div class="slider-review__arrow  slider-review__arrow--left"></div>
-        <div class="slider-review__arrow  slider-review__arrow--right"></div>
       </div>
     </div>
 
@@ -216,7 +225,7 @@
 
 
 
-    <div class="map"></div>
+    <div class="map">Как проехать</div>
   </main>
 
 
