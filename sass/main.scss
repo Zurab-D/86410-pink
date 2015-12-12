@@ -21,21 +21,25 @@
   }
   &--offer {
     margin-top: -6px;
-    margin-bottom: 0px;
+    margin-bottom: 30px;
+    @media (min-width: $screen-lg) {
+      padding-bottom: 45px;
+    }
   }
   &--ask {
     margin: 55px 0 31px;
     @media (min-width: $screen-md) {
-      margin: 105px 0 41px;
+      margin: 37px 0 41px;
     }
     @media (min-width: $screen-lg) {
-      margin: 165px 0 55px;
+      margin: 62px 0 55px;
     }
   }
 }
 
 
 .benefits {
+  @include wrapper;
   @media (min-width: $screen-md) {
     display: flex;
     margin-bottom: 18px;
@@ -45,20 +49,22 @@
     display: flex;
     flex-direction: column;
     margin: 0 auto;
-    padding-top: 75px;
+    //padding-top: 75px;
   }
   &__items {
-    margin: 93px 0 0;
+    //margin: 93px 0 0;
+    //padding: 91px 0 0;
     line-height: $base-line-height;
     @media (min-width: $screen-md) {
-      margin-top: 128px;
+      //margin-top: 128px;
+      margin-top: 71px;
       width: calc(97% - 290px);
       order: 2;
     }
     @media (min-width: $screen-lg) {
       display: flex;
       justify-content: space-between;
-      margin: 66px 0 65px;
+      margin: 55px 0 65px;
       width: 100%;
     }
   }
@@ -98,6 +104,8 @@
     }
   }
   &__pictures {
+    position: relative;
+    z-index: 1;
     @media (min-width: $screen-md) {
       padding-right: 40px;
       order: 1;
@@ -167,7 +175,7 @@
         }
       }
       @media (min-width: $screen-md) {
-        margin-top: 55px;
+        //margin-top: 55px;
         height: 481px;
         width: 268px;
         background-size: 268px 481px;
@@ -185,6 +193,7 @@
 
 
 .effect24 {
+  @include wrapper;
   display: none;
   padding-bottom: 58px;
   @media (min-width: $screen-md) {
@@ -193,7 +202,7 @@
     padding-bottom: 45px;
   }
   @media (min-width: $screen-lg) {
-    padding-bottom: 235px;
+    padding-bottom: 67px;
   }
   &__icon-wrapper {
     position: relative;
@@ -269,10 +278,26 @@
 
 .slider-review {
   position: relative;
+  @include wrapper;
+  @media (min-width: $screen-lg) {
+    padding-top: 167px;
+    margin-bottom: 37px;
+    &:before {
+      content: "";
+      position: absolute;
+      width: 79px;
+      height: 64px;
+      top: 72px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: url(../img/quotes.svg) no-repeat center;
+      background-size: cover;
+    }
+  }
+  position: relative;
   display: flex;
   flex-direction: column;
   width: 100%;
-  min-height: 365px;
   line-height: $header-line-height;
   &__items-wrapper {
     order: 1;
@@ -319,6 +344,8 @@
     }
   }
   &__text {
+    //margin-bottom: -8px;
+    margin-bottom: -1 * (($header-line-height - $base-font-size)/2);
     font-weight: normal;
     font-size: $base-font-size;
     order: 3;
@@ -331,7 +358,9 @@
   &__arrow {
     display: none;
     position: absolute;
-    top: 12%;
+    //top: 3%;
+    //transform: translateY(196px);
+    top: 210px;
     width: 22px;
     height: 42px;
     background-size: 22px 42px;
@@ -366,11 +395,11 @@
 .switch {
   display: flex;
   justify-content: space-between;
+  align-self: flex-end;
+  margin: 0 auto;
   padding: 0;
-  margin: 40px auto;
   width: 62px;
   order: 2;
-  align-self: flex-end;
   &__item {
     list-style: none;
   }
@@ -410,10 +439,74 @@
   &__radio:nth-child(3):checked ~ .slider-review__items-wrapper .slider-review__item:nth-child(3) {
     display: flex;
   }
+  &--review {
+    margin: 33px auto;
+    @media (min-width: $screen-lg) {
+      display: none;
+    }
+  }
+  &--prices {
+    margin: 50px auto;
+    @media (min-width: $screen-md) {
+      display: none;
+    }
+  }
+}
+
+
+.wide-container {
+  position: relative;
+  background-color: $color-bg-grey;
+  @media (min-width: $screen-md) {
+    padding: 90px 0 68px;
+  }
+  @media (min-width: $screen-lg) {
+    padding: 154px 0 94px;
+  }
+  &--effect24 {
+    padding: 0;
+    @media (max-width: $screen-lg - 1px) {
+      background-color: #fff;
+    }
+    &:after {
+      content: none;
+      display: none;
+    }
+  }
+  &--benefits {
+    padding-top: 82px;
+    @media (min-width: $screen-md) {
+      padding-top: 0;
+    }
+    @media (min-width: $screen-md) {
+      padding-bottom: 0;
+    }
+  }
+  &--prices {
+    padding: 90px 0 0;
+    @media (min-width: $screen-md) {
+      padding-bottom: 68px;
+    }
+    @media (min-width: $screen-lg) {
+      padding-top: 150px;
+      padding-bottom: 95px;
+    }
+  }
+  &:after {
+    position: absolute;
+    content: "";
+    right: 0;
+    top: 0;
+    width: 100%;
+    height: 120px;
+    background: url(../img/triangle-white.svg) no-repeat;
+    background-size: contain;
+  }
 }
 
 
 .prices {
+  //background-color: #fff;
   overflow: hidden;
   @media (min-width: $screen-md) {
     @include wrapper;
@@ -439,13 +532,13 @@
   &__th:first-child,
   &__td:first-child {
     display: none;
-    background-color: #fff;
     @media (min-width: $screen-md) {
       display: table-cell;
     }
   }
   &__th:first-child {
     border: none;
+    background-color: $color-bg-grey;
   }
   &__th {
     min-width: 0;
@@ -459,13 +552,23 @@
   }
   &__td {
     position: relative;
-    padding: 14px 0 15px 22px;
+    //padding: 14px 0 15px 22px;
+    padding: 17px 0 18px 22px;
     border: 2px solid $color-border;
     font-weight: normal;
     font-size: $base-font-size;
-    line-height: $header-line-height;
+    //line-height: $header-line-height;
+    line-height: $base-line-height;
+    @media (min-width: $screen-md) {
+      padding: 11px 0 12px 22px;
+      text-transform: none;
+    }
+    @media (min-width: $screen-lg) {
+      padding: 17px 0 18px 22px;
+    }
     text-transform: uppercase;
     text-align: left;
+    background-color: #fff;
     &:first-child {
       @media (min-width: $screen-md) {
         padding-left: 2.5%;
@@ -475,10 +578,6 @@
       @media (min-width: $screen-md) {
         font-size: 0;
       }
-    }
-    @media (min-width: $screen-md) {
-      padding: 8px 0 8px 22px;
-      text-transform: none;
     }
   }
   &__title {
@@ -538,11 +637,6 @@
   }
   &__sign-no {
     fill: $color-red;
-  }
-  .switch {
-    @media (min-width: $screen-md) {
-      display: none;
-    }
   }
 }
 
@@ -604,13 +698,43 @@
 
 
 .map {
-  height: 30vh;
-  background: url(../img/map.jpg) bottom no-repeat;
-  background-size: cover;
+  position: relative;
+  height: 33vh;
+  background: url(../img/map-big.jpg) 45% 55% no-repeat;
+  //background-size: cover;
   font-size: 0;
   @media (min-width: $screen-md) {
-    height: 50vh;
+    height: 61vh;
     background: url(../img/map-big.jpg) 46% 57% no-repeat;
+  }
+  @media (min-width: $screen-lg) {
+    height: 77vh;
+  }
+  &:before {
+    content: "";
+    position: absolute;
+    top: -0px;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url(../img/triangle-white-footer.svg) no-repeat;
+    background-size: 100% auto;
+  }
+  &:after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 55%;
+    transform: translateX(-50%);
+    width: 36px;
+    height: 36px;
+    background: url(../img/map-marker.svg) no-repeat;
+    @media (min-width: $screen-md) {
+      left: 50%;
+    }
+    @media (min-width: $screen-md) {
+      left: 48%;
+    }
   }
 }
 
