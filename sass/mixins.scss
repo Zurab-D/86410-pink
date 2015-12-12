@@ -42,7 +42,7 @@
 }
 
 @mixin transition {
-  transition: all .3s;
+  transition: .2s;
 }
 
 @mixin sign-x($color: #000, $size: 30px, $line-width: 2px, $bg-color: transparent) {

@@ -8,15 +8,33 @@
     width: auto;
     &--img {
       height: $palm-height-mobile;
-      background: url("../img/palm.png") 50% 119% no-repeat;
-      background-size: 320px auto;
+      background-size: 260px auto;
+      background: url("../img/iphone-hand-mobile.png") bottom no-repeat;
+      @media (min-resolution: 1.5dppx) {
+        background: url("../img/iphone-hand-mobile@2x.png") bottom no-repeat;
+        background-size: 260px auto;
+      }
+      @media (min-resolution: 2.5dppx) {
+        background: url("../img/iphone-hand-mobile@3x.png") bottom no-repeat;
+        background-size: 260px auto;
+      }
       @media (min-width: $screen-md) {
         height: $palm-height-tablet;
-        background: url("../img/palm-tablet.png") 60% 100% no-repeat;
+        background: url("../img/iphone-hand-tablet@1x.png") 60% 100% no-repeat;
+        background-size: auto 545px;
+        @media (min-resolution: 1.5dppx) {
+          background: url("../img/iphone-hand-tablet@2x.png") 60% 100% no-repeat;
+          background-size: auto 545px;
+        }
       }
       @media (min-width: $screen-lg) {
         height: $palm-height-desktop;
         background: url("../img/iphone-hand-desktop@1x.png") 100% 100% no-repeat;
+        background-size: auto 645px;
+        @media (min-resolution: 1.5dppx) {
+          background: url("../img/iphone-hand-desktop@2x.png") 100% 100% no-repeat;
+          background-size: auto 645px;
+        }
       }
     }
     &-text {
@@ -46,11 +64,23 @@
     position: relative;
     width: auto;
     min-height: 237px;
-    background: #2e3e4f url("../img/background-fullsize.jpg") no-repeat center;
+    background: #2e3e4f url("../img/background-mobile@1x.jpg") no-repeat center;
     background-size: cover;
-    @media (min-width: $screen-md) {
-      background: #2e3e4f url("../img/background-fullsize.jpg") no-repeat 50% 26%;
+    @media (min-resolution: 1.5dppx) {
+      background: #2e3e4f url("../img/background-mobile@2x.jpg") no-repeat center;
       background-size: cover;
+    }
+    @media (min-resolution: 2.5dppx) {
+      background: #2e3e4f url("../img/background-mobile@3x.jpg") no-repeat center;
+      background-size: cover;
+    }
+    @media (min-width: $screen-md) {
+      background: #2e3e4f url("../img/background-tablet@1x.jpg") no-repeat 50% 26%;
+      background-size: cover;
+      @media (min-resolution: 1.5dppx) {
+        background: #2e3e4f url("../img/background-tablet@2x.jpg") no-repeat 50% 26%;
+        background-size: cover;
+      }
     }
     @media (min-width: $screen-lg) {
       background: #2e3e4f url("../img/background-fullsize.jpg") no-repeat 50% 26%;
@@ -294,7 +324,7 @@
   top: ($nav-height - $menu-btn-height) / 2;
   cursor: pointer;
   z-index: 6;
-  transition: all .3s;
+  @include transition;
   @media (min-width: $screen-md) {
     top: ($nav-height-tablet - $menu-btn-height) / 2;
     right: 40px;
@@ -420,7 +450,8 @@
     font-weight: bold;
     font-size: $middle-font-size;
     line-height: $middle-font-size;
-    text-transform:none;
+    text-transform: none;
+    @include transition;
     @media (min-width: $screen-md) {
       background-color: transparent;
     }
