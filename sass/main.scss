@@ -1064,9 +1064,9 @@
   &__result-over:after {
     content: attr(data-label);
     position: absolute;
-    top: calc(50% - 1px);
+    top: calc(50%);
     transform: translateY(-50%);
-    left: 55%;
+    left: 60%;
     height: $middle-font-size;
     background-color: transparent;
     border: none;

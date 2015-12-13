@@ -1,12 +1,13 @@
 /**
 * Отправка формы по AJAX
 */
-(function () {
+/*(function () {
   var form = document.querySelector("#form");
   if (!("FormData" in window) || (!form)) {
     return;
   }
   var urlBase = "https://echo.htmlacademy.ru/adaptive&";
+  var successDlg = document.querySelector(".success");
 
   // запрашиваем по Ajax
   form.addEventListener("submit", function (event) {
@@ -29,8 +30,24 @@
       };
     });
     xhr.send(dataQS);
+
+    showSuccessDlg();
   };
-})();
+
+
+
+  // функция показа диалога успеха
+  function showSuccessDlg() {
+    showOverlay();
+    !!successDlg && successDlg.classList.remove("success--hidden");
+  };
+  // функция закрытия диалога успеха
+  function hideSuccessDlg() {
+    !!successDlg && successDlg.classList.add("success--hidden");
+    hideOverlay();
+  };
+})();*/
+//---------------------------------------------------------------------------
 
 
 
@@ -114,18 +131,29 @@
 
 
 
+  // функция показа диалога успеха
+  function showSuccessDlg() {
+    showOverlay();
+    !!successDlg && successDlg.classList.remove("success--hidden");
+  };
+  // функция закрытия диалога успеха
+  function hideSuccessDlg() {
+    !!successDlg && successDlg.classList.add("success--hidden");
+    hideOverlay();
+  };
+
+
+
   // показать диалог успеха
   /*!!formBtnSubmit && formBtnSubmit.addEventListener("click", function(event) {
     event.preventDefault();
-    showOverlay();
-    !!successDlg && successDlg.classList.remove("success--hidden");
-  });
+    showSuccessDlg();
+  });*/
   // закрыть диалог успеха
   !!successBtnClose && successBtnClose.addEventListener("click", function(event) {
     event.preventDefault();
-    !!successDlg && successDlg.classList.add("success--hidden");
-    hideOverlay();
-  });*/
+    hideSuccessDlg();
+  });
 
 
 
@@ -219,4 +247,39 @@
     event.preventDefault();
     switchSlider(".switch__radio", DIRECTION_RIGHT);
   });
+
+
+
+  // === Отправка формы по AJAX ======================================
+  var form = document.querySelector("#form");
+  if (!("FormData" in window) || (!form)) {
+    return;
+  }
+  var urlBase = "https://echo.htmlacademy.ru/adaptive&";
+
+  // запрашиваем по Ajax
+  form.addEventListener("submit", function (event) {
+    event.preventDefault();
+    var data = new FormData(form);
+    request(data, urlBase, function (response) {
+      console.log("server response: \"" + response+"\"");
+    })
+  });
+
+  // функция запроса по Ajax
+  function request (dataQS, url, func) {
+    var xhr = new XMLHttpRequest();
+    var time = (new Date()).getTime();
+    var url = urlBase + time;
+    xhr.open("post", url);
+    xhr.addEventListener("readystatechange", function() {
+      if (xhr.readyState == 4) {
+        func(xhr.responseText);
+      };
+    });
+    xhr.send(dataQS);
+
+    showSuccessDlg();
+  };
+
 }());
