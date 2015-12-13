@@ -1,6 +1,6 @@
 /**
- * Отправка формы по AJAX
- */
+* Отправка формы по AJAX
+*/
 (function () {
   var form = document.querySelector("#form");
   if (!("FormData" in window) || (!form)) {
@@ -35,8 +35,8 @@
 
 
 /**
- * Обработка кнопок, переключателей и пр.
- */
+* Обработка кнопок, переключателей и пр.
+*/
 (function () {
   "use strict";
   var
