@@ -10,6 +10,7 @@ body {
   //font-family: "OpenSansLight", "Gabriola", sans-serif;
   font-family: "OpenSans", sans-serif;
   font-weight: 100;
+  font-style: normal;
   font-size: $base-font-size;
   line-height: $base-line-height;
   text-align: center;
@@ -97,11 +98,48 @@ body {
 
 input[type=text] {
   transition: all .3s;
-  &:hover {
+  &:hover:not(:disabled) {
     border-color: $base-color;
   }
-  &:focus,
-  &:active {
+  &:focus:not(:disabled),
+  &:active:not(:disabled) {
     border-color: $color-red;
+  }
+}
+
+.preloader {
+  visibility: hidden;
+  width: 0;
+  height: 0;
+  &__logo-top {
+    background-image: url(../img/logotype-white-mobile.svg);
+    @media (min-width: $screen-md) {
+      background-image: url(../img/logotype-white-tablet.svg);
+    }
+    @media (min-width: $screen-lg) {
+      background-image: url(../img/logotype-white-desktop.svg);
+    }
+  }
+  &__logo-top-hover {
+    background-image: url(../img/logotype-white-mobile--hover.svg);
+    @media (min-width: $screen-md) {
+      background-image: url(../img/logotype-white-tablet--hover.svg);
+    }
+    @media (min-width: $screen-lg) {
+      background-image: url(../img/logotype-white-desktop--hover.svg);
+    }
+  }
+
+  &__logo-bottom {
+    background: url(../img/logotype-blue-tablet.svg);
+    @media (min-width: $screen-lg) {
+      background: url(../img/logotype-blue-desktop.svg);
+    }
+  }
+  &__logo-bottom-hover {
+    background: url(../img/logotype-blue-tablet--hover.svg);
+    @media (min-width: $screen-lg) {
+      background: url(../img/logotype-blue-desktop--hover.svg);
+    }
   }
 }

@@ -1,14 +1,14 @@
 /* миксины */
 
 @mixin clearfix {
-  content: "";
-  display: table;
-  clear: both;
-}
-
-
-@mixin outline {
-  outline: 1px dashed lime;
+    &:before,
+    &:after {
+        content: "";
+        display: table;
+    }
+    &:after {
+        clear: both;
+    }
 }
 
 
@@ -30,23 +30,19 @@
   margin-right: auto;
   padding-left: 20px;
   padding-right: 20px;
-  @media (min-width: $screen_md) {
+  @media (min-width: $screen-md) {
     padding-left: 40px;
     padding-right: 40px;
   }
-  @media (min-width: $screen_lg) {
-    //padding: 0 130px;
+  @media (min-width: $screen-lg) {
     padding-left: 0;
     padding-right: 0;
     width: 940px;
-    //margin: 0 auto;
-    //margin-left: auto;
-    //margin-right: auto;
   }
 }
 
 @mixin transition {
-  transition: all .3s;
+  transition: .2s;
 }
 
 @mixin sign-x($color: #000, $size: 30px, $line-width: 2px, $bg-color: transparent) {

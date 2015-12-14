@@ -10,67 +10,70 @@
   font-weight: 100;
   font-size: $header-font-size;
   line-height: $header-line-height;
-  @media (min-width: $screen_md) {
+  @media (min-width: $screen-md) {
     margin-top: 50px;
     font-size: 40px;
     line-height: 47px;
   }
-  @media (min-width: $screen_lg) {
+  @media (min-width: $screen-lg) {
     font-size: 50px;
     line-height: 60px;
   }
   &--offer {
     margin-top: -6px;
-    margin-bottom: 0px;
+    margin-bottom: 30px;
+    @media (min-width: $screen-lg) {
+      padding-bottom: 45px;
+    }
   }
   &--ask {
     margin: 55px 0 31px;
-    @media (min-width: $screen_md) {
-      margin: 105px 0 41px;
+    @media (min-width: $screen-md) {
+      margin: 37px 0 41px;
     }
-    @media (min-width: $screen_lg) {
-      margin: 165px 0 55px;
+    @media (min-width: $screen-lg) {
+      margin: 62px 0 55px;
     }
   }
 }
 
 
 .benefits {
-  @media (min-width: $screen_md) {
+  @include wrapper;
+  @media (min-width: $screen-md) {
     display: flex;
-    margin-bottom: 18px;//70px;
+    margin-bottom: 18px;
     text-align: left;
-    &:after {
-      @include clearfix;
-    }
   }
-  @media (min-width: $screen_lg) {
+  @media (min-width: $screen-lg) {
     display: flex;
     flex-direction: column;
     margin: 0 auto;
-    padding-top: 75px;
+    //padding-top: 75px;
   }
   &__items {
-    margin: 93px 0 0;
+    //margin: 93px 0 0;
+    //padding: 91px 0 0;
     line-height: $base-line-height;
-    @media (min-width: $screen_md) {
-      margin-top: 128px;
+    @media (min-width: $screen-md) {
+      //margin-top: 128px;
+      margin-top: 71px;
       width: calc(97% - 290px);
       order: 2;
     }
-    @media (min-width: $screen_lg) {
+    @media (min-width: $screen-lg) {
       display: flex;
       justify-content: space-between;
-      margin: 66px 0 65px;
+      margin: 55px 0 65px;
       width: 100%;
     }
   }
   &__item {
     margin-bottom: 40px;
-    @media (min-width: $screen_md) {
+    @media (min-width: $screen-md) {
       margin-bottom: 35px;
     }
-    @media (min-width: $screen_lg) {
+    @media (min-width: $screen-lg) {
       margin-bottom: 0;
       padding: 0 25px;
       flex-basis: 292px;
@@ -82,10 +85,10 @@
     color: #000;
     font-weight: bold;
     font-size: $middle-font-size;
-    @media (min-width: $screen_md) {
+    @media (min-width: $screen-md) {
       margin-bottom: 11px;
     }
-    @media (min-width: $screen_lg) {
+    @media (min-width: $screen-lg) {
       margin-bottom: 25px;
       font-size: $header-line-height;
       line-height: $header-line-height;
@@ -95,17 +98,19 @@
     margin: 0;
     font-weight: normal;
     font-size: $base-font-size;
-    @media (min-width: $screen_lg) {
+    @media (min-width: $screen-lg) {
       font-size: $middle-font-size;
       line-height: $header-line-height;
     }
   }
   &__pictures {
-    @media (min-width: $screen_md) {
+    position: relative;
+    z-index: 1;
+    @media (min-width: $screen-md) {
       padding-right: 40px;
       order: 1;
     }
-    @media (min-width: $screen_lg) {
+    @media (min-width: $screen-lg) {
       padding: 0;
       width: 100%;
       display: flex;
@@ -114,9 +119,26 @@
     &-item {
       margin: 0 0 39px;
       padding: 0;
-      //height: 157px;
-      background-size: 155px 320px;
-      &--1, &--2 { display: none; }
+      &--1 {
+        display: none;
+        @media (min-width: $screen-lg) {
+          display: block;
+          background: url(../img/iphone-screen-desktop-1@1x.png) no-repeat;
+          @media (min-resolution: 1.5dppx) {
+            background: url(../img/iphone-screen-desktop-1@2x.png) no-repeat;
+          }
+        }
+      }
+      &--2 {
+        display: none;
+        @media (min-width: $screen-lg) {
+          display: block;
+          background: url(../img/iphone-screen-desktop-2@1x.png) no-repeat;
+          @media (min-resolution: 1.5dppx) {
+            background: url(../img/iphone-screen-desktop-2@2x.png) no-repeat;
+          }
+        }
+      }
       &--3 {
         height: 278px;
         width: auto;
@@ -124,37 +146,46 @@
           url(../img/iphone-screen-mobile-3@1x.png) no-repeat center 34px,
           url(../img/iphone-case-mobile@1x.png) no-repeat top;
         background-size:
-          141px,
-          157px;
+          141px, 157px;
+        @media (min-resolution: 1.5dppx) {
+          background:
+            url(../img/iphone-screen-mobile-3@2x.png) no-repeat center 34px,
+            url(../img/iphone-case-mobile@2x.png) no-repeat top;
+          background-size:
+            141px, 157px;
+        }
+        @media (min-resolution: 2.5dppx) {
+          background:
+            url(../img/iphone-screen-mobile-3@3x.png) no-repeat center 34px,
+            url(../img/iphone-case-mobile@3x.png) no-repeat top;
+          background-size:
+            141px, 157px;
+        }
+        @media (min-width: $screen-md) {
+          background: url(../img/iphone-screen-tablet-3@1x.png) no-repeat;
+          @media (min-resolution: 1.5dppx) {
+            background: url(../img/iphone-screen-tablet-3@2x.png) no-repeat;
+          }
+        }
+        @media (min-width: $screen-lg) {
+          background: url(../img/iphone-screen-desktop-3@1x.png) no-repeat;
+          @media (min-resolution: 1.5dppx) {
+            background: url(../img/iphone-screen-desktop-3@2x.png) no-repeat;
+          }
+        }
       }
-      @media (min-width: $screen_md) {
-        float: left;
-        margin-top: 55px;
+      @media (min-width: $screen-md) {
+        //margin-top: 55px;
         height: 481px;
         width: 268px;
         background-size: 268px 481px;
-        &--3 {
-          background: url(../img/iphone-screen-tablet-3@1x.png) no-repeat;
-        }
       }
-      @media (min-width: $screen_lg) {
+      @media (min-width: $screen-lg) {
         flex-shrink: 1;
         margin: 0;
         height: 302px;
         flex-basis: 292px;
         background-size: 292px 302px;
-        &--1 {
-          display: block;
-          background: url(../img/iphone-screen-desktop-1@1x.png) no-repeat;
-        }
-        &--2 {
-          display: block;
-          background: url(../img/iphone-screen-desktop-2@1x.png) no-repeat;
-        }
-        &--3 {
-          display: block;
-          background: url(../img/iphone-screen-desktop-3@1x.png) no-repeat;
-        }
       }
     }
   }
@@ -162,25 +193,26 @@
 
 
 .effect24 {
+  @include wrapper;
   display: none;
   padding-bottom: 58px;
-  @media (min-width: $screen_md) {
+  @media (min-width: $screen-md) {
     display: flex;
     justify-content: space-between;
     padding-bottom: 45px;
   }
-  @media (min-width: $screen_lg) {
-    padding-bottom: 235px;
+  @media (min-width: $screen-lg) {
+    padding-bottom: 67px;
   }
   &__icon-wrapper {
     position: relative;
     width: 262px;
-    height: 302px;
+    min-height: 302px;
     background: url(../img/timer.svg) no-repeat;
     background-size: contain;
-    @media (min-width: $screen_lg) {
+    @media (min-width: $screen-lg) {
       width: 299px;
-      height: 346px;
+      min-height: 346px;
     }
   }
   &__icon {
@@ -198,7 +230,7 @@
     border-radius: 50%;
     flex-basis: 214;
     align-self: center;
-    @media (min-width: $screen_lg) {
+    @media (min-width: $screen-lg) {
       top: 72px;
       left: 0;
       width: 248px;
@@ -221,7 +253,7 @@
     font-weight: bold;
     font-size: $header-font-size;
     line-height: 36px;
-    @media (min-width: $screen_lg) {
+    @media (min-width: $screen-lg) {
       padding-right: 0;
       font-size: $header-line-height;
       line-height: $header-line-height;
@@ -231,7 +263,7 @@
   &__more {
     font-size: $base-font-size;
     line-height: $header-font-size;
-    @media (min-width: $screen_lg) {
+    @media (min-width: $screen-lg) {
       font-weight: normal;
       font-size: $middle-font-size;
       line-height: $header-line-height;
@@ -246,17 +278,29 @@
 
 .slider-review {
   position: relative;
+  @include wrapper;
+  @media (min-width: $screen-lg) {
+    padding-top: 167px;
+    margin-bottom: 37px;
+    &:before {
+      content: "";
+      position: absolute;
+      width: 79px;
+      height: 64px;
+      top: 72px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: url(../img/quotes.svg) no-repeat center;
+      background-size: cover;
+    }
+  }
+  position: relative;
   display: flex;
   flex-direction: column;
-  //margin-bottom: 100px;
   width: 100%;
-  min-height: 365px;
   line-height: $header-line-height;
   &__items-wrapper {
     order: 1;
-    @media (min-width: $screen_md) {
-      //min-height: 150px;
-    }
   }
   &__item {
     margin: 0 auto;
@@ -265,7 +309,7 @@
     &--active {
       display: flex;
     }
-    @media (min-width: $screen_lg) {
+    @media (min-width: $screen-lg) {
       width: 760px;
     }
   }
@@ -276,11 +320,11 @@
     font-weight: bold;
     font-size: $middle-font-size;
     order: 1;
-    @media (min-width: $screen_md) {
+    @media (min-width: $screen-md) {
       font-size: 20px;
       margin-bottom: 3px;
     }
-    @media (min-width: $screen_lg) {
+    @media (min-width: $screen-lg) {
       font-size: 24px;
     }
   }
@@ -288,23 +332,24 @@
     display: none;
     font-size: $base-font-size;
     order: 2;
-    @media (min-width: $screen_md) {
+    @media (min-width: $screen-md) {
       display: block;
       font-weight: normal;
       font-size: $middle-font-size;
     }
   }
   &__quote {
-    @media (min-width: $screen_lg) {
+    @media (min-width: $screen-lg) {
       display: none;
     }
   }
   &__text {
+    //margin-bottom: -8px;
+    margin-bottom: -1 * (($header-line-height - $base-font-size)/2);
     font-weight: normal;
     font-size: $base-font-size;
-    //line-height: $header-line-height;
     order: 3;
-    @media (min-width: $screen_md) {
+    @media (min-width: $screen-md) {
       font-size: $middle-font-size;
       margin-bottom: 35px;
       order: 0;
@@ -313,11 +358,16 @@
   &__arrow {
     display: none;
     position: absolute;
-    top: 12%;
+    //top: 3%;
+    //transform: translateY(196px);
+    top: 210px;
     width: 22px;
     height: 42px;
     background-size: 22px 42px;
     cursor: pointer;
+    font-size: 0;
+    border: none;
+    outline: none;
     &--left {
       background: url(../img/review-arrow-left.svg) no-repeat center;
       &:hover {
@@ -345,11 +395,11 @@
 .switch {
   display: flex;
   justify-content: space-between;
+  align-self: flex-end;
+  margin: 0 auto;
   padding: 0;
-  margin: 40px auto;
   width: 62px;
   order: 2;
-  align-self: flex-end;
   &__item {
     list-style: none;
   }
@@ -367,13 +417,12 @@
       height: 12px;
       border-radius: 50%;
       border: 3px solid;
-      background-color: #bec2c7; //#b5b9be;
+      background-color: #bec2c7;
       border-color: #fff;
     }
     &:hover:before {
       background-color: #7e868f;
     }
-    //&:focus:before ,
     &:active:before {
       background-color: $color-light-blue-border;
     }
@@ -390,12 +439,76 @@
   &__radio:nth-child(3):checked ~ .slider-review__items-wrapper .slider-review__item:nth-child(3) {
     display: flex;
   }
+  &--review {
+    margin: 33px auto;
+    @media (min-width: $screen-lg) {
+      display: none;
+    }
+  }
+  &--prices {
+    margin: 50px auto;
+    @media (min-width: $screen-md) {
+      display: none;
+    }
+  }
+}
+
+
+.wide-container {
+  position: relative;
+  background-color: $color-bg-grey;
+  @media (min-width: $screen-md) {
+    padding: 90px 0 68px;
+  }
+  @media (min-width: $screen-lg) {
+    padding: 154px 0 94px;
+  }
+  &--effect24 {
+    padding: 0;
+    @media (max-width: $screen-lg - 1px) {
+      background-color: #fff;
+    }
+    &:after {
+      content: none;
+      display: none;
+    }
+  }
+  &--benefits {
+    padding-top: 82px;
+    @media (min-width: $screen-md) {
+      padding-top: 0;
+    }
+    @media (min-width: $screen-md) {
+      padding-bottom: 0;
+    }
+  }
+  &--prices {
+    padding: 90px 0 0;
+    @media (min-width: $screen-md) {
+      padding-bottom: 68px;
+    }
+    @media (min-width: $screen-lg) {
+      padding-top: 150px;
+      padding-bottom: 95px;
+    }
+  }
+  &:after {
+    position: absolute;
+    content: "";
+    right: 0;
+    top: 0;
+    width: 100%;
+    height: 120px;
+    background: url(../img/triangle-white.svg) no-repeat;
+    background-size: contain;
+  }
 }
 
 
 .prices {
+  //background-color: #fff;
   overflow: hidden;
-  @media (min-width: $screen_md) {
+  @media (min-width: $screen-md) {
     @include wrapper;
   }
   &__table {
@@ -406,7 +519,7 @@
     &--switch-1 { transform: translateX(4%    /*0*/     ); }
     &--switch-2 { transform: translateX(-29.2%/*-31.7%*/); }
     &--switch-3 { transform: translateX(-62.4%/*-66.6%*/); }
-    @media (min-width: $screen_md) {
+    @media (min-width: $screen-md) {
       width: 100%;
       &--switch-1,
       &--switch-2,
@@ -419,40 +532,50 @@
   &__th:first-child,
   &__td:first-child {
     display: none;
-    background-color: #fff;
-    @media (min-width: $screen_md) {
+    @media (min-width: $screen-md) {
       display: table-cell;
     }
   }
   &__th:first-child {
     border: none;
+    background-color: $color-bg-grey;
   }
   &__th {
-    min-width: 0;//278px;
+    min-width: 0;
     width: 33.33333%;
     border: 2px solid $color-border;
     background-color: $base-color;
-    @media (min-width: $screen_md) {
+    @media (min-width: $screen-md) {
       min-width: 0;
       width: 25%;
     }
   }
   &__td {
     position: relative;
-    padding: 14px 0 15px 22px;
+    //padding: 14px 0 15px 22px;
+    padding: 17px 0 18px 22px;
     border: 2px solid $color-border;
     font-weight: normal;
     font-size: $base-font-size;
-    line-height: $header-line-height;
+    //line-height: $header-line-height;
+    line-height: $base-line-height;
+    @media (min-width: $screen-md) {
+      padding: 11px 0 12px 22px;
+      text-transform: none;
+    }
+    @media (min-width: $screen-lg) {
+      padding: 17px 0 18px 22px;
+    }
     text-transform: uppercase;
     text-align: left;
-    @media (min-width: $screen_md) {
-      padding: 8px 0 8px 22px;
-      text-transform: none;
-      &:first-child {
+    background-color: #fff;
+    &:first-child {
+      @media (min-width: $screen-md) {
         padding-left: 2.5%;
       }
-      &:not(:first-child) {
+    }
+    &:not(:first-child) {
+      @media (min-width: $screen-md) {
         font-size: 0;
       }
     }
@@ -463,7 +586,7 @@
     font-size: $middle-font-size;
     line-height: $header-line-height;
     color: #fff;
-    @media (min-width: $screen_md) {
+    @media (min-width: $screen-md) {
       margin-top: 12px;
       font-size: $middle-font-size - 2;
       text-transform: uppercase;
@@ -475,7 +598,7 @@
     font-size: $header-font-size;
     line-height: $header-line-height;
     color: #fff;
-    @media (min-width: $screen_md) {
+    @media (min-width: $screen-md) {
       margin-bottom: 13px;
       font-size: $middle-font-size;
       line-height: $header-line-height - 6;
@@ -504,7 +627,7 @@
     right: 15px;
     width: 30px;
     height: 30px;
-    @media (min-width: $screen_md) {
+    @media (min-width: $screen-md) {
       left: calc(50%);
       transform: translate(-50%, -50%);
     }
@@ -514,11 +637,6 @@
   }
   &__sign-no {
     fill: $color-red;
-  }
-  .switch {
-    @media (min-width: $screen_md) {
-      display: none;
-    }
   }
 }
 
@@ -538,21 +656,18 @@
     }
     &--email {
       order: 2;
+      @media (min-width: $screen-lg) {
+        order: 4;
+      }
     }
     &--address {
       order: 3;
     }
-    @media (min-width: $screen_md) {
+    @media (min-width: $screen-md) {
       margin-bottom: 42px;
-    }
-    @media (min-width: $screen_lg) {
-      &--email {
-        order: 4;
-      }
     }
   }
   &__item:last-child &__text{
-    //padding: 0 20%;
     width: 208px;
     margin: 0 auto;
   }
@@ -565,7 +680,6 @@
   }
   &__text {
     display: block;
-    //margin: 0 0 20px;
     margin: 0;
     font-weight: 100;
     font-size: $header-font-size;
@@ -576,7 +690,6 @@
     &:hover {
       color: $base-color;
     }
-    //&:focus,
     &:active {
       color: rgba($base-color, .3);
     }
@@ -585,13 +698,43 @@
 
 
 .map {
-  //height: 200px;
-  height: 30vh;
-  background: url(../img/map.jpg) bottom no-repeat;
-  background-size: cover;
-  @media (min-width: $screen_md) {
-    height: 50vh;
+  position: relative;
+  height: 33vh;
+  background: url(../img/map-big.jpg) 45% 55% no-repeat;
+  //background-size: cover;
+  font-size: 0;
+  @media (min-width: $screen-md) {
+    height: 61vh;
     background: url(../img/map-big.jpg) 46% 57% no-repeat;
+  }
+  @media (min-width: $screen-lg) {
+    height: 77vh;
+  }
+  &:before {
+    content: "";
+    position: absolute;
+    top: -0px;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url(../img/triangle-white-footer.svg) no-repeat;
+    background-size: 100% auto;
+  }
+  &:after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 55%;
+    transform: translateX(-50%);
+    width: 36px;
+    height: 36px;
+    background: url(../img/map-marker.svg) no-repeat;
+    @media (min-width: $screen-md) {
+      left: 50%;
+    }
+    @media (min-width: $screen-md) {
+      left: 48%;
+    }
   }
 }
 
@@ -599,20 +742,20 @@
 .wrapper {
   @include wrapper;
   &--form {
-    @media (min-width: $screen_md) {
+    @media (min-width: $screen-md) {
       margin: 0 40px;
       padding: 0 60px;
     }
-    @media (min-width: $screen_lg) {
+    @media (min-width: $screen-lg) {
       padding: 0 80px;
       margin: 0 auto;
     }
   }
   &--post {
-    @media (min-width: $screen_md) {
+    @media (min-width: $screen-md) {
       padding: 0 100px;
     }
-    @media (min-width: $screen_lg) {
+    @media (min-width: $screen-lg) {
       padding: 0 60px;
     }
   }
@@ -630,7 +773,6 @@
     font-size: $middle-font-size;
   }
   @media (min-width: $screen-lg) {
-    //margin-bottom: 55px;
     margin: 0 0 45px;
   }
   &__fill-please {
@@ -647,23 +789,24 @@
   padding: 37px 0;
   border: none;
   text-align: left;
-  @media (min-width: $screen-md) {
-    &--trip-date &__wrapper {
+  &--trip-date &__wrapper {
+    @media (min-width: $screen-md) {
       display: flex;
       justify-content: space-between;
       flex-wrap: wrap;
     }
-    &--trip-date &__input,
-    &--trip-date .calc__wrapper {
+  }
+  &--trip-date &__input,
+  &--trip-date .calc__wrapper {
+    @media (min-width: $screen-md) {
       flex-basis: 47.5%;
+    }
+    @media (min-width: $screen-lg) {
+      flex-basis: 240px;
     }
   }
   @media (min-width: $screen-lg) {
     padding: 63px 0 0;
-    &--trip-date &__input,
-    &--trip-date .calc__wrapper {
-      flex-basis: 240px;
-    }
   }
   &__wrapper {
     position: relative;
@@ -736,7 +879,7 @@
       }
     }
     @media (min-width: $screen-md) {
-      margin-top: 0px;//54px;
+      margin-top: 0px;
     }
   }
   &--fio {
@@ -831,7 +974,9 @@
       align-items: center;
       align-content: space-around;
       height: 100%;
-      li {
+    }
+    li {
+      @media (min-width: $screen-lg) {
         margin: 0 0 48px;
         flex-basis: 26%;
       }
@@ -899,7 +1044,6 @@
     @media (min-width: $screen-md) {
       width: 252px;
       padding-bottom: 40px;
-      //border-bottom: 2px solid $color-border;
     }
   }
   &--persons &__result,
@@ -909,12 +1053,38 @@
     }
   }
   &__result-over {
+    position: relative;
     flex-grow: 1;
     display: flex;
     justify-content: space-between;
     @media (min-width: $screen-md) {
       flex-grow: 1;
     }
+  }
+  &__result-over:after {
+    content: attr(data-label);
+    position: absolute;
+    top: calc(50% - 1px);
+    transform: translateY(-50%);
+    left: 55%;
+    height: $middle-font-size;
+    background-color: transparent;
+    border: none;
+    text-align: left;
+    font-weight: normal;
+    font-size: $middle-font-size;
+    line-height: $middle-font-size;
+    color: $base-color;
+    z-index: 1;
+    @media (min-width: $screen-md) {
+      left: 50%;
+    }
+  }
+  &__result-over:hover &__result{
+    @include transition;
+    border-left-width: 2px;
+    border-right-width: 2px;
+    border-color: $base-color;
   }
   &__result {
     text-align: center;
@@ -925,7 +1095,6 @@
     @media (min-width: $screen-md) {
       padding-right: 27%;
     }
-    background-color: transparent;
   }
   &--days:hover {
     .calc__btn--minus:hover {
@@ -941,8 +1110,8 @@
     border-left-color: $base-color;
     border-right-color: $base-color;
   }
-  &__result:active,
-  &__result:focus {
+  &__result:focus,
+  &__result:active {
     border-left-width: 2px;
     border-right-width: 2px;
 }
@@ -950,11 +1119,12 @@
     @include fieldset-control;
     position: relative;
     display: block;
-    width: 63px;//57px;
+    width: 63px;
     height: 59px;
     background-color: #fff;
     border: 2px solid $color-border;
     font-size: 0;
+    @include transition;
     &:before,
     &:after {
       content: "";
@@ -993,12 +1163,13 @@
   &__rem {
     position: absolute;
     left: 55%;
-    z-index: -1;
+    z-index: 1;
     text-align: left;
     @include fieldset-control;
     min-height: 0;
     border: none;
     top: 2px;
+    background-color: transparent;
     @media (min-width: $screen-md) {
       left: 50%;
     }
@@ -1102,13 +1273,15 @@
   height: 59px;
   font-weight: bold;
   font-size: $middle-font-size;
-  line-height: 59px;//$header-line-height;
+  line-height: 59px;
   color: $base-color;
   border: 2px solid $color-border;
   background-color: #fff;
   @media (min-width: $screen-md) {
     margin-bottom: 41px;
-    &:after {
+  }
+  &:after {
+    @media (min-width: $screen-md) {
       content: "";
       display: block;
       position: absolute;
@@ -1196,12 +1369,10 @@
     &:active:after ,
     &:active:before {
       background-color: #fff;
-      //border-color: $base-color;
     }
   }
   &__img {
     position: relative;
-    //overflow: hidden;
     display: block;
     width: 67px;
     height: 67px;
@@ -1217,8 +1388,8 @@
       left: 50%;
       transform: translate(-50%, -50%);
       display: block;
-      width: 67px;//auto;
-      height: 67px;//100%;
+      width: 67px;
+      height: 67px;
       @media (min-width: $screen-md) {
         width: 120px;
         height: 120px;
@@ -1239,13 +1410,11 @@
 
 .submit {
   margin: 0 0 63px;
-  //padding: 0 20px;
   @include wrapper;
   @media (min-width: $screen-md) {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    //padding: 0 40px;
   }
   @media (min-width: $screen-lg) {
     margin-bottom: 0;
@@ -1434,8 +1603,8 @@
   justify-content: flex-start;
   text-align: center;
   margin-bottom: 40px;
-  @media (min-width: $screen-md) {
-    &:before {
+  &:before {
+    @media (min-width: $screen-md) {
       position: absolute;
       content: "Стр.";
       display: block;
@@ -1546,16 +1715,6 @@
       text-transform: uppercase;
     }
   }
-  /*&__text,
-  &__link,
-  &__list-item {
-    font-size: $base-font-size;
-    line-height: 27px;
-    @media (min-width: $screen-md) {
-      font-size: $middle-font-size;
-      line-height: $header-line-height;
-    }
-  }*/
   &__link {
     color: $color-red;
   }

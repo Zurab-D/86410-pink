@@ -1,7 +1,7 @@
 (function () {
   "use strict";
   var
-    priceSwitch = document.querySelector(".price_switch"),
+    priceSwitch = document.querySelector(".switch--prices"),
     priceSwitchItems = !!priceSwitch && priceSwitch.querySelectorAll(".switch__item"),
     priceSwitchLabels = !!priceSwitch && priceSwitch.querySelectorAll(".switch__label"),
     tablePrice = document.querySelector(".prices__table"),
@@ -70,7 +70,8 @@
   // назначаем обработчики переключателям слайдера цен
   if (!!priceSwitchLabels) {
     for (var i = 0; i < priceSwitchLabels.length; i++) {
-      !!priceSwitchLabels[i] && priceSwitchLabels[i].addEventListener("click", function(event) {
+      //!!priceSwitchLabels[i] &&
+        priceSwitchLabels[i].addEventListener("click", function(event) {
         event.preventDefault();
         switchItemsListener(this);
       })

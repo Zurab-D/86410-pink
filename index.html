@@ -7,6 +7,14 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+  <!-- ПРАВИЛЬНО ЛИ ТАК ДЕЛАТЬ ПРЕДЗАГРУЗКУ КАРТИНОК? (стили в common.scss)
+  <div class="preloader">
+    <div class="preloader__logo-top"></div>
+    <div class="preloader__logo-top-hover"></div>
+    <div class="preloader__logo-bottom"></div>
+    <div class="preloader__logo-bottom-hover"></div>
+  </div>
+  -->
   <header class="header  header--index">
     <div class="header__wrap">
       <nav class="nav">
@@ -14,6 +22,7 @@
           <a class="logo  logo--top" href="index.html">Главная</a>
           <span class="menu-btn" id="menu_btn"></span>
           <ul class="nav__list">
+            <!--<li class="nav__item"><a href="#">Информация 11111 222222 33333 44444 555555</a></li>-->
             <li class="nav__item"><a href="#">Информация</a></li>
             <li class="nav__item"><a href="blog.html">Блог</a></li>
             <li class="nav__item"><a href="post.html">Отзывы</a></li>
@@ -45,51 +54,55 @@
 
 
 
-    <div class="wrapper">
+    <div class="wide-container  wide-container--benefits">
       <div class="benefits">
-        <div class="benefits__items">
-          <div class="benefits__item">
-            <h3 class="benefits__head">Поднимает настроение</h3>
-            <p class="benefits__text">Приложение позволит вам победить осеннюю хандру и деперессию буквально в несколько кликов!</p>
+          <div class="benefits__items">
+            <div class="benefits__item">
+              <h3 class="benefits__head">Поднимает настроение</h3>
+              <p class="benefits__text">Приложение позволит вам победить осеннюю хандру и деперессию буквально в несколько кликов!</p>
+            </div>
+
+            <div class="benefits__item">
+              <h3 class="benefits__head">Меняет мир вокруг</h3>
+              <p class="benefits__text">Сделайте снимок и украсьте его смайликом или текстовой подписью, чтобы усилить эффект</p>
+            </div>
+
+            <div class="benefits__item">
+              <h3 class="benefits__head">Заводит новых друзей</h3>
+              <p class="benefits__text">Ставьте лайки, комментируте, делитесь фотографиями с друзьями и заводите новых</p>
+            </div>
           </div>
 
-          <div class="benefits__item">
-            <h3 class="benefits__head">Меняет мир вокруг</h3>
-            <p class="benefits__text">Сделайте снимок и украсьте его смайликом или текстовой подписью, чтобы усилить эффект</p>
-          </div>
-
-          <div class="benefits__item">
-            <h3 class="benefits__head">Заводит новых друзей</h3>
-            <p class="benefits__text">Ставьте лайки, комментируте, делитесь фотографиями с друзьями и заводите новых</p>
+          <div class="benefits__pictures">
+            <div class="benefits__pictures-item  benefits__pictures-item--1"></div>
+            <div class="benefits__pictures-item  benefits__pictures-item--2"></div>
+            <div class="benefits__pictures-item  benefits__pictures-item--3"></div>
           </div>
         </div>
-
-        <div class="benefits__pictures">
-          <div class="benefits__pictures-item  benefits__pictures-item--1"></div>
-          <div class="benefits__pictures-item  benefits__pictures-item--2"></div>
-          <div class="benefits__pictures-item  benefits__pictures-item--3"></div>
-        </div>
-      </div>
+    </div>
 
 
 
+    <div class="wide-container wide-container--effect24">
       <div class="effect24">
-        <div class="effect24__icon-wrapper">
-          <div class="effect24__icon">24</div>
+          <div class="effect24__icon-wrapper">
+            <div class="effect24__icon">24</div>
+          </div>
+          <div class="effect24__info">
+            <div class="effect24__header">Эффект на&nbsp;24&nbsp;часа!</div>
+            <div class="effect24__text">Британские ученые провели исследования и доказали, что положительный эффект от использования приложения длится целые сутки!</div>
+            <a class="effect24__more" href="#more">Узнать больше об исследовании</a>
+          </div>
         </div>
-        <div class="effect24__info">
-          <div class="effect24__header">Эффект на&nbsp;24&nbsp;часа!</div>
-          <div class="effect24__text">Британские ученые провели исследования и доказали, что положительный эффект от использования приложения длится целые сутки!</div>
-          <a class="effect24__more" href="#more">Узнать больше об исследовании</a>
-        </div>
-      </div>
+    </div>
 
 
 
-      <div class="slider-review">
+    <div class="slider-review">
         <input class="switch__radio" type="radio" name="review_pages" id="review_pages_1" checked hidden>
         <input class="switch__radio" type="radio" name="review_pages" id="review_pages_2" hidden>
         <input class="switch__radio" type="radio" name="review_pages" id="review_pages_3" hidden>
+        <button class="slider-review__arrow  slider-review__arrow--left">&lt;</button>
         <div class="slider-review__items-wrapper">
           <div class="slider-review__item">
             <h3 class="slider-review__author">Николай Петров</h3>
@@ -109,7 +122,8 @@
             <p class="slider-review__text"><span class="slider-review__quote">«</span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Inventore, ad?<span class="slider-review__quote">»</span></p>
           </div>
         </div>
-        <ul class="switch">
+        <button class="slider-review__arrow  slider-review__arrow--right">&gt;</button>
+        <ul class="switch  switch--review">
           <li class="switch__item">
             <label class="switch__label" for="review_pages_1">&bull;</label>
           </li>
@@ -120,77 +134,76 @@
             <label class="switch__label" for="review_pages_3">&bull;</label>
           </li>
         </ul>
-        <div class="slider-review__arrow  slider-review__arrow--left"></div>
-        <div class="slider-review__arrow  slider-review__arrow--right"></div>
-      </div>
-    </div>
-
-
-
-    <div class="prices">
-      <div class="svg-hide-wrapper" style="display: none;">
-        <svg version="1.0" id="yes" display-="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-          width="30.375px" height="21.688px" viewBox="0 0 30.375 21.688" enable-background="new 0 0 30.375 21.688" xml:space="preserve">
-        <path d="M29.936,0.439c-0.586-0.586-1.535-0.586-2.121,0L10.188,18.066l-7.627-7.627c-0.586-0.586-1.535-0.586-2.121,0
-          s-0.586,1.535,0,2.121l8.688,8.688c0.293,0.293,0.677,0.439,1.061,0.439s0.768-0.146,1.061-0.439L29.936,2.561
-          C30.521,1.975,30.521,1.025,29.936,0.439z"/>
-        </svg>
-        <svg version="1.0" id="no" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-          width="26.752px" height="26.752px" viewBox="0 0 26.752 26.752" enable-background="new 0 0 26.752 26.752" xml:space="preserve">
-        <path d="M15.497,13.376L26.312,2.562c0.586-0.585,0.586-1.535,0-2.121s-1.535-0.586-2.121,0L13.376,11.255L2.562,0.439
-          c-0.586-0.586-1.535-0.586-2.121,0c-0.586,0.585-0.586,1.535,0,2.121l10.814,10.815L0.439,24.19c-0.586,0.586-0.586,1.535,0,2.121
-          c0.293,0.293,0.677,0.439,1.061,0.439s0.768-0.146,1.061-0.439l10.815-10.814L24.19,26.312c0.293,0.293,0.677,0.439,1.061,0.439
-          s0.768-0.146,1.061-0.439c0.586-0.586,0.586-1.535,0-2.121L15.497,13.376z"/>
-        </svg>
       </div>
 
-      <table class="prices__table  prices__table--switch-2">
-        <tr class="prices__row">
-          <th class="prices__th  prices--1st-col"></th>
-          <th class="prices__th">
-            <h3 class="prices__title">База</h3>
-            <p class="prices__value">1,99 USD</p>
-          </th>
-          <th class="prices__th  prices__hit">
-            <h3 class="prices__title">Стандарт</h3>
-            <p class="prices__value">3,99 USD</p>
-          </th>
-          <th class="prices__th">
-            <h3 class="prices__title">Анлим</h3>
-            <p class="prices__value">9,99 USD</p>
-          </th>
-        </tr>
-        <tr class="prices__row">
-          <td class="prices__td  prices--1st-col">Розовый фильтр</td>
-          <td class="prices__td">Розовый фильтр <svg class="prices__sign-yes"><use xlink:href="#yes"></use></svg></td>
-          <td class="prices__td">Розовый фильтр <svg class="prices__sign-yes"><use xlink:href="#yes"></use></svg></td>
-          <td class="prices__td">Розовый фильтр <svg class="prices__sign-yes"><use xlink:href="#yes"></use></svg></td>
-        </tr>
-        <tr class="prices__row">
-          <td class="prices__td  prices__1st-col" >Смайлики</td>
-          <td class="prices__td" >Смайлики <svg class="prices__sign-no"><use xlink:href="#no"></use></svg></td>
-          <td class="prices__td">Смайлики <svg class="prices__sign-yes"><use xlink:href="#yes"></use></svg></td>
-          <td class="prices__td">Смайлики <svg class="prices__sign-yes"><use xlink:href="#yes"></use></svg></td>
-        </tr>
-        <tr class="prices__row">
-          <td class="prices__td  prices__1st-col">Комментарии</td>
-          <td class="prices__td">Комментарии <svg class="prices__sign-no"><use xlink:href="#no"></use></svg></td>
-          <td class="prices__td" >Комментарии <svg class="prices__sign-no"><use xlink:href="#no"></use></svg></td>
-          <td class="prices__td">Комментарии <svg class="prices__sign-yes"><use xlink:href="#yes"></use></svg></td>
-        </tr>
-      </table>
 
-      <ul class="switch  price_switch">
-        <li class="switch__item">
-          <span class="switch__label" id="prices__table--switch-1"></span>
-        </li>
-        <li class="switch__item  switch__item--active">
-          <span class="switch__label" id="prices__table--switch-2"></span>
-        </li>
-        <li class="switch__item">
-          <span class="switch__label" id="prices__table--switch-3"></span>
-        </li>
-      </ul>
+
+    <div class="wide-container  wide-container--prices">
+      <div class="prices">
+        <div class="svg-hide-wrapper" style="display: none;">
+          <svg version="1.0" id="yes" display-="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+            width="30.375px" height="21.688px" viewBox="0 0 30.375 21.688" enable-background="new 0 0 30.375 21.688" xml:space="preserve">
+          <path d="M29.936,0.439c-0.586-0.586-1.535-0.586-2.121,0L10.188,18.066l-7.627-7.627c-0.586-0.586-1.535-0.586-2.121,0
+            s-0.586,1.535,0,2.121l8.688,8.688c0.293,0.293,0.677,0.439,1.061,0.439s0.768-0.146,1.061-0.439L29.936,2.561
+            C30.521,1.975,30.521,1.025,29.936,0.439z"/>
+          </svg>
+          <svg version="1.0" id="no" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+            width="26.752px" height="26.752px" viewBox="0 0 26.752 26.752" enable-background="new 0 0 26.752 26.752" xml:space="preserve">
+          <path d="M15.497,13.376L26.312,2.562c0.586-0.585,0.586-1.535,0-2.121s-1.535-0.586-2.121,0L13.376,11.255L2.562,0.439
+            c-0.586-0.586-1.535-0.586-2.121,0c-0.586,0.585-0.586,1.535,0,2.121l10.814,10.815L0.439,24.19c-0.586,0.586-0.586,1.535,0,2.121
+            c0.293,0.293,0.677,0.439,1.061,0.439s0.768-0.146,1.061-0.439l10.815-10.814L24.19,26.312c0.293,0.293,0.677,0.439,1.061,0.439
+            s0.768-0.146,1.061-0.439c0.586-0.586,0.586-1.535,0-2.121L15.497,13.376z"/>
+          </svg>
+        </div>
+
+        <table class="prices__table  prices__table--switch-2">
+          <tr class="prices__row">
+            <th class="prices__th  prices--1st-col"></th>
+            <th class="prices__th">
+              <h3 class="prices__title">База</h3>
+              <p class="prices__value">1,99 USD</p>
+            </th>
+            <th class="prices__th  prices__hit">
+              <h3 class="prices__title">Стандарт</h3>
+              <p class="prices__value">3,99 USD</p>
+            </th>
+            <th class="prices__th">
+              <h3 class="prices__title">Анлим</h3>
+              <p class="prices__value">9,99 USD</p>
+            </th>
+          </tr>
+          <tr class="prices__row">
+            <td class="prices__td  prices--1st-col">Розовый фильтр</td>
+            <td class="prices__td">Розовый фильтр <svg class="prices__sign-yes"><use xlink:href="#yes"></use></svg></td>
+            <td class="prices__td">Розовый фильтр <svg class="prices__sign-yes"><use xlink:href="#yes"></use></svg></td>
+            <td class="prices__td">Розовый фильтр <svg class="prices__sign-yes"><use xlink:href="#yes"></use></svg></td>
+          </tr>
+          <tr class="prices__row">
+            <td class="prices__td  prices__1st-col" >Смайлики</td>
+            <td class="prices__td" >Смайлики <svg class="prices__sign-no"><use xlink:href="#no"></use></svg></td>
+            <td class="prices__td">Смайлики <svg class="prices__sign-yes"><use xlink:href="#yes"></use></svg></td>
+            <td class="prices__td">Смайлики <svg class="prices__sign-yes"><use xlink:href="#yes"></use></svg></td>
+          </tr>
+          <tr class="prices__row">
+            <td class="prices__td  prices__1st-col">Комментарии</td>
+            <td class="prices__td">Комментарии <svg class="prices__sign-no"><use xlink:href="#no"></use></svg></td>
+            <td class="prices__td" >Комментарии <svg class="prices__sign-no"><use xlink:href="#no"></use></svg></td>
+            <td class="prices__td">Комментарии <svg class="prices__sign-yes"><use xlink:href="#yes"></use></svg></td>
+          </tr>
+        </table>
+
+        <ul class="switch  switch--prices">
+          <li class="switch__item">
+            <span class="switch__label" id="prices__table--switch-1"></span>
+          </li>
+          <li class="switch__item  switch__item--active">
+            <span class="switch__label" id="prices__table--switch-2"></span>
+          </li>
+          <li class="switch__item">
+            <span class="switch__label" id="prices__table--switch-3"></span>
+          </li>
+        </ul>
+      </div>
     </div>
 
 
@@ -216,7 +229,7 @@
 
 
 
-    <div class="map"></div>
+    <div class="map">Как проехать</div>
   </main>
 
 
