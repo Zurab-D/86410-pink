@@ -8,7 +8,6 @@
     successDlg = document.querySelector(".success")
   ;
 
-
   // функция показа полупрозрачной вуали
   pink.showOverlay = function () {
     document.querySelector("body").classList.add("show-overlay");
@@ -17,7 +16,6 @@
   pink.hideOverlay = function () {
     document.querySelector("body").classList.remove("show-overlay");
   };
-
 
   // функция показа диалога успеха
   pink.showSuccessDlg = function () {
@@ -29,7 +27,6 @@
     !!successDlg && successDlg.classList.add("success--hidden");
     pink.hideOverlay();
   };
-
 
   // функция увеличения значения поля input.value
   pink.inputValueInc = function (input) {
@@ -48,7 +45,6 @@
     }
   };
 
-
   // функция получения индекса предыдущей страницы слайдера
   pink.getSliderPrevIndex = function (currentIndex, sliderItemCount) {
     currentIndex = currentIndex - 1;
@@ -59,7 +55,6 @@
   pink.getSliderNextIndex = function (currentIndex, sliderItemCount) {
     return (currentIndex + 1) % sliderItemCount;
   };
-
 
   // функция переключения радио-инпутов (для сдвига слайдера на инпутах - input[type=radio] )
   // direction: DIRECTION_LEFT, DIRECTION_RIGHT; default value: DIRECTION_LEFT
@@ -80,7 +75,6 @@
       }
     }
   };
-
 
   window.pink = pink;
   return pink;
@@ -105,8 +99,6 @@
     sliderReviewArrowRight = document.querySelector(".slider-review__arrow--right")
   ;
 
-
-
   // спрятать / показать мобильное меню
   !!menuBtn && menuBtn.addEventListener("click", function(event){
     var nav = document.querySelector(".nav");
@@ -115,8 +107,6 @@
     menuBtn.classList.toggle("menu-btn--close");
     document.querySelector("body").classList.toggle("show-overlay");
   });
-
-
 
   // слайдер slider-review - влево
   !!sliderReviewArrowLeft && sliderReviewArrowLeft.addEventListener("click", function(event) {
@@ -128,8 +118,6 @@
     event.preventDefault();
     pink.switchSlider(".switch__radio", pink.DIRECTION_RIGHT);
   });
-
-
 
   // обработчик переключателей слайдера цен
   function switchItemsListener(self) {
@@ -156,8 +144,6 @@
         switchItemsListener(this);
       })
   }};
-
-
 
   // показать диалог успеха
   /*!!formBtnSubmit && formBtnSubmit.addEventListener("click", function(event) {
@@ -227,17 +213,19 @@
     daysCountMinus = document.querySelector("#days_count_minus"),
     daysCountPlus = document.querySelector("#days_count_plus")
   ;
+
   // количество дней - минус
   !!daysCountMinus && daysCountMinus.addEventListener("click", function(event) {
     event.preventDefault();
     pink.inputValueDec(daysCount);
   });
+
   // количество дней - плюс
   !!daysCountPlus && daysCountPlus.addEventListener("click", function(event) {
     event.preventDefault();
     pink.inputValueInc(daysCount);
   });
-  
+
 })();
 //------------------------------------------------------------------------------
 
@@ -307,11 +295,11 @@
     picsArea = document.querySelector(".pics"),
     loadFileLabel = document.querySelector(".load-file-label")
   ;
-  
+
   !!loadFileLabel && loadFileLabel.addEventListener("click", function() {
-    
+
   })
-  
+
   // функция добавления фото
   function addPhoto(imgSrc, figCaption) {
     var
