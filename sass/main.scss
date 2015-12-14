@@ -1043,7 +1043,7 @@
   &--persons {
     @media (min-width: $screen-md) {
       width: 252px;
-      padding-bottom: 40px;
+      //padding-bottom: 40px;
     }
   }
   &--persons &__result,
@@ -1064,9 +1064,9 @@
   &__result-over:after {
     content: attr(data-label);
     position: absolute;
-    top: calc(50% - 1px);
+    top: calc(50%);
     transform: translateY(-50%);
-    left: 55%;
+    left: 60%;
     height: $middle-font-size;
     background-color: transparent;
     border: none;
@@ -1184,13 +1184,22 @@
 }
 
 
+.persons {
+  @media (max-width: $screen-lg - 1px) {
+    margin-bottom: 30px;
+  }
+}
+
+
 .person {
   display: flex;
   margin-bottom: 30px;
   @media (min-width: $screen-lg) {
     margin-bottom: 13px;
   }
-  &:nth-of-type(2) {
+  //&:nth-of-type(2) {
+  &:first-child {
+    margin-top: 40px;
     @media (min-width: $screen-md) {
       padding-top: 23px;
       border-top: 2px solid $color-border;
