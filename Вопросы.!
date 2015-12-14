@@ -19,3 +19,6 @@
 
 - Где прочитать подробнее о размерах в процентах в CSS, не всегда ясно от чего берется процент,
     особенно когда большая вложенность, псевдоэлементы и т.д.
+
+
+XMLHttpRequest cannot load https://htmlacademy.ru/. The 'Access-Control-Allow-Origin' header contains the invalid value '*.htmlacademy.ru'. Origin 'null' is therefore not allowed access.
