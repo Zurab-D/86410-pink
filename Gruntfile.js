@@ -3,8 +3,6 @@
 module.exports = function(grunt) {
   require("load-grunt-tasks")(grunt);
 
-  //var mozjpeg = require('imagemin-mozjpeg');
-
   var config = {
     pkg: grunt.file.readJSON("package.json"),
 
@@ -38,11 +36,12 @@ module.exports = function(grunt) {
           expand: true,
           cwd: "src",
           src: [
-            "css/**",
+            "css/*.css",
             "fonts/**",
             "img/**",
-            "js/script*.js",
-            "*.html"
+            "js/*.js",
+            "*.html",
+            "!**/README"
           ],
           dest: "build"
         }]
@@ -97,42 +96,18 @@ module.exports = function(grunt) {
       }
     },
 
-    //imagemin: {
-    //  images: {
-    //    options: {
-    //      optimizationLevel: 3
-    //    },
-    //    files: [{
-    //      expand: true,
-    //      src: ["build/img/**/*.{png,jpg,gif,svg}"]
-    //    }]
-    //  }
-    //},
-
-    imagemin: {                          // Task
-      /*static: {                          // Target
-        options: {                       // Target options
-          optimizationLevel: 3,
-          svgoPlugins: [{ removeViewBox: false }],
-          use: [mozjpeg()]
-        },
-        files: {                         // Dictionary of files
-          "dist/img.png": "src/img.png", // "destination": "source"
-          "dist/img.jpg": "src/img.jpg",
-          "dist/img.gif": "src/img.gif"
-        }
-      },*/
-      dynamic: {                         // Another target
-        options: {                       // Target options
+    imagemin: {
+      dynamic: {
+        options: {
           optimizationLevel: 3
         },
         files: [{
-          expand: true,                  // Enable dynamic expansion
-          //cwd: "build/",                 // Src matches are relative to this path
-          //src: ["**/*.{png,jpg,gif,svg}"],   // Actual patterns to match
-          //dest: "dist/"                  // Destination path prefix
-          src: ["build/img/**/*.{png,jpg,gif,svg}"],
-          dest: "/"
+          expand: true,
+          cwd: "build",
+          src: ["**/*.{png,jpg,gif,svg}"],
+          dest: "build"
+          //src: ["build/img/**/*.{png,jpg,gif,svg}"],
+          //dest: "/"
         }]
       }
     },
@@ -141,7 +116,6 @@ module.exports = function(grunt) {
       style: {
         files: ["src/sass/**/*.scss", "src/sass/*.scss"],
         tasks: ["sass", "postcss", "cmq", "cssmin"],
-        //tasks: ["sass", "postcss"],
         options: {
           spawn: false,
           livereload: true

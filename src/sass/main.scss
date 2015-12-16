@@ -22,8 +22,12 @@
   &--offer {
     margin-top: -6px;
     margin-bottom: 30px;
+    @media (min-width: $screen-md) {
+      margin-bottom: 0px;
+      padding-bottom: 0px;
+    }
     @media (min-width: $screen-lg) {
-      padding-bottom: 45px;
+      //padding-bottom: 45px;
     }
   }
   &--ask {
@@ -60,7 +64,7 @@
     @media (min-width: $screen-lg) {
       display: flex;
       justify-content: space-between;
-      margin: 55px 0 65px;
+      margin: 55px 0 0;//65px;
       width: 100%;
     }
   }
@@ -72,7 +76,8 @@
     @media (min-width: $screen-lg) {
       margin-bottom: 0;
       padding: 0 25px;
-      flex-basis: 292px;
+      //flex-basis: 292px;
+      width: 292px;
       text-align: center;
     }
   }
@@ -183,7 +188,8 @@
         flex-shrink: 1;
         margin: 0;
         height: 302px;
-        flex-basis: 292px;
+        //flex-basis: 292px;
+        width: 292px;
         background-size: 292px 302px;
       }
     }
@@ -201,7 +207,7 @@
     padding-bottom: 45px;
   }
   @media (min-width: $screen-lg) {
-    padding-bottom: 67px;
+    padding-bottom: 34px; //67px;
   }
   &__icon-wrapper {
     position: relative;
@@ -227,7 +233,7 @@
     color: $color-red;
     border: 11px solid $color-red;
     border-radius: 50%;
-    flex-basis: 214;
+    //flex-basis: 214;
     align-self: center;
     @media (min-width: $screen-lg) {
       top: 72px;
@@ -252,6 +258,10 @@
     font-weight: bold;
     font-size: $header-font-size;
     line-height: 36px;
+    @media (min-width: $screen-md) {
+      font-size: $header-line-height;
+      line-height: $header-line-height;
+    }
     @media (min-width: $screen-lg) {
       padding-right: 0;
       font-size: $header-line-height;
@@ -266,6 +276,11 @@
       font-weight: normal;
       font-size: $middle-font-size;
       line-height: $header-line-height;
+    }
+  }
+  &__text {
+    @media (min-width: $screen-lg) {
+      margin-bottom: 30px;
     }
   }
   &__more {
@@ -471,7 +486,11 @@
   &--effect24 {
     padding: 0;
     @media (max-width: $screen-lg - 1px) {
+      padding-top: 0;
       background-color: #fff;
+    }
+    @media (min-width: $screen-lg) {
+      padding: 0;
     }
     &:after {
       content: none;
@@ -481,10 +500,10 @@
   &--benefits {
     padding-top: 82px;
     @media (min-width: $screen-md) {
-      padding-top: 0;
+      padding: 0;
     }
-    @media (min-width: $screen-md) {
-      padding-bottom: 0;
+    @media (min-width: $screen-lg) {
+      padding-top: 82px;
     }
   }
   &--prices {
@@ -650,7 +669,8 @@
   align-items: flex-start;
   @include wrapper;
   &__item {
-    flex-basis: 285px;
+    //flex-basis: 285px;
+    width: 285px;
     margin-bottom: 20px;
     flex-grow: 1;
     &--phone {
@@ -800,10 +820,12 @@
   &--trip-date &__input,
   &--trip-date .calc__wrapper {
     @media (min-width: $screen-md) {
-      flex-basis: 47.5%;
+      //flex-basis: 47.5%;
+      width: 47.5%;
     }
     @media (min-width: $screen-lg) {
-      flex-basis: 240px;
+      //flex-basis: 240px;
+      width: 240px;
     }
   }
   @media (min-width: $screen-lg) {
@@ -819,6 +841,7 @@
     }
     @media (min-width: $screen-lg) {
       margin: 0 auto;
+      padding: 42px 58px 0;
     }
   }
   &__header {
@@ -855,12 +878,17 @@
     input[type="text"] {
       padding: 14px 20px;
       width: 100%;
-      &::-webkit-input-placeholder {color: $base-color;font-weight: normal;}
-      &::-moz-placeholder {color: $base-color;font-weight: normal;}
-      &:-moz-placeholder {color: $base-color;font-weight: normal;}
+      &::-webkit-input-placeholder {display: none; color: $base-color;font-weight: normal;}
+      &::-moz-placeholder {display: none; color: $base-color;font-weight: normal;}
+      &:-moz-placeholder {display: none; color: $base-color;font-weight: normal;}
       &:disabled {background-color: $color-bg-grey}
+      &:focus::-webkit-input-placeholder {color: transparent}
+      &:focus::-moz-placeholder          {color: transparent}
+      &:focus:-moz-placeholder           {color: transparent}
+      &:focus:-ms-input-placeholder      {color: transparent}
       @media (min-width: $screen-lg) {
-        flex-basis: 284px;
+        //flex-basis: 284px;
+        width: 284px;
       }
     }
   }
@@ -979,7 +1007,8 @@
     li {
       @media (min-width: $screen-lg) {
         margin: 0 0 48px;
-        flex-basis: 26%;
+        //flex-basis: 26%;
+        width: 26%;
       }
     }
   }
@@ -1067,8 +1096,9 @@
     top: calc(50%);
     transform: translateY(-50%);
     left: 60%;
-    height: $middle-font-size;
-    background-color: transparent;
+    height: $middle-font-size + 2;
+    width: 45%;
+    background-color: #fff;
     border: none;
     text-align: left;
     font-weight: normal;
@@ -1176,7 +1206,8 @@
   }
   &__rem,
   &__result {
-    flex-basis: 100%;
+    //flex-basis: 100%;
+    width: 100%;
     border-left-width: 0;
     border-right-width: 0;
     line-height: 53px;
@@ -1205,7 +1236,8 @@
     }
   }
   &__number-cover {
-    flex-basis: 63px;
+    //flex-basis: 63px;
+    width: 63px;
     flex-shrink: 0;
   }
   &__number-label {
@@ -1238,13 +1270,15 @@
     }
     .fieldset__input {
       @media (min-width: $screen-lg) {
-        flex-basis: 301px; //48.4%;
+        //flex-basis: 301px; //48.4%;
+        width: 301px; //48.4%;
       }
     }
   }
   &__delete-wrapper {
     display: none;
-    flex-basis: 115px;
+    //flex-basis: 115px;
+    width: 115px;
     flex-shrink: 0;
     margin: 0;
     padding: 46px 0 0;
@@ -1669,12 +1703,13 @@
     }
   }
   &__header {
+    margin: 16px 0;
     text-align: center;
     font-weight: bold;
     font-size: $header-font-size;
     line-height: 36px;
     @media (min-width: $screen-md) {
-      margin-bottom: 22px;
+      margin: 33.5px 0 22px;
       font-size: 50px;
       line-height: 60px;
     }
@@ -1712,11 +1747,12 @@
     }
   }
   &__subtitle {
+    margin: 15px 0;
     font-weight: bold;
     font-size: $middle-font-size;
     line-height: $header-line-height;
     @media (min-width: $screen-md) {
-      margin-top: 58px;
+      margin: 58px 0 19.920px;
       padding-bottom: 3px;
       font-size: $header-font-size;
       line-height: $header-line-height;
