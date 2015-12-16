@@ -16,9 +16,20 @@
 
 + Галочку и крестик делаем или оба SVG или оба одинаково центрировать  (см. 11:50 в видео)
 
-- height -> min-height
++ height -> min-height
 
-- @media одинаково
++ @media одинаково
+
+
+
++ background  ->  background-image
++ предзагрузка картинок с hover (лого, htmlacademy)
++ слайдер отзывов через opacity
+- автоматизация
+- фотографии
+- даты
+- pixel perfect
+
 
 
 - Избегать :nth-of-type, :nth-child, :forst-child, :last-child, т.к. могут добавиться элементы и верстка поламается
