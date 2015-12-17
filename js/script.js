@@ -4,8 +4,8 @@
   var
     DIRECTION_LEFT = 0,
     DIRECTION_RIGHT = 1,
-    pink = function () {},
-    successDlg = document.querySelector(".success")
+    successDlg = document.querySelector(".success"),
+    pink = {}
   ;
 
   // функция показа полупрозрачной вуали
@@ -169,7 +169,7 @@
   if (!("FormData" in window) || (!form)) {
     return;
   }
-  var urlBase = "https://echo.htmlacademy.ru/adaptive&",
+  var urlBase = "https://echo.htmlacademy.ru/adaptive?",
       successDlg = document.querySelector(".success")
   ;
 
