@@ -274,20 +274,24 @@
     return;
   }
   var
-    urlBase = "https://echo.htmlacademy.ru/adaptive?",
-    queue = [];
-  
+    queue = [],
+    urlBase = form.getAttribute("action")
+  ;
+
+  if (urlBase[urlBase.length-1] != "?") {
+    urlBase = urlBase + "?";
+  };
 
   // запрашиваем по Ajax
   form.addEventListener("submit", function (event) {
     event.preventDefault();
-  
+
     var data = new FormData(form);
-    
+
     queue.forEach(function(element) {
       data.append("images", element.file);
     });
-  
+
     request(data, urlBase, function (response) {
       console.log("server response: \n\"" + response+"\"");
       pink.showSuccessDlg();
@@ -301,7 +305,7 @@
       time = (new Date()).getTime(),
       url = url + time
     ;
-  
+
     xhr.open("post", url);
     xhr.addEventListener("readystatechange", function() {
       if (xhr.readyState == 4) {
@@ -365,4 +369,3 @@
     };
   };
 }());
-//------------------------------------------------------------------------------

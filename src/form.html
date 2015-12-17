@@ -7,17 +7,6 @@
     <link rel="stylesheet" href="css/style.min.css">
 </head>
 <body>
-  <div class="preloader">
-    <div class="preloader__logo-top"></div>
-    <div class="preloader__logo-top-hover"></div>
-    <div class="preloader__logo-bottom"></div>
-    <div class="preloader__logo-bottom-hover"></div>
-    <div class="preloader__htmlacademy"></div>
-    <div class="preloader__htmlacademy-hover"></div>
-  </div>
-
-
-
   <header class="header  header--form">
     <div class="header__wrap">
       <nav class="nav">
@@ -45,7 +34,7 @@
       <p class="story">Поделитесь своей историей и получите шанс выиграть ценный приз — 1000 миль на вашу бонусную карту! <span class="story__fill-please">Пожалуйста, заполните форму ниже:</span></p>
     </div>
 
-    <form id="form" action="#" method="post">
+    <form id="form" action="https://echo.htmlacademy.ru/adaptive" method="post">
       <fieldset class="fieldset  fieldset--fio">
         <div class="fieldset__wrapper">
           <div class="fieldset__input">
@@ -195,13 +184,11 @@
           <label class="load-file-label  btn" for="input_file">Загрузить фото</label>
 
           <script id="pic_template" type="text/html">
-            <!--<li class="pics__item">-->
-              <a class="pics__delete" href="#pic-del">&times;</a>
-              <figure class="pics__img">
-                <img src="{{img-src}}" alt="" width="67" height="67">
-                <figcaption>{{figcaption}}</figcaption>
-              </figure>
-            <!--</li>-->
+            <a class="pics__delete" href="#pic-del">&times;</a>
+            <figure class="pics__img">
+              <img src="{{img-src}}" alt="" width="67" height="67">
+              <figcaption>{{figcaption}}</figcaption>
+            </figure>
           </script>
 
           <ul class="pics"></ul>
@@ -243,9 +230,19 @@
 
 
 
-  <!--<script src="../node_modules/moment/min/moment-with-locales.js"></script>
+  <div class="preloader">
+    <div class="preloader__logo-top-hover"></div>
+    <div class="preloader__logo-bottom-hover"></div>
+    <div class="preloader__htmlacademy-hover"></div>
+  </div>
+
+
+
+  <!-- Раскомментировать при разработке, для отладки. Перед билдом закомментировать
+  <script src="../node_modules/moment/min/moment-with-locales.js"></script>
   <script src="../node_modules/mustache/mustache.js"></script>
-  <script src="js/script.js"></script> -->
+  <script src="js/script.js"></script>
+  -->
   <script src="js/script.min.js"></script>
 </body>
 </html>
