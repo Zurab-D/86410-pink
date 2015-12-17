@@ -76,8 +76,8 @@
     @media (min-width: $screen-lg) {
       margin-bottom: 0;
       padding: 0 25px;
-      //flex-basis: 292px;
-      width: 292px;
+      flex-basis: 292px;
+      //width: 292px;
       text-align: center;
     }
   }
@@ -188,8 +188,8 @@
         flex-shrink: 1;
         margin: 0;
         height: 302px;
-        //flex-basis: 292px;
-        width: 292px;
+        flex-basis: 292px;
+        //width: 292px;
         background-size: 292px 302px;
       }
     }
@@ -669,8 +669,8 @@
   align-items: flex-start;
   @include wrapper;
   &__item {
-    //flex-basis: 285px;
-    width: 285px;
+    flex-basis: 285px;
+    //width: 285px;
     margin-bottom: 20px;
     flex-grow: 1;
     &--phone {
@@ -820,12 +820,12 @@
   &--trip-date &__input,
   &--trip-date .calc__wrapper {
     @media (min-width: $screen-md) {
-      //flex-basis: 47.5%;
-      width: 47.5%;
+      flex-basis: 47.5%;
+      //width: 47.5%;
     }
     @media (min-width: $screen-lg) {
-      //flex-basis: 240px;
-      width: 240px;
+      flex-basis: 240px;
+      //width: 240px;
     }
   }
   @media (min-width: $screen-lg) {
@@ -887,8 +887,8 @@
       &:focus:-moz-placeholder           {color: transparent}
       &:focus:-ms-input-placeholder      {color: transparent}
       @media (min-width: $screen-lg) {
-        //flex-basis: 284px;
-        width: 284px;
+        flex-basis: 284px;
+        //width: 284px;
       }
     }
   }
@@ -1007,8 +1007,8 @@
     li {
       @media (min-width: $screen-lg) {
         margin: 0 0 48px;
-        //flex-basis: 26%;
-        width: 26%;
+        flex-basis: 26%;
+        //width: 26%;
       }
     }
   }
@@ -1097,7 +1097,7 @@
     transform: translateY(-50%);
     left: 60%;
     height: $middle-font-size + 2;
-    width: 60px;
+    width: 50px;
     background-color: #fff;
     border: none;
     text-align: left;
@@ -1206,8 +1206,8 @@
   }
   &__rem,
   &__result {
-    //flex-basis: 100%;
-    width: 100%;
+    flex-basis: 100%;
+    //width: 100%;
     border-left-width: 0;
     border-right-width: 0;
     line-height: 53px;
@@ -1236,8 +1236,8 @@
     }
   }
   &__number-cover {
-    //flex-basis: 63px;
-    width: 63px;
+    flex-basis: 63px;
+    //width: 63px;
     flex-shrink: 0;
   }
   &__number-label {
@@ -1270,15 +1270,15 @@
     }
     .fieldset__input {
       @media (min-width: $screen-lg) {
-        //flex-basis: 301px; //48.4%;
-        width: 301px; //48.4%;
+        flex-basis: 301px; //48.4%;
+        //width: 301px; //48.4%;
       }
     }
   }
   &__delete-wrapper {
     display: none;
-    //flex-basis: 115px;
-    width: 115px;
+    flex-basis: 115px;
+    //width: 115px;
     flex-shrink: 0;
     margin: 0;
     padding: 46px 0 0;
