@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+    <title>HTML Academy: Pink :: Form</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.min.css">
+</head>
+<body>
+  <div class="preloader">
+    <div class="preloader__logo-top"></div>
+    <div class="preloader__logo-top-hover"></div>
+    <div class="preloader__logo-bottom"></div>
+    <div class="preloader__logo-bottom-hover"></div>
+    <div class="preloader__htmlacademy"></div>
+    <div class="preloader__htmlacademy-hover"></div>
+  </div>
+
+
+
+  <header class="header  header--form">
+    <div class="header__wrap">
+      <nav class="nav">
+        <div class="wrapper">
+          <a class="logo  logo--top" href="index.html">Главная</a>
+          <span class="menu-btn" id="menu_btn"></span>
+          <ul class="nav__list">
+            <li class="nav__item"><a href="#">Информация</a></li>
+            <li class="nav__item"><a href="blog.html">Блог</a></li>
+            <li class="nav__item"><a href="post.html">Отзывы</a></li>
+            <li class="nav__item"><a href="form.html">Конкурс</a></li>
+          </ul>
+        </div>
+      </nav>
+      <div class="header__front">
+        <h1 class="header__front-text">Конкурс на самое безбашенное путешествие с Пинк</h1>
+      </div>
+    </div>
+  </header>
+
+
+
+  <main class="main">
+    <div class="wrapper  wrapper--form">
+      <p class="story">Поделитесь своей историей и получите шанс выиграть ценный приз — 1000 миль на вашу бонусную карту! <span class="story__fill-please">Пожалуйста, заполните форму ниже:</span></p>
+    </div>
+
+    <form id="form" action="#" method="post">
+      <fieldset class="fieldset  fieldset--fio">
+        <div class="fieldset__wrapper">
+          <div class="fieldset__input">
+            <label class="fieldset__label" for="fio_name-f">Имя: *</label>
+            <input class="fieldset__control" type="text" id="fio_name-f" placeholder="Введите ваше имя" required>
+          </div>
+          <div class="fieldset__input">
+            <label class="fieldset__label" for="fio_name-l">Фамилия: *</label>
+            <input class="fieldset__control" type="text" id="fio_name-l" placeholder="Укажите фамилию" required>
+          </div>
+          <div class="fieldset__input">
+            <label class="fieldset__label" for="fio_name-m">Отчество</label>
+            <input class="fieldset__control" type="text" id="fio_name-m" placeholder="Ну и отчество тоже">
+          </div>
+        </div>
+      </fieldset>
+
+
+
+      <fieldset class="fieldset  fieldset--app">
+        <div class="fieldset__wrapper">
+          <h3 class="fieldset__header">С каким приложением путешествовали? *</h3>
+          <ul class="fieldset__ul">
+            <li>
+              <input class="fieldset__radio" type="radio" id="app_ios" name="app" checked required>
+              <label class="fieldset__label" for="app_ios">Pink для iOS</label>
+            </li>
+            <li>
+              <input class="fieldset__radio" type="radio" id="app_and" name="app">
+              <label class="fieldset__label" for="app_and">Pink на Android</label>
+            </li>
+            <li>
+              <input class="fieldset__radio" type="radio" id="app_win" name="app">
+              <label class="fieldset__label" for="app_win">Windows Phone</label>
+            </li>
+          </ul>
+        </div>
+      </fieldset>
+
+
+
+      <fieldset class="fieldset  fieldset--trip-date">
+        <div class="fieldset__wrapper">
+          <h3 class="fieldset__header">Когда вы путешествовали? *</h3>
+          <div class="fieldset__input">
+            <input class="fieldset__control" type="text" pattern="\d{1,2}\.\d{1,2}\.\d{4}" id="checkin-date" value="01.04.2015" required>
+            <label class="fieldset__label" for="checkin-date">Дата вызда</label>
+          </div>
+
+          <div class="calc__wrapper">
+            <div class="calc  calc--days">
+              <button class="calc__btn  calc__btn--minus  btn" id="days_count_minus" type="button">-</button>
+              <div class="calc__result-over" data-label="дней">
+                <input class="calc__result" type="text" id="days_count" name="days_count" min="1" value="10" pattern="\d+" required>
+              </div>
+              <button class="calc__btn  calc__btn--plus  btn" id="days_count_plus" type="button">+</button>
+            </div>
+            <label class="fieldset__label" for="days_count">Продолжительность</label>
+          </div>
+
+          <div class="fieldset__input">
+            <input class="fieldset__control" type="text" pattern="\d{1,2}\.\d{1,2}\.\d{4}" id="checkout-date" value="11.04.2015" disabled>
+            <label class="fieldset__label" for="checkout-date">Дата возвращения</label>
+          </div>
+        </div>
+      </fieldset>
+
+
+
+      <fieldset class="fieldset  fieldset--travelers">
+        <div class="fieldset__wrapper">
+          <h3 class="fieldset__header"><label for="persons_count">Количество попутчиков *</label></h3>
+          <div class="calc  calc--persons">
+            <button class="calc__btn  calc__btn--minus  btn" id="persons_count_minus" type="button">-</button>
+            <div class="calc__result-over" data-label="чел">
+              <input class="calc__result" type="text" id="persons_count" name="persons_count" pattern="\d+" value="0" min="0" required>
+            </div>
+            <button class="calc__btn  calc__btn--plus  btn" id="persons_count_plus" type="button">+</button>
+          </div>
+
+          <script id="person-template" type="text/html">
+            <div class="person">
+              <div class="person__number-cover">
+                <p class="person__number-label">№</p>
+                <p class="person__number">1</p>
+              </div>
+              <div class="person__fio">
+                <div class="fieldset__input">
+                  <label class="fieldset__label" for="first_name_{{num}}">Имя: *</label>
+                  <input class="fieldset__control" type="text" id="first_name_{{num}}" name="first_name_{{num}}" placeholder="Введите ваше имя" required>
+                </div>
+                <div class="fieldset__input">
+                  <label class="fieldset__label" for="nickname_{{num}}">Прозвище:</label>
+                  <input class="fieldset__control" type="text" id="nickname_{{num}}" name="nickname_{{num}}" placeholder="Ну как же без этого!">
+                </div>
+              </div>
+              <div class="person__delete-wrapper">
+                <button class="person__delete" type="button">Удалить</button>
+              </div>
+            </div>
+          </script>
+
+          <div class="persons"></div>
+        </div>
+      </fieldset>
+
+
+
+      <fieldset class="fieldset  fieldset--achievements">
+        <div class="fieldset__wrapper">
+          <h3 class="fieldset__header">Ваши безбашенные достижения в путешествии</h3>
+          <ul class="fieldset__ul">
+            <li>
+              <input class="fieldset__checkbox" type="checkbox" id="cb_1" name="cb_1" checked>
+              <label class="fieldset__label" for="cb_1">Сделал селфи с акулой</label>
+            </li>
+            <li>
+              <input class="fieldset__checkbox" type="checkbox" id="cb_2" name="cb_2" checked>
+              <label class="fieldset__label" for="cb_2">Обгорел на пляже</label>
+            </li>
+            <li>
+              <input class="fieldset__checkbox" type="checkbox" id="cb_3" name="cb_3">
+              <label class="fieldset__label" for="cb_3">Видел Чака Норриса</label>
+            </li>
+            <li>
+              <input class="fieldset__checkbox" type="checkbox" id="cb_4" name="cb_4">
+              <label class="fieldset__label" for="cb_4">Накупил сувениров</label>
+            </li>
+            <li>
+              <input class="fieldset__checkbox" type="checkbox" id="cb_5" name="cb_5" checked>
+              <label class="fieldset__label" for="cb_5">Удержал башню</label>
+            </li>
+            <li>
+              <input class="fieldset__checkbox" type="checkbox" id="cb_6" name="cb_6">
+              <label class="fieldset__label" for="cb_6">Разгромил отель</label>
+            </li>
+          </ul>
+        </div>
+      </fieldset>
+
+
+
+      <fieldset class="fieldset  fieldset--photo">
+        <div class="fieldset__wrapper">
+          <h2 class="fieldset__header">Ваши фотографии из поездки *</h2>
+          <input type="file" id="input_file" multiple hidden>
+          <label class="load-file-label  btn" for="input_file">Загрузить фото</label>
+
+          <script id="pic_template" type="text/html">
+            <!--<li class="pics__item">-->
+              <a class="pics__delete" href="#pic-del">&times;</a>
+              <figure class="pics__img">
+                <img src="{{img-src}}" alt="" width="67" height="67">
+                <figcaption>{{figcaption}}</figcaption>
+              </figure>
+            <!--</li>-->
+          </script>
+
+          <ul class="pics">
+            <!--
+            <li class="pics__item">
+              <a class="pics__delete" href="#pic-del">&times;</a>
+              <figure class="pics__img">
+                <img src="http://placehold.it/567x267" alt="" width="67" height="67">
+                <figcaption>img-1.jpg</figcaption>
+              </figure>
+            </li>
+            <li class="pics__item">
+              <a class="pics__delete" href="#pic-del">&times;</a>
+              <figure class="pics__img">
+                <img src="http://placehold.it/67x67" alt="" width="67" height="67">
+                <figcaption>img-2.jpg</figcaption>
+              </figure>
+            </li>
+            <li class="pics__item">
+              <a class="pics__delete" href="#pic-del">&times;</a>
+              <figure class="pics__img">
+                <img src="http://placehold.it/67x67" alt="" width="67" height="67">
+                <figcaption>img-3.jpg</figcaption>
+              </figure>
+            </li>
+            <li class="pics__item">
+              <a class="pics__delete" href="#pic-del">&times;</a>
+              <figure class="pics__img">
+                <img src="http://placehold.it/67x67" alt="" width="67" height="67">
+                <figcaption>img-4.jpg</figcaption>
+              </figure>
+            </li>
+            <li class="pics__item">
+              <a class="pics__delete" href="#pic-del">&times;</a>
+              <figure class="pics__img">
+                <img src="http://placehold.it/67x67" alt="" width="67" height="67">
+                <figcaption>img-5.jpg</figcaption>
+              </figure>
+            </li>
+            <li class="pics__item">
+              <a class="pics__delete" href="#pic-del">&times;</a>
+              <figure class="pics__img">
+                <img src="http://placehold.it/67x67" alt="" width="67" height="67">
+                <figcaption>img-6.jpg</figcaption>
+              </figure>
+            </li>
+            <li class="pics__item">
+              <a class="pics__delete" href="#pic-del">&times;</a>
+              <figure class="pics__img">
+                <img src="http://placehold.it/67x367" alt="" width="67" height="67">
+                <figcaption>img-7.jpg</figcaption>
+              </figure>
+            </li>
+            -->
+          </ul>
+        </div>
+      </fieldset>
+
+      <div class="submit">
+        <input class="submit__btn  btn" type="submit" value="Отправить форму">
+        <p class="submit__required-note"><span class="asterisk">*</span>&nbsp;&mdash;&nbsp;Обязательные поля</p>
+      </div>
+    </form>
+
+  </main>
+
+
+
+  <footer class="footer">
+    <a class="logo  logo--bottom" href="index.html">Pink</a>
+    <ul class="socials">
+      <li><a class="socials__item  socials__item--tw" href="#tw">Twitter</a></li>
+      <li><a class="socials__item  socials__item--fb" href="#fb">Facebook</a></li>
+      <li><a class="socials__item  socials__item--yu" href="#yu">VK</a></li>
+    </ul>
+    <a class="footer__developed" href="#dev">Разработано</a>
+  </footer>
+
+
+
+  <div class="success  success--hidden">
+    <div class="success__inner">
+      <h3 class="success__header">Ваша заявка отправлена</h3>
+      <p class="success__text">Спасибо за ваше участие, ваша заявка уже поступила к нам. В ближайшее время мы рассмотрим ее и
+      оповестим вас.</p>
+      <div class="success__btn-overlay">
+        <button class="success__btn  btn">Закрыть окно</button>
+      </div>
+    </div>
+  </div>
+
+
+
+  <!-- <script src="../node_modules/moment/min/moment-with-locales.js"></script>
+  <script src="../node_modules/mustache/mustache.js"></script>
+  <script src="js/script.js"></script> -->
+  <script src="js/script.min.js"></script>
+</body>
+</html>
