@@ -2,9 +2,12 @@
 <html lang="ru">
 <head>
   <meta charset="UTF-8">
-    <title>HTML Academy: Pink :: Form</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/style.min.css">
+  <title>HTML Academy: Pink :: Form</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/style.min.css">
+  <!--[if lt IE 9]>
+    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
 </head>
 <body>
   <header class="header  header--form">
@@ -180,7 +183,7 @@
       <fieldset class="fieldset  fieldset--photo">
         <div class="fieldset__wrapper">
           <h2 class="fieldset__header">Ваши фотографии из поездки *</h2>
-          <input type="file" id="input_file" multiple hidden>
+          <input type="file" id="input_file" multiple>
           <label class="load-file-label  btn" for="input_file">Загрузить фото</label>
 
           <script id="pic_template" type="text/html">
@@ -238,11 +241,6 @@
 
 
 
-  <!-- Раскомментировать при разработке, для отладки. Перед билдом закомментировать
-  <script src="../node_modules/moment/min/moment-with-locales.js"></script>
-  <script src="../node_modules/mustache/mustache.js"></script>
-  <script src="js/script.js"></script>
-  -->
   <script src="js/script.min.js"></script>
 </body>
 </html>

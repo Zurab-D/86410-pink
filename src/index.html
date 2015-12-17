@@ -2,9 +2,12 @@
 <html lang="ru">
 <head>
   <meta charset="UTF-8">
-    <title>HTML Academy: Pink</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/style.min.css">
+  <title>HTML Academy: Pink</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/style.min.css">
+  <!--[if lt IE 9]>
+    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
 </head>
 <body>
   <header class="header  header--index">
@@ -21,7 +24,6 @@
           </ul>
         </div>
       </nav>
-      <div class="header__front  header__front--img"></div>
     </div>
 
     <div class="download">
@@ -33,7 +35,7 @@
           <li class="download__item  download__item--and"><a href="#and">Android</a></li>
           <li class="download__item  download__item--win"><a href="#win">Windows Phone</a></li>
         </ul>
-        <p class="download__text">Доступно&nbsp;для&nbsp;iPhone,&nbsp;iPad,&nbsp;Android, Windows&nbsp;Phone,&nbsp;OS&nbsp;X,&nbsp;Windows&nbsp;8</p>
+        <p class="download__text">Доступно для iPhone, iPad, Android, Windows&nbsp;Phone, OS&nbsp;X, Windows&nbsp;8</p>
       </div>
     </div>
   </header>
@@ -41,7 +43,8 @@
 
 
   <main class="main">
-    <h2 class="big_text  big_text--offer  wrapper">Устали от серости мегаполиса?<br><span class="show-for-mobile"><br></span>Нам есть, что вам<br>предложить!</h2>
+    <p class="big_text  big_text--offer">Устали от серости мегаполиса?</p>
+    <p class="big_text  big_text--offer">Нам есть, что вам<br>предложить!</p>
 
 
 
@@ -74,7 +77,7 @@
 
 
 
-    <div class="wide-container wide-container--effect24">
+    <div class="wide-container  wide-container--effect24">
       <div class="effect24">
           <div class="effect24__icon-wrapper">
             <div class="effect24__icon">24</div>
@@ -90,27 +93,27 @@
 
 
     <div class="slider-review">
-        <input class="switch__radio" type="radio" name="review_pages" id="review_pages_1" checked hidden>
-        <input class="switch__radio" type="radio" name="review_pages" id="review_pages_2" hidden>
-        <input class="switch__radio" type="radio" name="review_pages" id="review_pages_3" hidden>
+        <input class="switch__radio" type="radio" name="review_pages" id="review_pages_1" checked>
+        <input class="switch__radio" type="radio" name="review_pages" id="review_pages_2">
+        <input class="switch__radio" type="radio" name="review_pages" id="review_pages_3">
         <button class="slider-review__arrow  slider-review__arrow--left">&lt;</button>
         <div class="slider-review__items-wrapper">
           <div class="slider-review__item">
             <h3 class="slider-review__author">Николай Петров</h3>
-            <span class="slider-review__author-description">25 лет, водитель трамвая</span>
+            <div class="slider-review__author-description">25 лет, водитель трамвая</div>
             <p class="slider-review__text">
-              <span class="slider-review__quote">«</span>Это приложение перевернуло мой мир и позволило по-новому взглянуть на привычные серые вещи! А еще я познакомился со своей будущей женой в комментариях к выложенной фотографии!<span class="slider-review__quote">»</span>
+              Это приложение перевернуло мой мир и позволило по-новому взглянуть на привычные серые вещи! А еще я познакомился со своей будущей женой в комментариях к выложенной фотографии!
             </p>
           </div>
           <div class="slider-review__item">
             <h3 class="slider-review__author">Lorem ipsum</h3>
             <div class="slider-review__author-description">qwerty uiop</div>
-            <p class="slider-review__text"><span class="slider-review__quote">«</span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eius, beatae in accusamus cumque! Amet consequatur consequuntur, reprehenderit error ad quo fugit veniam reiciendis doloribus impedit, excepturi quas mollitia ullam autem.<span class="slider-review__quote">»</span></p>
+            <p class="slider-review__text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eius, beatae in accusamus cumque! Amet consequatur consequuntur, reprehenderit error ad quo fugit veniam reiciendis doloribus impedit, excepturi quas mollitia ullam autem.</p>
           </div>
           <div class="slider-review__item">
             <h3 class="slider-review__author">Lorem ipsum!</h3>
             <div class="slider-review__author-description">asdf ghjkl</div>
-            <p class="slider-review__text"><span class="slider-review__quote">«</span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Inventore, ad?<span class="slider-review__quote">»</span></p>
+            <p class="slider-review__text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Inventore, ad?</p>
           </div>
         </div>
         <button class="slider-review__arrow  slider-review__arrow--right">&gt;</button>
@@ -131,15 +134,15 @@
 
     <div class="wide-container  wide-container--prices">
       <div class="prices">
-        <div class="svg-hide-wrapper" style="display: none;">
+        <div class="svg-hide-wrapper">
           <svg id="yes" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-            width="30.375px" height="21.688px" viewBox="0 0 30.375 21.688" enable-background="new 0 0 30.375 21.688" xml:space="preserve">
+            width="30.375px" height="21.688px" viewbox="0 0 30.375 21.688" enable-background="new 0 0 30.375 21.688" xml:space="preserve">
           <path d="M29.936,0.439c-0.586-0.586-1.535-0.586-2.121,0L10.188,18.066l-7.627-7.627c-0.586-0.586-1.535-0.586-2.121,0
             s-0.586,1.535,0,2.121l8.688,8.688c0.293,0.293,0.677,0.439,1.061,0.439s0.768-0.146,1.061-0.439L29.936,2.561
             C30.521,1.975,30.521,1.025,29.936,0.439z"/>
           </svg>
           <svg id="no" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-            width="26.752px" height="26.752px" viewBox="0 0 26.752 26.752" enable-background="new 0 0 26.752 26.752" xml:space="preserve">
+            width="26.752px" height="26.752px" viewbox="0 0 26.752 26.752" enable-background="new 0 0 26.752 26.752" xml:space="preserve">
           <path d="M15.497,13.376L26.312,2.562c0.586-0.585,0.586-1.535,0-2.121s-1.535-0.586-2.121,0L13.376,11.255L2.562,0.439
             c-0.586-0.586-1.535-0.586-2.121,0c-0.586,0.585-0.586,1.535,0,2.121l10.814,10.815L0.439,24.19c-0.586,0.586-0.586,1.535,0,2.121
             c0.293,0.293,0.677,0.439,1.061,0.439s0.768-0.146,1.061-0.439l10.815-10.814L24.19,26.312c0.293,0.293,0.677,0.439,1.061,0.439
@@ -184,14 +187,14 @@
         </table>
 
         <ul class="switch  switch--prices">
-          <li class="switch__item">
-            <span class="switch__label" id="prices__table--switch-1"></span>
+          <li class="switch__item" id="prices__table--switch-1">&bull;
+<!--            <span class="switch__label" id="prices__table--switch-1">&bull;</span>-->
           </li>
-          <li class="switch__item  switch__item--active">
-            <span class="switch__label" id="prices__table--switch-2"></span>
+          <li class="switch__item  switch__item--active" id="prices__table--switch-2">&bull;
+<!--            <span class="switch__label" id="prices__table--switch-2">&bull;</span>-->
           </li>
-          <li class="switch__item">
-            <span class="switch__label" id="prices__table--switch-3"></span>
+          <li class="switch__item" id="prices__table--switch-3">&bull;
+<!--            <span class="switch__label" id="prices__table--switch-3">&bull;</span>-->
           </li>
         </ul>
       </div>

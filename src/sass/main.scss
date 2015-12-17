@@ -23,12 +23,17 @@
     margin-top: -6px;
     margin-bottom: 30px;
     @media (min-width: $screen-md) {
+      margin-top: 0;
       margin-bottom: 0px;
       padding-bottom: 0px;
     }
     @media (min-width: $screen-lg) {
       //padding-bottom: 45px;
+      //&:first-child {
+        margin-bottom: 0;
+      //}
     }
+    @include wrapper;
   }
   &--ask {
     margin: 55px 0 31px;
@@ -46,7 +51,7 @@
   @include wrapper;
   @media (min-width: $screen-md) {
     display: flex;
-    margin-bottom: 18px;
+    margin-bottom: 57px;
     text-align: left;
   }
   @media (min-width: $screen-lg) {
@@ -72,6 +77,9 @@
     margin-bottom: 40px;
     @media (min-width: $screen-md) {
       margin-bottom: 35px;
+      &:last-child {
+        margin-bottom: 0;
+      }
     }
     @media (min-width: $screen-lg) {
       margin-bottom: 0;
@@ -180,6 +188,7 @@
         }
       }
       @media (min-width: $screen-md) {
+        margin: 0;
         height: 481px;
         width: 268px;
         background-size: 268px 481px;
@@ -359,11 +368,6 @@
       font-size: $middle-font-size;
     }
   }
-  &__quote {
-    @media (min-width: $screen-lg) {
-      display: none;
-    }
-  }
   &__text {
     margin-bottom: -1 * (($header-line-height - $base-font-size)/2);
     font-weight: normal;
@@ -373,6 +377,14 @@
       font-size: $middle-font-size;
       margin-bottom: 35px;
       order: 0;
+    }
+    @media (max-width: $screen-lg - 1px) {
+      &:before {
+        content: "«";
+      }
+      &:after {
+        content: "»";
+      }
     }
   }
   &__arrow {
@@ -449,13 +461,15 @@
   &__item--active &__label:before,
   &__radio:nth-child(1):checked ~ & &__item:nth-child(1) &__label:before,
   &__radio:nth-child(2):checked ~ & &__item:nth-child(2) &__label:before,
-  &__radio:nth-child(3):checked ~ & &__item:nth-child(3) &__label:before {
+  &__radio:nth-child(3):checked ~ & &__item:nth-child(3) &__label:before
+  {
     background-color: #fff;
     border-color:  $base-color;
   }
   &__radio:nth-child(1):checked ~ .slider-review__items-wrapper .slider-review__item:nth-child(1),
   &__radio:nth-child(2):checked ~ .slider-review__items-wrapper .slider-review__item:nth-child(2),
-  &__radio:nth-child(3):checked ~ .slider-review__items-wrapper .slider-review__item:nth-child(3) {
+  &__radio:nth-child(3):checked ~ .slider-review__items-wrapper .slider-review__item:nth-child(3)
+  {
     display: flex;
     opacity: 1;
   }
@@ -469,6 +483,36 @@
     margin: 50px auto;
     @media (min-width: $screen-md) {
       display: none;
+    }
+  }
+  &--prices &__item {
+    position: relative;
+    cursor: pointer;
+    font-size: 0;
+    line-height: 0;
+    &:before {
+      content: "";
+      display: block;
+      position: absolute;
+      left: 0;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      border: 3px solid;
+      background-color: #bec2c7;
+      border-color: #fff;
+    }
+    &:hover:before {
+      background-color: #7e868f;
+    }
+    &:active:before {
+      background-color: $color-light-blue-border;
+    }
+    &--active:before {
+      background-color: #fff;
+      border-color: #283645;
     }
   }
 }
@@ -501,9 +545,11 @@
     padding-top: 82px;
     @media (min-width: $screen-md) {
       padding: 0;
+      margin-top: 50px;
     }
     @media (min-width: $screen-lg) {
       padding-top: 82px;
+      margin-top: 0;
     }
   }
   &--prices {
@@ -1350,7 +1396,7 @@
 .pics {
   position: relative;
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-start;
   flex-wrap: wrap;
   list-style: none;
   margin: 0 -15px;
