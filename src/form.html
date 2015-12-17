@@ -91,15 +91,15 @@
         <div class="fieldset__wrapper">
           <h3 class="fieldset__header">Когда вы путешествовали? *</h3>
           <div class="fieldset__input">
-            <input class="fieldset__control" type="text" pattern="\d{1,2}\.\d{1,2}\.\d{4}" id="checkin-date" value="01.04.2015" required>
-            <label class="fieldset__label" for="checkin-date">Дата вызда</label>
+            <input class="fieldset__control" type="text" pattern="\d{1,2}\.\d{1,2}\.\d{4}" id="checkin_date" value="01.04.2015" required>
+            <label class="fieldset__label" for="checkin_date">Дата вызда</label>
           </div>
 
           <div class="calc__wrapper">
             <div class="calc  calc--days">
               <button class="calc__btn  calc__btn--minus  btn" id="days_count_minus" type="button">-</button>
               <div class="calc__result-over" data-label="дней">
-                <input class="calc__result" type="text" id="days_count" name="days_count" min="1" value="10" pattern="\d+" required>
+                <input class="calc__result" type="number" id="days_count" name="days_count" min="1" value="10" readonly required>
               </div>
               <button class="calc__btn  calc__btn--plus  btn" id="days_count_plus" type="button">+</button>
             </div>
@@ -107,8 +107,8 @@
           </div>
 
           <div class="fieldset__input">
-            <input class="fieldset__control" type="text" pattern="\d{1,2}\.\d{1,2}\.\d{4}" id="checkout-date" value="11.04.2015" disabled>
-            <label class="fieldset__label" for="checkout-date">Дата возвращения</label>
+            <input class="fieldset__control" type="text" pattern="\d{1,2}\.\d{1,2}\.\d{4}" id="checkout_date" value="11.04.2015" disabled>
+            <label class="fieldset__label" for="checkout_date">Дата возвращения</label>
           </div>
         </div>
       </fieldset>
@@ -121,7 +121,7 @@
           <div class="calc  calc--persons">
             <button class="calc__btn  calc__btn--minus  btn" id="persons_count_minus" type="button">-</button>
             <div class="calc__result-over" data-label="чел">
-              <input class="calc__result" type="text" id="persons_count" name="persons_count" pattern="\d+" value="0" min="0" required>
+              <input class="calc__result" type="number" id="persons_count" name="persons_count" value="0" min="0" readonly required>
             </div>
             <button class="calc__btn  calc__btn--plus  btn" id="persons_count_plus" type="button">+</button>
           </div>
@@ -204,59 +204,7 @@
             <!--</li>-->
           </script>
 
-          <ul class="pics">
-            <!--
-            <li class="pics__item">
-              <a class="pics__delete" href="#pic-del">&times;</a>
-              <figure class="pics__img">
-                <img src="http://placehold.it/567x267" alt="" width="67" height="67">
-                <figcaption>img-1.jpg</figcaption>
-              </figure>
-            </li>
-            <li class="pics__item">
-              <a class="pics__delete" href="#pic-del">&times;</a>
-              <figure class="pics__img">
-                <img src="http://placehold.it/67x67" alt="" width="67" height="67">
-                <figcaption>img-2.jpg</figcaption>
-              </figure>
-            </li>
-            <li class="pics__item">
-              <a class="pics__delete" href="#pic-del">&times;</a>
-              <figure class="pics__img">
-                <img src="http://placehold.it/67x67" alt="" width="67" height="67">
-                <figcaption>img-3.jpg</figcaption>
-              </figure>
-            </li>
-            <li class="pics__item">
-              <a class="pics__delete" href="#pic-del">&times;</a>
-              <figure class="pics__img">
-                <img src="http://placehold.it/67x67" alt="" width="67" height="67">
-                <figcaption>img-4.jpg</figcaption>
-              </figure>
-            </li>
-            <li class="pics__item">
-              <a class="pics__delete" href="#pic-del">&times;</a>
-              <figure class="pics__img">
-                <img src="http://placehold.it/67x67" alt="" width="67" height="67">
-                <figcaption>img-5.jpg</figcaption>
-              </figure>
-            </li>
-            <li class="pics__item">
-              <a class="pics__delete" href="#pic-del">&times;</a>
-              <figure class="pics__img">
-                <img src="http://placehold.it/67x67" alt="" width="67" height="67">
-                <figcaption>img-6.jpg</figcaption>
-              </figure>
-            </li>
-            <li class="pics__item">
-              <a class="pics__delete" href="#pic-del">&times;</a>
-              <figure class="pics__img">
-                <img src="http://placehold.it/67x367" alt="" width="67" height="67">
-                <figcaption>img-7.jpg</figcaption>
-              </figure>
-            </li>
-            -->
-          </ul>
+          <ul class="pics"></ul>
         </div>
       </fieldset>
 
@@ -295,7 +243,7 @@
 
 
 
-  <!-- <script src="../node_modules/moment/min/moment-with-locales.js"></script>
+  <!--<script src="../node_modules/moment/min/moment-with-locales.js"></script>
   <script src="../node_modules/mustache/mustache.js"></script>
   <script src="js/script.js"></script> -->
   <script src="js/script.min.js"></script>

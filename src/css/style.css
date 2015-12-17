@@ -510,7 +510,7 @@ html {
 body {
 	background-color: #fff;
 	color: #283645;
-	font-family: "OpenSans", sans-serif;
+	font-family: "OpenSans", Arial, sans-serif;
 	font-weight: 100;
 	font-style: normal;
 	font-size: 14px;
@@ -1077,9 +1077,6 @@ input[type=text]:active:not(:disabled) {
 	color: #d22856;
 	border: 11px solid #d22856;
 	border-radius: 50%;
-	-webkit-flex-basis: 214;
-	-ms-flex-preferred-size: 214;
-	flex-basis: 214;
 	-webkit-align-self: center;
 	-ms-flex-item-align: center;
 	align-self: center;
@@ -1464,9 +1461,7 @@ input[type=text]:active:not(:disabled) {
 }
 
 .contacts__item {
-	-webkit-flex-basis: 285px;
-	-ms-flex-preferred-size: 285px;
-	flex-basis: 285px;
+	width: 285px;
 	margin-bottom: 20px;
 	-webkit-flex-grow: 1;
 	-ms-flex-positive: 1;
@@ -1618,22 +1613,41 @@ input[type=text]:active:not(:disabled) {
 }
 
 .fieldset__input input[type="text"]::-webkit-input-placeholder {
+	display: none;
 	color: #283645;
 	font-weight: normal;
 }
 
 .fieldset__input input[type="text"]::-moz-placeholder {
+	display: none;
 	color: #283645;
 	font-weight: normal;
 }
 
 .fieldset__input input[type="text"]:-moz-placeholder {
+	display: none;
 	color: #283645;
 	font-weight: normal;
 }
 
 .fieldset__input input[type="text"]:disabled {
 	background-color: #f2f2f2;
+}
+
+.fieldset__input input[type="text"]:focus::-webkit-input-placeholder {
+	color: transparent;
+}
+
+.fieldset__input input[type="text"]:focus::-moz-placeholder {
+	color: transparent;
+}
+
+.fieldset__input input[type="text"]:focus:-moz-placeholder {
+	color: transparent;
+}
+
+.fieldset__input input[type="text"]:focus:-ms-input-placeholder {
+	color: transparent;
 }
 
 .fieldset__ul {
@@ -1807,8 +1821,9 @@ input[type=text]:active:not(:disabled) {
 	-webkit-transform: translateY(-50%);
 	transform: translateY(-50%);
 	left: 60%;
-	height: 18px;
-	background-color: transparent;
+	height: 20px;
+	width: 45%;
+	background-color: #fff;
 	border: none;
 	text-align: left;
 	font-weight: normal;
@@ -1941,9 +1956,7 @@ input[type=text]:active:not(:disabled) {
 
 .calc__rem,
 .calc__result {
-	-webkit-flex-basis: 100%;
-	-ms-flex-preferred-size: 100%;
-	flex-basis: 100%;
+	width: 100%;
 	border-left-width: 0;
 	border-right-width: 0;
 	line-height: 53px;
@@ -1961,9 +1974,7 @@ input[type=text]:active:not(:disabled) {
 }
 
 .person__number-cover {
-	-webkit-flex-basis: 63px;
-	-ms-flex-preferred-size: 63px;
-	flex-basis: 63px;
+	width: 63px;
 	-webkit-flex-shrink: 0;
 	-ms-flex-negative: 0;
 	flex-shrink: 0;
@@ -2003,9 +2014,7 @@ input[type=text]:active:not(:disabled) {
 
 .person__delete-wrapper {
 	display: none;
-	-webkit-flex-basis: 115px;
-	-ms-flex-preferred-size: 115px;
-	flex-basis: 115px;
+	width: 115px;
 	-webkit-flex-shrink: 0;
 	-ms-flex-negative: 0;
 	flex-shrink: 0;
@@ -2390,6 +2399,7 @@ input[type=text]:active:not(:disabled) {
 }
 
 .post__header {
+	margin: 16px 0;
 	text-align: center;
 	font-weight: bold;
 	font-size: 24px;
@@ -2410,6 +2420,7 @@ input[type=text]:active:not(:disabled) {
 }
 
 .post__subtitle {
+	margin: 15px 0;
 	font-weight: bold;
 	font-size: 18px;
 	line-height: 30px;
@@ -2733,6 +2744,11 @@ input[type=text]:active:not(:disabled) {
 	line-height: 47px;
 }
 
+.big_text--offer {
+	margin-bottom: 0px;
+	padding-bottom: 0px;
+}
+
 .big_text--ask {
 	margin: 37px 0 41px;
 }
@@ -2798,6 +2814,11 @@ input[type=text]:active:not(:disabled) {
 	padding-bottom: 45px;
 }
 
+.effect24__header {
+	font-size: 30px;
+	line-height: 30px;
+}
+
 .slider-review {
 	padding-left: 40px;
 	padding-right: 40px;
@@ -2831,11 +2852,7 @@ input[type=text]:active:not(:disabled) {
 }
 
 .wide-container--benefits {
-	padding-top: 0;
-}
-
-.wide-container--benefits {
-	padding-bottom: 0;
+	padding: 0;
 }
 
 .wide-container--prices {
@@ -2961,9 +2978,7 @@ input[type=text]:active:not(:disabled) {
 
 .fieldset--trip-date .fieldset__input,
 .fieldset--trip-date .calc__wrapper {
-	-webkit-flex-basis: 47.5%;
-	-ms-flex-preferred-size: 47.5%;
-	flex-basis: 47.5%;
+	width: 47.5%;
 }
 
 .fieldset__wrapper {
@@ -3173,7 +3188,7 @@ input[type=text]:active:not(:disabled) {
 }
 
 .post__header {
-	margin-bottom: 22px;
+	margin: 33.5px 0 22px;
 	font-size: 50px;
 	line-height: 60px;
 }
@@ -3207,7 +3222,7 @@ input[type=text]:active:not(:disabled) {
 }
 
 .post__subtitle {
-	margin-top: 58px;
+	margin: 58px 0 19.920px;
 	padding-bottom: 3px;
 	font-size: 24px;
 	line-height: 30px;
@@ -3458,10 +3473,6 @@ body {
 	line-height: 60px;
 }
 
-.big_text--offer {
-	padding-bottom: 45px;
-}
-
 .big_text--ask {
 	margin: 62px 0 55px;
 }
@@ -3489,16 +3500,14 @@ body {
 	-webkit-justify-content: space-between;
 	-ms-flex-pack: justify;
 	justify-content: space-between;
-	margin: 55px 0 65px;
+	margin: 55px 0 0;
 	width: 100%;
 }
 
 .benefits__item {
 	margin-bottom: 0;
 	padding: 0 25px;
-	-webkit-flex-basis: 292px;
-	-ms-flex-preferred-size: 292px;
-	flex-basis: 292px;
+	width: 292px;
 	text-align: center;
 }
 
@@ -3544,9 +3553,7 @@ body {
 	flex-shrink: 1;
 	margin: 0;
 	height: 302px;
-	-webkit-flex-basis: 292px;
-	-ms-flex-preferred-size: 292px;
-	flex-basis: 292px;
+	width: 292px;
 	background-size: 292px 302px;
 }
 
@@ -3557,7 +3564,7 @@ body {
 }
 
 .effect24 {
-	padding-bottom: 67px;
+	padding-bottom: 34px;
 }
 
 .effect24__icon-wrapper {
@@ -3586,6 +3593,10 @@ body {
 	font-weight: normal;
 	font-size: 18px;
 	line-height: 30px;
+}
+
+.effect24__text {
+	margin-bottom: 30px;
 }
 
 .slider-review {
@@ -3636,6 +3647,14 @@ body {
 	padding: 154px 0 94px;
 }
 
+.wide-container--effect24 {
+	padding: 0;
+}
+
+.wide-container--benefits {
+	padding-top: 82px;
+}
+
 .wide-container--prices {
 	padding-top: 150px;
 	padding-bottom: 95px;
@@ -3682,9 +3701,7 @@ body {
 
 .fieldset--trip-date .fieldset__input,
 .fieldset--trip-date .calc__wrapper {
-	-webkit-flex-basis: 240px;
-	-ms-flex-preferred-size: 240px;
-	flex-basis: 240px;
+	width: 240px;
 }
 
 .fieldset {
@@ -3699,12 +3716,11 @@ body {
 
 .fieldset__wrapper {
 	margin: 0 auto;
+	padding: 42px 58px 0;
 }
 
 .fieldset__input input[type="text"] {
-	-webkit-flex-basis: 284px;
-	-ms-flex-preferred-size: 284px;
-	flex-basis: 284px;
+	width: 284px;
 }
 
 .fieldset__ul li {
@@ -3760,9 +3776,7 @@ body {
 
 .fieldset--achievements .fieldset__ul li {
 	margin: 0 0 48px;
-	-webkit-flex-basis: 26%;
-	-ms-flex-preferred-size: 26%;
-	flex-basis: 26%;
+	width: 26%;
 }
 
 .fieldset--app .fieldset__ul {
@@ -3791,9 +3805,7 @@ body {
 }
 
 .person__fio .fieldset__input {
-	-webkit-flex-basis: 301px;
-	-ms-flex-preferred-size: 301px;
-	flex-basis: 301px;
+	width: 301px;
 }
 
 .submit {
@@ -3862,6 +3874,7 @@ body {
 @media (max-width: 959px) {
 
 .wide-container--effect24 {
+	padding-top: 0;
 	background-color: #fff;
 }
 

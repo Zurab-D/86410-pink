@@ -34,16 +34,20 @@
   pink.inputValueInc = function (input) {
     if (!!input) {
       var sum = parseInt(input.value);
-      !!sum || sum === 0 ? sum = sum + 1 : null;
-      !!sum ? input.value = sum : null;
+      if (isNaN(sum)) {
+        sum = 0;
+      }
+      input.value = sum + 1;
     }
   };
   // функция уменьшения значения поля input.value
   pink.inputValueDec = function (input) {
     if (!!input) {
       var sum = parseInt(input.value);
-      !!sum ? sum = sum - 1 : null;
-      !!sum || sum === 0 ? input.value = sum : null;
+      if (isNaN(sum)) {
+        sum = 0;
+      }
+      input.value = sum - 1;
     }
   };
 
@@ -164,46 +168,6 @@
 
 
 
-/*** Отправка формы по AJAX ***************************************************/
-(function () {
-  var form = document.querySelector("#form");
-  if (!("FormData" in window) || (!form)) {
-    return;
-  }
-  var urlBase = "https://echo.htmlacademy.ru/adaptive?";
-
-  // запрашиваем по Ajax
-  form.addEventListener("submit", function (event) {
-    event.preventDefault();
-    var data = new FormData(form);
-    request(data, urlBase, function (response) {
-      console.log("server response: \"" + response+"\"");
-    })
-  });
-
-  // функция запроса по Ajax
-  function request (dataQS, url, func) {
-    var
-      xhr = new XMLHttpRequest(),
-      time = (new Date()).getTime(),
-      url = urlBase + time;
-    xhr.open("post", url);
-    xhr.addEventListener("readystatechange", function() {
-      if (xhr.readyState == 4) {
-        func(xhr.responseText);
-      };
-    });
-    xhr.send(dataQS);
-
-    pink.showSuccessDlg();
-  };
-})();
-//------------------------------------------------------------------------------
-
-
-
-
-
 /*** Количество дней ***********************************************************/
 (function () {
   "use strict";
@@ -215,9 +179,11 @@
 
   // количество дней - минус
   !!daysCountMinus && daysCountMinus.addEventListener("click", function(event) {
-    event.preventDefault();
-    pink.inputValueDec(daysCount);
-    calcCheckoutDate();
+    if (daysCount.value > 0) {
+      event.preventDefault();
+      pink.inputValueDec(daysCount);
+      calcCheckoutDate();
+    }
   });
 
   // количество дней - плюс
@@ -228,7 +194,11 @@
   });
 
   function calcCheckoutDate() {
-    document.querySelector('#checkout-date').value = moment(document.querySelector('#checkin-date').value, "DD.MM.YYYY").add(document.querySelector('#days_count').value, 'days').format("DD.MM.YYYY");
+    var
+      checkoutDate = document.querySelector('#checkout_date'),
+      checkinDate = document.querySelector('#checkin_date')
+    ;
+    checkoutDate.value = moment(checkinDate.value, "DD.MM.YYYY").add(daysCount.value, 'days').format("DD.MM.YYYY");
   };
 
   calcCheckoutDate();
@@ -280,13 +250,15 @@
 
   // функция удаления попутчика
   function delPerson() {
-    var
-      personAll = !!personsArea && personsArea.querySelectorAll(".fieldset--travelers .person"),
-      elem = /*!!personAll &&*/ personAll[personAll.length-1]
-    ;
-    !!personAll && personsArea.removeChild(elem);
-    // уменьшили значение счетчика попутчиков
-    pink.inputValueDec(personsCount);
+    if (!!personsCount && personsCount.value > 0) {
+      var
+        personAll = !!personsArea && personsArea.querySelectorAll(".fieldset--travelers .person"),
+        elem = /*!!personAll &&*/ personAll[personAll.length-1]
+      ;
+      !!personAll && personsArea.removeChild(elem);
+      // уменьшили значение счетчика попутчиков
+      pink.inputValueDec(personsCount);
+    }
   }
 }());
 //------------------------------------------------------------------------------
@@ -295,49 +267,92 @@
 
 
 
-/**** Фотографии **************************************************************/
+/*** Отправка формы по AJAX ***************************************************/
 (function () {
+  var form = document.querySelector("#form");
+  if (!("FormData" in window) || (!form)) {
+    return;
+  }
+  var
+    urlBase = "https://echo.htmlacademy.ru/adaptive?",
+    queue = [];
+  
+
+  // запрашиваем по Ajax
+  form.addEventListener("submit", function (event) {
+    event.preventDefault();
+  
+    var data = new FormData(form);
+    
+    queue.forEach(function(element) {
+      data.append("images", element.file);
+    });
+  
+    request(data, urlBase, function (response) {
+      console.log("server response: \n\"" + response+"\"");
+      pink.showSuccessDlg();
+    });
+  });
+
+  // функция запроса по Ajax
+  function request (dataQS, url, func) {
+    var
+      xhr = new XMLHttpRequest(),
+      time = (new Date()).getTime(),
+      url = url + time
+    ;
+  
+    xhr.open("post", url);
+    xhr.addEventListener("readystatechange", function() {
+      if (xhr.readyState == 4) {
+        func(xhr.responseText);
+      };
+    });
+    xhr.send(dataQS);
+  };
+
+  //--- Фотографии ----------------
   if ("FileReader" in window) {
     var
-      inputFile = document.querySelector("#input_file"),
-      picsArea = document.querySelector(".pics"),
-      templatePic = document.querySelector("#pic_template").innerHTML,
-      queue = []
+      //inputFile = document.querySelector("#input_file"),
+      inputFile = form.querySelector("#input_file"),
+      picsArea = form.querySelector(".pics"),
+      templatePic = form.querySelector("#pic_template").innerHTML
     ;
 
     // вешаем событие на выбор файла
     !!inputFile && inputFile.addEventListener("change", function() {
       var files = this.files;
       for (var i = 0; i < files.length; i++) {
-        addPhoto(files[i]);
+        preview(files[i]);
       };
       this.value = "";
     });
 
     // функция добавления фото
-    function addPhoto(file) {
-      if (!!picsArea && !!templatePic) {
-        if (file.type.match(/image.*/)) {
-          var reader = new FileReader();
-          reader.addEventListener("load", function(event) {
-            var html = Mustache.render(templatePic, {
-              "img-src": event.target.result,
-              "figcaption": file.name
-            });
+    function preview(file) {
+      if (file.type.match(/image.*/)) {
+        var reader = new FileReader();
 
-            var li = document.createElement("li");
-            li.classList.add("pics__item");
-            li.innerHTML = html;
-            picsArea.appendChild(li);
-
-            li.querySelector(".pics__delete").addEventListener("click", function(event) {
-              event.preventDefault();
-              removePhoto(li);
-            });
-            queue.push({"file": file, "li": li});
+        reader.addEventListener("load", function(event) {
+          var html = Mustache.render(templatePic, {
+            "img-src": event.target.result,
+            "figcaption": file.name
           });
-          reader.readAsDataURL(file);
-        };
+
+          var li = document.createElement("li");
+          li.classList.add("pics__item");
+          li.innerHTML = html;
+          picsArea.appendChild(li);
+
+          li.querySelector(".pics__delete").addEventListener("click", function(event) {
+            event.preventDefault();
+            removePhoto(li);
+          });
+          queue.push({"file": file, "li": li});
+        });
+
+        reader.readAsDataURL(file);
       };
     };
 

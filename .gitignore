@@ -15,3 +15,6 @@ ex_files
 Thumbs.db
 .gitignore
 Замечания.!
+*.min.css
+*.min.js
+*.con
