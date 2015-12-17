@@ -14,7 +14,9 @@ css/*.css
 ex_files
 Thumbs.db
 .gitignore
-Замечания.!
+Замечания.*
+FarMenu.ini
 *.min.css
 *.min.js
 *.con
+*.!

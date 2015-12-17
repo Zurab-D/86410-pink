@@ -9,7 +9,7 @@ module.exports = function(grunt) {
     sass: {
       style: {
         files: {
-          "src/css/style.css": "src/sass/style.scss"
+          "build/css/style.css": "src/sass/style.scss"
         }
       }
     },
@@ -21,13 +21,13 @@ module.exports = function(grunt) {
         ]
       },
       style: {
-        src: "src/css/*.css"
+        src: "build/css/*.css"
       }
     },
 
     clean: {
       build: ["build"],
-      watch_html: ["build/*.html"]
+      watch_html: ["build/*.html"],
     },
 
     copy: {
@@ -36,10 +36,8 @@ module.exports = function(grunt) {
           expand: true,
           cwd: "src",
           src: [
-            "css/*.css",
             "fonts/**",
             "img/**",
-            "js/*.js",
             "*.html",
             "!**/README"
           ],
@@ -60,7 +58,7 @@ module.exports = function(grunt) {
     cmq: {
       style: {
         files: {
-          "src/css/style.css": ["src/css/style.css"]
+          "build/css/style.css": ["build/css/style.css"]
         }
       }
     },
@@ -72,7 +70,7 @@ module.exports = function(grunt) {
       },
       target: {
         files: {
-          "src/css/style.min.css": ["src/css/style.css"]
+          "build/css/style.min.css": ["build/css/style.css"]
         }
       }
     },
@@ -84,38 +82,38 @@ module.exports = function(grunt) {
           "node_modules/moment/min/moment-with-locales.min.js",
           "src/js/script.js",
         ],
-        dest: "src/js/script.con"
+        dest: "build/js/script.js"
       }
     },
 
     uglify: {
       main: {
         files: {
-          "src/js/script.min.js": ["src/js/script.con"]
+          "build/js/script.min.js": ["build/js/script.js"]
         }
       }
     },
 
     imagemin: {
-      dynamic: {
+      images: {
         options: {
           optimizationLevel: 3
         },
         files: [{
           expand: true,
-          cwd: "build",
-          src: ["**/*.{png,jpg,gif,svg}"],
-          dest: "build"
-          //src: ["build/img/**/*.{png,jpg,gif,svg}"],
-          //dest: "/"
+          src: ["build/img/**/*.{png,jpg,gif,svg}"]
         }]
       }
     },
 
     watch: {
+      options: {
+        livereload: true,
+      },
+
       style: {
         files: ["src/sass/**/*.scss", "src/sass/*.scss"],
-        tasks: ["sass", "postcss", "cmq", "cssmin"],
+        tasks: ["sass", "cmq", "postcss", "cssmin"],
         options: {
           spawn: false,
           livereload: true
@@ -129,19 +127,29 @@ module.exports = function(grunt) {
           spawn: false,
           livereload: true
         }
+      },
+
+      html: {
+        files: ["src/*.html"],
+        tasks: ["clean:watch_html", "copy:watch_html"],
+        options: {
+          spawn: false,
+          livereload: true
+        }
       }
     }
+
   };
 
   grunt.registerTask("build", [
     "clean",
+    "copy",
     "sass",
-    "postcss",
     "cmq",
+    "postcss",
     "cssmin",
     "concat",
     "uglify",
-    "copy",
     "imagemin"
   ]);
 

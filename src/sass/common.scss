@@ -108,6 +108,12 @@ input[type=text] {
   }
 }
 
+input[type="file"],
+input[type="radio"],
+input[type="checkbox"] {
+  display: none;
+}
+
 .preloader {
   visibility: hidden;
   width: 0;
@@ -150,4 +156,8 @@ input[type=text] {
       background-image: url("../img/htmlacademy--hover.svg");
     }
   }
+}
+
+.svg-hide-wrapper {
+  display: none;
 }

@@ -97,9 +97,8 @@
   var
     menuBtn = document.querySelector("#menu_btn"),
     priceSwitch = document.querySelector(".switch--prices"),
-    priceSwitchLabels = !!priceSwitch && priceSwitch.querySelectorAll(".switch__label"),
+    priceSwitchBullets = !!priceSwitch && priceSwitch.querySelectorAll(".switch--prices .switch__item"),
     successBtnClose = document.querySelector(".success__btn"),
-    //formBtnSubmit = document.querySelector(".submit__btn"),
     sliderReviewArrowLeft = document.querySelector(".slider-review__arrow--left"),
     sliderReviewArrowRight = document.querySelector(".slider-review__arrow--right")
   ;
@@ -127,10 +126,12 @@
   // обработчик переключателей слайдера цен
   function switchItemsListener(self) {
     var tablePrice = document.querySelector(".prices__table");
+
     if (!!tablePrice) {
       removePriceSwitchClasses();
       tablePrice.classList.add(self.id);
-      self.parentNode.classList.add("switch__item--active");
+      self.classList.add("switch__item--active");
+
       // удаляем пометки (классы) активности у таблицы и у переключателей слайдера цен
       function removePriceSwitchClasses() {
         var priceSwitchItems = !!priceSwitch && priceSwitch.querySelectorAll(".switch__item");
@@ -142,9 +143,9 @@
     }
   }
   // назначаем обработчики переключателям слайдера цен
-  if (!!priceSwitchLabels) {
-    for (var i = 0; i < priceSwitchLabels.length; i++) {
-      priceSwitchLabels[i].addEventListener("click", function(event) {
+  if (!!priceSwitchBullets) {
+    for (var i = 0; i < priceSwitchBullets.length; i++) {
+      priceSwitchBullets[i].addEventListener("click", function(event) {
         event.preventDefault();
         switchItemsListener(this);
       })
@@ -198,7 +199,9 @@
       checkoutDate = document.querySelector('#checkout_date'),
       checkinDate = document.querySelector('#checkin_date')
     ;
-    checkoutDate.value = moment(checkinDate.value, "DD.MM.YYYY").add(daysCount.value, 'days').format("DD.MM.YYYY");
+    if (!!checkoutDate && !!checkinDate) {
+      checkoutDate.value = moment(checkinDate.value, "DD.MM.YYYY").add(daysCount.value, 'days').format("DD.MM.YYYY");
+    }
   };
 
   calcCheckoutDate();
@@ -274,20 +277,24 @@
     return;
   }
   var
-    urlBase = "https://echo.htmlacademy.ru/adaptive?",
-    queue = [];
-  
+    queue = [],
+    urlBase = form.getAttribute("action")
+  ;
+
+  if (urlBase[urlBase.length-1] != "?") {
+    urlBase = urlBase + "?";
+  };
 
   // запрашиваем по Ajax
   form.addEventListener("submit", function (event) {
     event.preventDefault();
-  
+
     var data = new FormData(form);
-    
+
     queue.forEach(function(element) {
       data.append("images", element.file);
     });
-  
+
     request(data, urlBase, function (response) {
       console.log("server response: \n\"" + response+"\"");
       pink.showSuccessDlg();
@@ -301,7 +308,7 @@
       time = (new Date()).getTime(),
       url = url + time
     ;
-  
+
     xhr.open("post", url);
     xhr.addEventListener("readystatechange", function() {
       if (xhr.readyState == 4) {
@@ -314,7 +321,6 @@
   //--- Фотографии ----------------
   if ("FileReader" in window) {
     var
-      //inputFile = document.querySelector("#input_file"),
       inputFile = form.querySelector("#input_file"),
       picsArea = form.querySelector(".pics"),
       templatePic = form.querySelector("#pic_template").innerHTML
@@ -365,4 +371,3 @@
     };
   };
 }());
-//------------------------------------------------------------------------------
