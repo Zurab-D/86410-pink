@@ -6,10 +6,10 @@ module.exports = {
       files: [{
         expand: true,
         src: [
-          "src/*.html",
-          "src/css/**",
-          "src/img/**",
-          "src/js/**"
+          "*.html",
+          "css/**",
+          "img/**",
+          "js/**"
         ],
         dest: "gosha",
       }]
@@ -27,11 +27,11 @@ module.exports = {
   lintspaces: {
     codestyle: {
       src: [
-        "src/*.html",
-        "src/js/*.js",
-        "src/less/*.less",
-        "src/sass/*.sass",
-        "src/sass/*.scss"
+        "*.html",
+        "js/*.js",
+        "less/*.less",
+        "sass/*.sass",
+        "sass/*.scss"
       ],
       options: {
         editorconfig: ".editorconfig"
