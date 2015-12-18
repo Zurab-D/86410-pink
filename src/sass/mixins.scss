@@ -70,14 +70,14 @@
 
 
 @mixin sign-v($color: #000, $size: 30px, $line-width: 2px, $bg-color: transparent) {
-  @include transition;
   width: $size;
   height: $size/100*45;
   border-left: $line-width solid $color;
   border-bottom: $line-width solid $color;
+  //tyransition: border-color .3s;
   transform-origin: center;
   transform: rotate(-45deg);
-  background-color: $bg-color;
+  //background-color: $bg-color;
 }
 
 

@@ -75,6 +75,7 @@ body {
   text-transform: uppercase;
   text-align: center;
   color: #fff;
+  cursor: pointer;
 }
 
 .veil {
@@ -136,7 +137,6 @@ input[type="checkbox"] {
       }
     }
   }
-
   &__logo-bottom {
     background-image: url(../img/logotype-blue-tablet.svg);
     @media (min-width: $screen-lg) {
@@ -149,12 +149,17 @@ input[type="checkbox"] {
       }
     }
   }
-
   &__htmlacademy {
     background-image: url("../img/htmlacademy.svg");
     &-hover {
       background-image: url("../img/htmlacademy--hover.svg");
     }
+  }
+  &__arrow-right-hover {
+    background-image: url("../img/review-arrow-right--hover.svg");
+  }
+  &__arrow-left-hover {
+    background-image: url("../img/review-arrow-left--hover.svg");
   }
 }
 
