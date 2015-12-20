@@ -385,6 +385,8 @@
     height: $menu-btn-height;
     border-radius: 2px;
     box-shadow: none;
+    transform-origin: center;
+    transform: rotate(-90deg);
     &:before,
     &:after {
       left: 50%;
