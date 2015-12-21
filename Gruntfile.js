@@ -150,7 +150,7 @@ module.exports = function(grunt) {
     ,"cssmin"
     ,"concat"
     ,"uglify"
-    //,"imagemin"
+    ,"imagemin"
   ]);
 
 
