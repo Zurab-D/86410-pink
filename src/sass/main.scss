@@ -325,6 +325,7 @@
     position: relative;
     order: 1;
     min-height: 206px;
+    overflow: hidden;
   }
   &__item {
     position: absolute;
@@ -603,6 +604,9 @@
       }
     }
   }
+  &__tr {
+    background-color: #fff;
+  }
   &__1st-col,
   &__th:first-child,
   &__td:first-child {
@@ -641,7 +645,7 @@
     }
     text-transform: uppercase;
     text-align: left;
-    background-color: #fff;
+    //background-color: #fff;
     &:first-child {
       @media (min-width: $screen-md) {
         padding-left: 2.5%;
@@ -1042,7 +1046,8 @@
   }
   &--achievements &__wrapper {
     @media (min-width: $screen-lg) {
-      padding: 55px 0 0 115px;
+      //padding: 55px 0 0 115px;
+      padding: 55px 0 0 58px;
     }
   }
   &--achievements &__ul {
