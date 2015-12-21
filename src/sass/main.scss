@@ -1436,6 +1436,7 @@
   }
   &__item {
     position: relative;
+    overflow: hidden;
   }
   &__delete {
     position: absolute;
