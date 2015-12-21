@@ -207,6 +207,7 @@
     }
     @media (min-width: $screen-lg) {
       display: inline-block;
+      vertical-align: top;
       padding: 46px 35px 47px;
       min-height: $nav-height-tablet;
       background-color: transparent;
@@ -490,8 +491,9 @@
     }
   }
   &__item {
-    & a{
+    & a {
       display: inline-block;
+      vertical-align: top;
       font-size: 0;
       width: 46px;
       min-height: 57px;
