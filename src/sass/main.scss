@@ -325,6 +325,7 @@
     position: relative;
     order: 1;
     min-height: 206px;
+    overflow: hidden;
   }
   &__item {
     position: absolute;
@@ -547,8 +548,8 @@
       margin-top: 50px;
     }
     @media (min-width: $screen-lg) {
-      padding-top: 82px;
-      margin-top: 0;
+      margin-top: 76px; //0;
+      padding-top: 0; //82px;
     }
   }
   &--prices {
@@ -567,9 +568,16 @@
     right: 0;
     top: 0;
     width: 100%;
-    height: 120px;
+    //height: 120px;
+    height: 50px;
     background: url(../img/triangle-white.svg) no-repeat;
     background-size: contain;
+    @media (min-width: $screen-md) {
+      height: 70px;
+    }
+    @media (min-width: $screen-lg) {
+      height: 100px;
+    }
   }
 }
 
@@ -595,6 +603,9 @@
         transform: none;
       }
     }
+  }
+  &__tr {
+    background-color: #fff;
   }
   &__1st-col,
   &__th:first-child,
@@ -634,7 +645,7 @@
     }
     text-transform: uppercase;
     text-align: left;
-    background-color: #fff;
+    //background-color: #fff;
     &:first-child {
       @media (min-width: $screen-md) {
         padding-left: 2.5%;
@@ -671,18 +682,8 @@
     }
   }
   &__hit {
-    position: relative;
-    &:after {
-      content: "";
-      position: absolute;
-      display: block;
-      width: 74px;
-      height: 73px;
-      top: 0px;
-      left: -2px;
-      background: transparent url(../img/hit.png) no-repeat top left;
-      background-size: 74px 73px;
-    }
+    background: #283645 url(../img/hit.png) no-repeat top left;
+    background-size: 74px 73px;
   }
   &__sign-yes,
   &__sign-no {
@@ -770,15 +771,16 @@
 
 .map {
   position: relative;
-  height: 33vh;
-  background: url(../img/map-big.jpg) 45% 55% no-repeat;
+  height: 200px;
+  background: url(../img/map-big.jpg) 46.2% 52% no-repeat;
   font-size: 0;
   @media (min-width: $screen-md) {
-    height: 61vh;
-    background: url(../img/map-big.jpg) 46% 57% no-repeat;
+    height: 377px;
+    background: url(../img/map-big.jpg) 45% 52% no-repeat;
   }
   @media (min-width: $screen-lg) {
-    height: 77vh;
+    height: 524px;
+    background-position: 44% 52%;
   }
   &:before {
     content: "";
@@ -786,24 +788,25 @@
     top: -0px;
     left: 0;
     width: 100%;
-    height: 100%;
-    background: url(../img/triangle-white-footer.svg) no-repeat;
+    height: 33%;
+    background: url(../img/triangle-white-footer.svg) no-repeat center top;
+    /*background: transparent url("data:image/svg+xml;utf8,<svg version='1.0' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' x='0px' y='0px' width='100%' height='100%' viewBox='0 0 595.28 61.905' enable-background='new 0 0 595.28 61.905' xml:space='preserve' preserveAspectRatio='none'><polygon fill='white' points='297.64,61.905 0,0 595.28,0 '/></svg>") no-repeat scroll center top / 100% auto;*/
     background-size: 100% auto;
   }
   &:after {
     content: "";
     position: absolute;
-    top: 50%;
-    left: 55%;
-    transform: translateX(-50%);
+    top: 61%;
+    left: 48%;
+    //transform: translateX(-50%);
     width: 36px;
     height: 36px;
     background: url(../img/map-marker.svg) no-repeat;
     @media (min-width: $screen-md) {
-      left: 50%;
+      top: 56.8%;
     }
     @media (min-width: $screen-md) {
-      left: 48%;
+      top: 56%;
     }
   }
 }
@@ -1043,7 +1046,8 @@
   }
   &--achievements &__wrapper {
     @media (min-width: $screen-lg) {
-      padding: 55px 0 0 115px;
+      //padding: 55px 0 0 115px;
+      padding: 55px 0 0 58px;
     }
   }
   &--achievements &__ul {
@@ -1278,8 +1282,9 @@
   }
   &__rem,
   &__result {
-    flex-basis: 100%;
+    //flex-basis: 100%;
     //width: 100%;
+    flex-grow: 1;
     border-left-width: 0;
     border-right-width: 0;
     line-height: 53px;
@@ -1436,6 +1441,7 @@
   }
   &__item {
     position: relative;
+    overflow: hidden;
   }
   &__delete {
     position: absolute;
@@ -1798,6 +1804,7 @@
     @media (min-width: $screen-md) {
       position: absolute;
       display: inline-block;
+      vertical-align: top;
       z-index: 1;
       font-size: $base-font-size;
       line-height: $header-line-height;

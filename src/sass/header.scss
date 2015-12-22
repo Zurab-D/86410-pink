@@ -207,6 +207,7 @@
     }
     @media (min-width: $screen-lg) {
       display: inline-block;
+      vertical-align: top;
       padding: 46px 35px 47px;
       min-height: $nav-height-tablet;
       background-color: transparent;
@@ -385,6 +386,8 @@
     height: $menu-btn-height;
     border-radius: 2px;
     box-shadow: none;
+    transform-origin: center;
+    transform: rotate(-90deg);
     &:before,
     &:after {
       left: 50%;
@@ -488,8 +491,9 @@
     }
   }
   &__item {
-    & a{
+    & a {
       display: inline-block;
+      vertical-align: top;
       font-size: 0;
       width: 46px;
       min-height: 57px;

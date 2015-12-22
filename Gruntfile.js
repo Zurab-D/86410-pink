@@ -142,15 +142,15 @@ module.exports = function(grunt) {
   };
 
   grunt.registerTask("build", [
-    "clean",
-    "copy",
-    "sass",
-    "cmq",
-    "postcss",
-    "cssmin",
-    "concat",
-    "uglify",
-    "imagemin"
+    "clean"
+    ,"copy"
+    ,"sass"
+    ,"cmq"
+    ,"postcss"
+    ,"cssmin"
+    ,"concat"
+    ,"uglify"
+    ,"imagemin"
   ]);
 
 
