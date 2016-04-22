@@ -1,9 +1,11 @@
 build/
 .Saved/
+_psd/
 _arc/
 _doc/
 bower_components/
 node_modules/
+css/
 *.log
 *.rar
 *.sublime*
@@ -14,7 +16,6 @@ node_modules/
 css/*.css
 ex_files
 Thumbs.db
-.gitignore
 Замечания.*
 FarMenu.ini
 *.min.css

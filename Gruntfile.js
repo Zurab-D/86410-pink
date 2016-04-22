@@ -106,6 +106,13 @@ module.exports = function(grunt) {
       }
     },
 
+    csscomb: {
+      style: {
+        expand: true,
+        src: ['src/sass/**/*.scss','!src/sass/vendor/**']
+      }
+    },
+
     watch: {
       options: {
         livereload: true,
