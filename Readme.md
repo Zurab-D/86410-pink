@@ -1,4 +1,4 @@
-[eng]
+_(eng)_
 # Training project Pink [![Build status][travis-image]][travis-url] [![Dependency status][dependency-image]][dependency-url]
 
 * Student: [Zurab Diakonashvili](https://htmlacademy.ru/profile/id86410).
