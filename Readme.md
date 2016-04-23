@@ -1,3 +1,20 @@
+_(eng)_
+# Training project Pink [![Build status][travis-image]][travis-url] [![Dependency status][dependency-image]][dependency-url]
+
+* Student: [Zurab Diakonashvili](https://htmlacademy.ru/profile/id86410).
+* Tutor: [Anton Popov](https://htmlacademy.ru/profile/joker).
+
+Demo pages:
+  * http://zurab-d.github.io/86410-pink/index.html
+  * http://zurab-d.github.io/86410-pink/form.html
+  * http://zurab-d.github.io/86410-pink/blog.html
+  * http://zurab-d.github.io/86410-pink/post.html
+
+---
+---
+
+
+_(rus)_
 # Проект «Пинк» [![Build status][travis-image]][travis-url] [![Dependency status][dependency-image]][dependency-url]
 
 * Студент: [Диаконашвили Зураб](https://htmlacademy.ru/profile/id86410).
