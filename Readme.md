@@ -5,10 +5,10 @@ _(eng)_
 * Tutor: [Anton Popov](https://htmlacademy.ru/profile/joker).
 
 Demo pages:
-  http://zurab-d.github.io/86410-pink/index.html
-  http://zurab-d.github.io/86410-pink/form.html
-  http://zurab-d.github.io/86410-pink/blog.html
-  http://zurab-d.github.io/86410-pink/post.html
+  * http://zurab-d.github.io/86410-pink/index.html
+  * http://zurab-d.github.io/86410-pink/form.html
+  * http://zurab-d.github.io/86410-pink/blog.html
+  * http://zurab-d.github.io/86410-pink/post.html
 
 ---
 ---
