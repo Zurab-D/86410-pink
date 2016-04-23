@@ -14,7 +14,7 @@ Demo pages:
 ---
 
 
-_(rus)_
+_`(rus)`_
 # Проект «Пинк» [![Build status][travis-image]][travis-url] [![Dependency status][dependency-image]][dependency-url]
 
 * Студент: [Диаконашвили Зураб](https://htmlacademy.ru/profile/id86410).
