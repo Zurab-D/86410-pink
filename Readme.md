@@ -1,4 +1,4 @@
-_(eng)_
+_`(eng)`_
 # Training project Pink [![Build status][travis-image]][travis-url] [![Dependency status][dependency-image]][dependency-url]
 
 * Student: [Zurab Diakonashvili](https://htmlacademy.ru/profile/id86410).
@@ -14,7 +14,7 @@ Demo pages:
 ---
 
 
-_(rus)_
+_`(rus)`_
 # Проект «Пинк» [![Build status][travis-image]][travis-url] [![Dependency status][dependency-image]][dependency-url]
 
 * Студент: [Диаконашвили Зураб](https://htmlacademy.ru/profile/id86410).
